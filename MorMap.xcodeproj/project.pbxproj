@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
+		A2CE33A81D19254B003CDE63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* ViewController.swift */; };
+		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
+		A2CE33AD1D19254B003CDE63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AC1D19254B003CDE63 /* Assets.xcassets */; };
+		A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */; };
+		A2CE33BB1D19254B003CDE63 /* MorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */; };
+		A2CE33C61D19254B003CDE63 /* MorMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2CE33B71D19254B003CDE63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2CE339A1D192549003CDE63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2CE33A11D192549003CDE63;
+			remoteInfo = MorMap;
+		};
+		A2CE33C21D19254B003CDE63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2CE339A1D192549003CDE63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2CE33A11D192549003CDE63;
+			remoteInfo = MorMap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A2CE33A21D192549003CDE63 /* MorMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A2CE33A71D19254B003CDE63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2CE33AA1D19254B003CDE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A2CE33AC1D19254B003CDE63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2CE33AF1D19254B003CDE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A2CE33B11D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapTests.swift; sourceTree = "<group>"; };
+		A2CE33BC1D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapUITests.swift; sourceTree = "<group>"; };
+		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2CE339F1D192549003CDE63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33B31D19254B003CDE63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33BE1D19254B003CDE63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2CE33991D192549003CDE63 = {
+			isa = PBXGroup;
+			children = (
+				A2CE33A41D19254B003CDE63 /* MorMap */,
+				A2CE33B91D19254B003CDE63 /* MorMapTests */,
+				A2CE33C41D19254B003CDE63 /* MorMapUITests */,
+				A2CE33A31D192549003CDE63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2CE33A31D192549003CDE63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE33A21D192549003CDE63 /* MorMap.app */,
+				A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */,
+				A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2CE33A41D19254B003CDE63 /* MorMap */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
+				A2CE33A71D19254B003CDE63 /* ViewController.swift */,
+				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
+				A2CE33AC1D19254B003CDE63 /* Assets.xcassets */,
+				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
+				A2CE33B11D19254B003CDE63 /* Info.plist */,
+			);
+			path = MorMap;
+			sourceTree = "<group>";
+		};
+		A2CE33B91D19254B003CDE63 /* MorMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */,
+				A2CE33BC1D19254B003CDE63 /* Info.plist */,
+			);
+			path = MorMapTests;
+			sourceTree = "<group>";
+		};
+		A2CE33C41D19254B003CDE63 /* MorMapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */,
+				A2CE33C71D19254B003CDE63 /* Info.plist */,
+			);
+			path = MorMapUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2CE33A11D192549003CDE63 /* MorMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMap" */;
+			buildPhases = (
+				A2CE339E1D192549003CDE63 /* Sources */,
+				A2CE339F1D192549003CDE63 /* Frameworks */,
+				A2CE33A01D192549003CDE63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MorMap;
+			productName = MorMap;
+			productReference = A2CE33A21D192549003CDE63 /* MorMap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A2CE33B51D19254B003CDE63 /* MorMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */;
+			buildPhases = (
+				A2CE33B21D19254B003CDE63 /* Sources */,
+				A2CE33B31D19254B003CDE63 /* Frameworks */,
+				A2CE33B41D19254B003CDE63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2CE33B81D19254B003CDE63 /* PBXTargetDependency */,
+			);
+			name = MorMapTests;
+			productName = MorMapTests;
+			productReference = A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A2CE33C01D19254B003CDE63 /* MorMapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */;
+			buildPhases = (
+				A2CE33BD1D19254B003CDE63 /* Sources */,
+				A2CE33BE1D19254B003CDE63 /* Frameworks */,
+				A2CE33BF1D19254B003CDE63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2CE33C31D19254B003CDE63 /* PBXTargetDependency */,
+			);
+			name = MorMapUITests;
+			productName = MorMapUITests;
+			productReference = A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2CE339A1D192549003CDE63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = MorTorq;
+				TargetAttributes = {
+					A2CE33A11D192549003CDE63 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A2CE33B51D19254B003CDE63 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A2CE33A11D192549003CDE63;
+					};
+					A2CE33C01D19254B003CDE63 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A2CE33A11D192549003CDE63;
+					};
+				};
+			};
+			buildConfigurationList = A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A2CE33991D192549003CDE63;
+			productRefGroup = A2CE33A31D192549003CDE63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2CE33A11D192549003CDE63 /* MorMap */,
+				A2CE33B51D19254B003CDE63 /* MorMapTests */,
+				A2CE33C01D19254B003CDE63 /* MorMapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2CE33A01D192549003CDE63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */,
+				A2CE33AD1D19254B003CDE63 /* Assets.xcassets in Resources */,
+				A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33B41D19254B003CDE63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33BF1D19254B003CDE63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2CE339E1D192549003CDE63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CE33A81D19254B003CDE63 /* ViewController.swift in Sources */,
+				A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33B21D19254B003CDE63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CE33BB1D19254B003CDE63 /* MorMapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2CE33BD1D19254B003CDE63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2CE33C61D19254B003CDE63 /* MorMapUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2CE33B81D19254B003CDE63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2CE33A11D192549003CDE63 /* MorMap */;
+			targetProxy = A2CE33B71D19254B003CDE63 /* PBXContainerItemProxy */;
+		};
+		A2CE33C31D19254B003CDE63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2CE33A11D192549003CDE63 /* MorMap */;
+			targetProxy = A2CE33C21D19254B003CDE63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A2CE33A91D19254B003CDE63 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2CE33AA1D19254B003CDE63 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2CE33AF1D19254B003CDE63 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A2CE33C81D19254B003CDE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2CE33C91D19254B003CDE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A2CE33CB1D19254B003CDE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MorMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A2CE33CC1D19254B003CDE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MorMap/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A2CE33CE1D19254B003CDE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorMap.app/MorMap";
+			};
+			name = Debug;
+		};
+		A2CE33CF1D19254B003CDE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MorMapTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorMap.app/MorMap";
+			};
+			name = Release;
+		};
+		A2CE33D11D19254B003CDE63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MorMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MorMap;
+			};
+			name = Debug;
+		};
+		A2CE33D21D19254B003CDE63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MorMapUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MorMap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CE33C81D19254B003CDE63 /* Debug */,
+				A2CE33C91D19254B003CDE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CE33CB1D19254B003CDE63 /* Debug */,
+				A2CE33CC1D19254B003CDE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CE33CE1D19254B003CDE63 /* Debug */,
+				A2CE33CF1D19254B003CDE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2CE33D11D19254B003CDE63 /* Debug */,
+				A2CE33D21D19254B003CDE63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2CE339A1D192549003CDE63 /* Project object */;
+}
