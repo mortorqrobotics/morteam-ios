@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29C43407B4838E1246EB446D /* Pods_MorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768501D6013D9EAD46189E81 /* Pods_MorMap.framework */; };
 		81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */; };
 		9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */; };
+		A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* ViewController.swift */; };
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
@@ -45,6 +45,7 @@
 		7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE33A71D19254B003CDE63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29C43407B4838E1246EB446D /* Pods_MorMap.framework in Frameworks */,
+				A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +159,7 @@
 		A882F49CF8877078A954EC52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */,
 				768501D6013D9EAD46189E81 /* Pods_MorMap.framework */,
 				7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */,
 				4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */,
@@ -241,6 +243,7 @@
 				TargetAttributes = {
 					A2CE33A11D192549003CDE63 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6GPMR8SXTF;
 					};
 					A2CE33B51D19254B003CDE63 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -573,10 +576,18 @@
 			baseConfigurationReference = 1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
+				);
 				INFOPLIST_FILE = MorMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -585,10 +596,18 @@
 			baseConfigurationReference = 0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
+				);
 				INFOPLIST_FILE = MorMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
