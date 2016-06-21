@@ -12,7 +12,17 @@ import Foundation
 import UIKit
 
 let storage = NSUserDefaults.standardUserDefaults()
-let morTeamURL = "http://www.morteam.com"
+
+func parseJSON(text: String) -> [String:AnyObject]? {
+    if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+        do {
+            return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    return nil
+}
 
 
 func UIColorFromHex( hexOld: String) -> UIColor {
