@@ -17,6 +17,7 @@
 		A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */; };
 		A2CE33BB1D19254B003CDE63 /* MorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */; };
 		A2CE33C61D19254B003CDE63 /* MorMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */; };
+		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapUITests.swift; sourceTree = "<group>"; };
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 		A2CE33A41D19254B003CDE63 /* MorMap */ = {
 			isa = PBXGroup;
 			children = (
+				A2EDBEE61D19E454003D9851 /* Util.swift */,
 				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
 				A2CE33A71D19254B003CDE63 /* ViewController.swift */,
 				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2CE33A81D19254B003CDE63 /* ViewController.swift in Sources */,
+				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

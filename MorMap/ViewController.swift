@@ -12,12 +12,12 @@ import GoogleMaps
 
 class ViewController: UIViewController {
     
+    @IBOutlet var MapUI: GMSMapView!
     let morTeamURL = "http://www.morteam.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //dispatch_async(dispatch_get_main_queue()) {
-        
+
         //Set camera
         let camera = GMSCameraPosition.cameraWithLatitude(34.06, longitude: -118.41, zoom: 5);
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera);
@@ -33,12 +33,12 @@ class ViewController: UIViewController {
                 let lat = location["latitude"] as! Double
                 let long = location["longitude"] as! Double
                 let marker = GMSMarker()
-                marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IF FIXED
+                marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IS FIXED
                 marker.title = "Team " + team
                 marker.snippet = "Team"
-                marker.map = mapView
+                marker.map = self.MapUI
                 dispatch_async(dispatch_get_main_queue(),{
-                    self.view = mapView
+                   self.MapUI.addSubview(mapView)
                 })
             }
         }
