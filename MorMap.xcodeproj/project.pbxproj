@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29C43407B4838E1246EB446D /* Pods_MorMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 768501D6013D9EAD46189E81 /* Pods_MorMap.framework */; };
+		81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */; };
+		9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* ViewController.swift */; };
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
@@ -34,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMap/Pods-MorMap.release.xcconfig"; sourceTree = "<group>"; };
+		1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMap/Pods-MorMap.debug.xcconfig"; sourceTree = "<group>"; };
+		44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		768501D6013D9EAD46189E81 /* Pods_MorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE33A71D19254B003CDE63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +58,7 @@
 		A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapUITests.swift; sourceTree = "<group>"; };
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C43407B4838E1246EB446D /* Pods_MorMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53FA300A71CB21890ECD5EDB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */,
+				0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */,
+				8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */,
+				9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */,
+				44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */,
+				E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A2CE33991D192549003CDE63 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				A2CE33B91D19254B003CDE63 /* MorMapTests */,
 				A2CE33C41D19254B003CDE63 /* MorMapUITests */,
 				A2CE33A31D192549003CDE63 /* Products */,
+				53FA300A71CB21890ECD5EDB /* Pods */,
+				A882F49CF8877078A954EC52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +155,16 @@
 			path = MorMapUITests;
 			sourceTree = "<group>";
 		};
+		A882F49CF8877078A954EC52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				768501D6013D9EAD46189E81 /* Pods_MorMap.framework */,
+				7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */,
+				4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMap" */;
 			buildPhases = (
+				C24FB486F3B269C6B2F0BDF5 /* [CP] Check Pods Manifest.lock */,
 				A2CE339E1D192549003CDE63 /* Sources */,
 				A2CE339F1D192549003CDE63 /* Frameworks */,
 				A2CE33A01D192549003CDE63 /* Resources */,
+				311E304CEFDE197FF48896BE /* [CP] Embed Pods Frameworks */,
+				1F97680F15D18D3930058EA4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */;
 			buildPhases = (
+				BE209345421AC297B9E10E37 /* [CP] Check Pods Manifest.lock */,
 				A2CE33B21D19254B003CDE63 /* Sources */,
 				A2CE33B31D19254B003CDE63 /* Frameworks */,
 				A2CE33B41D19254B003CDE63 /* Resources */,
+				D5148AC15BD056826210594F /* [CP] Embed Pods Frameworks */,
+				9E203DC5451E96DCCB27FD7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */;
 			buildPhases = (
+				4EBA836E78B624630986FD75 /* [CP] Check Pods Manifest.lock */,
 				A2CE33BD1D19254B003CDE63 /* Sources */,
 				A2CE33BE1D19254B003CDE63 /* Frameworks */,
 				A2CE33BF1D19254B003CDE63 /* Resources */,
+				5D14F4B69A9AAAEC2DE59B3B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +298,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F97680F15D18D3930058EA4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMap/Pods-MorMap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		311E304CEFDE197FF48896BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMap/Pods-MorMap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4EBA836E78B624630986FD75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5D14F4B69A9AAAEC2DE59B3B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E203DC5451E96DCCB27FD7C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE209345421AC297B9E10E37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C24FB486F3B269C6B2F0BDF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D5148AC15BD056826210594F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2CE339E1D192549003CDE63 /* Sources */ = {
@@ -399,6 +570,7 @@
 		};
 		A2CE33CB1D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MorMap/Info.plist;
@@ -410,6 +582,7 @@
 		};
 		A2CE33CC1D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MorMap/Info.plist;
@@ -421,6 +594,7 @@
 		};
 		A2CE33CE1D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MorMapTests/Info.plist;
@@ -433,6 +607,7 @@
 		};
 		A2CE33CF1D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MorMapTests/Info.plist;
@@ -445,6 +620,7 @@
 		};
 		A2CE33D11D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MorMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -456,6 +632,7 @@
 		};
 		A2CE33D21D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MorMapUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +661,7 @@
 				A2CE33CC1D19254B003CDE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +670,7 @@
 				A2CE33CF1D19254B003CDE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +679,7 @@
 				A2CE33D21D19254B003CDE63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
