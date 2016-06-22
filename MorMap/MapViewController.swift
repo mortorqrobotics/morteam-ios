@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet var MapUI: GMSMapView!
     let morTeamURL = "http://www.morteam.com"
@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.cameraWithLatitude(34.06, longitude: -118.41, zoom: 5);
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera);
         mapView.myLocationEnabled = true;
+        
         //Get locations
         httpRequest(morTeamURL+"/js/teamLocations.js", type: "GET") { responseText in
             //Parse response
@@ -35,13 +36,20 @@ class MapViewController: UIViewController {
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IS FIXED
                 marker.title = "Team " + team
-                marker.snippet = "Team"
+                marker.snippet = "View Team Profile >"
                 marker.map = self.MapUI
                 dispatch_async(dispatch_get_main_queue(),{
                    self.MapUI.addSubview(mapView)
+                   self.MapUI.delegate = self
                 })
             }
         }
+    }
+    
+    func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker){
+        print();
+        let teamNumber = Int((marker.title?.substringFromIndex(marker.title!.startIndex.advancedBy(5)))!)!
+        print(teamNumber)
     }
 
     override func didReceiveMemoryWarning() {

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        GMSServices.provideAPIKey("AIzaSyBj2utYh1d6jtf3E_mCNC-nQPXXdwzHaC8");//Use your own API Key
+        GMSServices.provideAPIKey("");//Use your own API Key
         UINavigationBar.appearance().barTintColor = UIColorFromHex("#FFC547")
         UINavigationBar.appearance().tintColor = UIColor.blackColor()
         UINavigationBar.appearance().translucent = false
