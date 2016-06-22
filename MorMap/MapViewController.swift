@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  MorMap
 //
 //  Created by arvin zadeh on 6/21/16.
@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
     
     @IBOutlet var MapUI: GMSMapView!
     let morTeamURL = "http://www.morteam.com"

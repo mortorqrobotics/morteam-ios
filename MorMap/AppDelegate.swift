@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColorFromHex("#FFC547")
         UINavigationBar.appearance().tintColor = UIColor.blackColor()
         UINavigationBar.appearance().translucent = false
+          
+        UITabBar.appearance().tintColor = UIColorFromHex("#E5B13F")
+            
         return true
     }
 
