@@ -83,16 +83,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKp-Ub-Dz2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <searchBar contentMode="redraw" placeholder="Search Teams and Regionals" translatesAutoresizingMaskIntoConstraints="NO" id="fIu-Tc-lxj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="AKp-Ub-Dz2" secondAttribute="trailing" constant="-20" id="3sB-FE-gwf"/>
-                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="MQ2-AK-sce" secondAttribute="bottom" id="6iG-dP-ttj"/>
+                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="fIu-Tc-lxj" secondAttribute="bottom" id="90n-Xf-KwQ"/>
+                            <constraint firstItem="fIu-Tc-lxj" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leadingMargin" constant="-20" id="A5f-36-Yxf"/>
                             <constraint firstItem="AKp-Ub-Dz2" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leadingMargin" constant="-20" id="B3p-au-LHL"/>
+                            <constraint firstItem="fIu-Tc-lxj" firstAttribute="top" secondItem="MQ2-AK-sce" secondAttribute="bottom" id="Gjr-xS-HvC"/>
                             <constraint firstItem="Cnc-7v-cSl" firstAttribute="top" secondItem="AKp-Ub-Dz2" secondAttribute="bottom" id="OXj-2Z-vyl"/>
+                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="fIu-Tc-lxj" secondAttribute="bottom" id="ye8-cc-1Pu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fIu-Tc-lxj" secondAttribute="trailing" constant="-20" id="zY2-Md-8Ic"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MorMap" id="OyN-Ru-ibp"/>
