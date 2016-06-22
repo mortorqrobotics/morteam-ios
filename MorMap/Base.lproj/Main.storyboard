@@ -106,11 +106,31 @@
                     <navigationItem key="navigationItem" title="MorMap" id="OyN-Ru-ibp"/>
                     <connections>
                         <outlet property="MapUI" destination="AKp-Ub-Dz2" id="yxG-tc-XRE"/>
+                        <segue destination="Avy-jN-z99" kind="show" id="c0h-Ii-lhL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTN-7a-D7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="666" y="1334"/>
+        </scene>
+        <!--Team Profile-->
+        <scene sceneID="tOi-qE-mVa">
+            <objects>
+                <viewController storyboardIdentifier="TeamProfile" title="Team Profile" id="JzS-tF-gVo" customClass="TeamProfileVC" customModule="MorMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LW8-E2-VYR"/>
+                        <viewControllerLayoutGuide type="bottom" id="TFc-C7-65R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8SH-9z-9EY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team Profile" id="R2c-XM-GHk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMH-Zn-C7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2198" y="1334"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="GIy-0J-Rkr">
@@ -245,6 +265,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COF-Oe-wxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-130" y="3565"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RRt-Iu-rAA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Avy-jN-z99" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCg-GZ-xdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JzS-tF-gVo" kind="relationship" relationship="rootViewController" id="qG2-tn-gBG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v4d-qy-bX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="1334"/>
         </scene>
     </scenes>
     <resources>

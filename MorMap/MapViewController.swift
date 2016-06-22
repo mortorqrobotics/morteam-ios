@@ -49,8 +49,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker){
         print();
         let teamNumber = Int((marker.title?.substringFromIndex(marker.title!.startIndex.advancedBy(5)))!)!
-        print(teamNumber)
+        dispatch_async(dispatch_get_main_queue(),{
+            let vc: TeamProfileVC! = self.storyboard!.instantiateViewControllerWithIdentifier("TeamProfile") as! TeamProfileVC
+            vc.teamNumber = teamNumber
+            self.showViewController(vc as UIViewController, sender: vc)
+        
+        })
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

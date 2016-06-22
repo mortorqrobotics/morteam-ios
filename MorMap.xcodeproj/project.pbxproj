@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */; };
 		9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */; };
+		A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206D511D1B43340023BC10 /* TeamProfileVC.swift */; };
 		A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* MapViewController.swift */; };
@@ -47,6 +48,7 @@
 		7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		A2206D511D1B43340023BC10 /* TeamProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileVC.swift; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
 				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
 				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
+				A2206D511D1B43340023BC10 /* TeamProfileVC.swift */,
 				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
 				A2CE33AC1D19254B003CDE63 /* Assets.xcassets */,
 				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */,
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
