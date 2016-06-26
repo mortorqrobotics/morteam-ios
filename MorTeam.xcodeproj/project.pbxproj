@@ -109,6 +109,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A226C4881D20978F0083971D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2206D511D1B43340023BC10 /* TeamProfileVC.swift */,
+				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
+				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A226C4891D2097AC0083971D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2EDBEE61D19E454003D9851 /* Util.swift */,
+				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A226C48A1D20985E0083971D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A2CE33991D192549003CDE63 = {
 			isa = PBXGroup;
 			children = (
@@ -134,11 +160,9 @@
 		A2CE33A41D19254B003CDE63 /* MorTeam */ = {
 			isa = PBXGroup;
 			children = (
-				A2EDBEE61D19E454003D9851 /* Util.swift */,
-				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
-				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
-				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
-				A2206D511D1B43340023BC10 /* TeamProfileVC.swift */,
+				A226C4891D2097AC0083971D /* Supporting Files */,
+				A226C48A1D20985E0083971D /* Models */,
+				A226C4881D20978F0083971D /* Views */,
 				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
 				A2CE33AC1D19254B003CDE63 /* Assets.xcassets */,
 				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
