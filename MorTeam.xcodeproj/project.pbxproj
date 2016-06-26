@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */; };
-		9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */; };
+		81858D7998F70318C7F87EFF /* Pods_MorTeamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3DE52033B216CD8979C1F8 /* Pods_MorTeamUITests.framework */; };
+		9ED61007986F9FD7F6F0A4AE /* Pods_MorTeamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A01BA6E11380E81EB846D94 /* Pods_MorTeamTests.framework */; };
 		A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206D511D1B43340023BC10 /* TeamProfileVC.swift */; };
 		A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
@@ -16,8 +16,8 @@
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
 		A2CE33AD1D19254B003CDE63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AC1D19254B003CDE63 /* Assets.xcassets */; };
 		A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */; };
-		A2CE33BB1D19254B003CDE63 /* MorMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */; };
-		A2CE33C61D19254B003CDE63 /* MorMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */; };
+		A2CE33BB1D19254B003CDE63 /* MorTeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33BA1D19254B003CDE63 /* MorTeamTests.swift */; };
+		A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */; };
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,44 +28,44 @@
 			containerPortal = A2CE339A1D192549003CDE63 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A2CE33A11D192549003CDE63;
-			remoteInfo = MorMap;
+			remoteInfo = MorTeam;
 		};
 		A2CE33C21D19254B003CDE63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A2CE339A1D192549003CDE63 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A2CE33A11D192549003CDE63;
-			remoteInfo = MorMap;
+			remoteInfo = MorTeam;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMap/Pods-MorMap.release.xcconfig"; sourceTree = "<group>"; };
-		1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMap/Pods-MorMap.debug.xcconfig"; sourceTree = "<group>"; };
-		44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		768501D6013D9EAD46189E81 /* Pods_MorMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		0DE4DA910C35DDD7FA578D2A /* Pods-MorTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.release.xcconfig"; sourceTree = "<group>"; };
+		1A8F1739CE09385FED45763D /* Pods-MorTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.debug.xcconfig"; sourceTree = "<group>"; };
+		44F41CBEDE67A1C962F223F8 /* Pods-MorTeamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A3DE52033B216CD8979C1F8 /* Pods_MorTeamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		768501D6013D9EAD46189E81 /* Pods_MorTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A01BA6E11380E81EB846D94 /* Pods_MorTeamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8392616A1E17694D7C19E224 /* Pods-MorTeamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AA9CB80D68D72E09FCCD703 /* Pods-MorTeamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2206D511D1B43340023BC10 /* TeamProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileVC.swift; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
-		A2CE33A21D192549003CDE63 /* MorMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33A21D192549003CDE63 /* MorTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE33A71D19254B003CDE63 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		A2CE33AA1D19254B003CDE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2CE33AC1D19254B003CDE63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2CE33AF1D19254B003CDE63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2CE33B11D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapTests.swift; sourceTree = "<group>"; };
+		A2CE33B61D19254B003CDE63 /* MorTeamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorTeamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33BA1D19254B003CDE63 /* MorTeamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorTeamTests.swift; sourceTree = "<group>"; };
 		A2CE33BC1D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorMapUITests.swift; sourceTree = "<group>"; };
+		A2CE33C11D19254B003CDE63 /* MorTeamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorTeamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorTeamUITests.swift; sourceTree = "<group>"; };
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E2980A2335157D5E95F599EF /* Pods-MorTeamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED61007986F9FD7F6F0A4AE /* Pods_MorMapTests.framework in Frameworks */,
+				9ED61007986F9FD7F6F0A4AE /* Pods_MorTeamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81858D7998F70318C7F87EFF /* Pods_MorMapUITests.framework in Frameworks */,
+				81858D7998F70318C7F87EFF /* Pods_MorTeamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +99,12 @@
 		53FA300A71CB21890ECD5EDB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */,
-				0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */,
-				8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */,
-				9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */,
-				44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */,
-				E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */,
+				1A8F1739CE09385FED45763D /* Pods-MorTeam.debug.xcconfig */,
+				0DE4DA910C35DDD7FA578D2A /* Pods-MorTeam.release.xcconfig */,
+				8392616A1E17694D7C19E224 /* Pods-MorTeamTests.debug.xcconfig */,
+				9AA9CB80D68D72E09FCCD703 /* Pods-MorTeamTests.release.xcconfig */,
+				44F41CBEDE67A1C962F223F8 /* Pods-MorTeamUITests.debug.xcconfig */,
+				E2980A2335157D5E95F599EF /* Pods-MorTeamUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -112,9 +112,9 @@
 		A2CE33991D192549003CDE63 = {
 			isa = PBXGroup;
 			children = (
-				A2CE33A41D19254B003CDE63 /* MorMap */,
-				A2CE33B91D19254B003CDE63 /* MorMapTests */,
-				A2CE33C41D19254B003CDE63 /* MorMapUITests */,
+				A2CE33A41D19254B003CDE63 /* MorTeam */,
+				A2CE33B91D19254B003CDE63 /* MorTeamTests */,
+				A2CE33C41D19254B003CDE63 /* MorTeamUITests */,
 				A2CE33A31D192549003CDE63 /* Products */,
 				53FA300A71CB21890ECD5EDB /* Pods */,
 				A882F49CF8877078A954EC52 /* Frameworks */,
@@ -124,14 +124,14 @@
 		A2CE33A31D192549003CDE63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A2CE33A21D192549003CDE63 /* MorMap.app */,
-				A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */,
-				A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */,
+				A2CE33A21D192549003CDE63 /* MorTeam.app */,
+				A2CE33B61D19254B003CDE63 /* MorTeamTests.xctest */,
+				A2CE33C11D19254B003CDE63 /* MorTeamUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2CE33A41D19254B003CDE63 /* MorMap */ = {
+		A2CE33A41D19254B003CDE63 /* MorTeam */ = {
 			isa = PBXGroup;
 			children = (
 				A2EDBEE61D19E454003D9851 /* Util.swift */,
@@ -144,34 +144,34 @@
 				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
 				A2CE33B11D19254B003CDE63 /* Info.plist */,
 			);
-			path = MorMap;
+			path = MorTeam;
 			sourceTree = "<group>";
 		};
-		A2CE33B91D19254B003CDE63 /* MorMapTests */ = {
+		A2CE33B91D19254B003CDE63 /* MorTeamTests */ = {
 			isa = PBXGroup;
 			children = (
-				A2CE33BA1D19254B003CDE63 /* MorMapTests.swift */,
+				A2CE33BA1D19254B003CDE63 /* MorTeamTests.swift */,
 				A2CE33BC1D19254B003CDE63 /* Info.plist */,
 			);
-			path = MorMapTests;
+			path = MorTeamTests;
 			sourceTree = "<group>";
 		};
-		A2CE33C41D19254B003CDE63 /* MorMapUITests */ = {
+		A2CE33C41D19254B003CDE63 /* MorTeamUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A2CE33C51D19254B003CDE63 /* MorMapUITests.swift */,
+				A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */,
 				A2CE33C71D19254B003CDE63 /* Info.plist */,
 			);
-			path = MorMapUITests;
+			path = MorTeamUITests;
 			sourceTree = "<group>";
 		};
 		A882F49CF8877078A954EC52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */,
-				768501D6013D9EAD46189E81 /* Pods_MorMap.framework */,
-				7A01BA6E11380E81EB846D94 /* Pods_MorMapTests.framework */,
-				4A3DE52033B216CD8979C1F8 /* Pods_MorMapUITests.framework */,
+				768501D6013D9EAD46189E81 /* Pods_MorTeam.framework */,
+				7A01BA6E11380E81EB846D94 /* Pods_MorTeamTests.framework */,
+				4A3DE52033B216CD8979C1F8 /* Pods_MorTeamUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -179,9 +179,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A2CE33A11D192549003CDE63 /* MorMap */ = {
+		A2CE33A11D192549003CDE63 /* MorTeam */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMap" */;
+			buildConfigurationList = A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeam" */;
 			buildPhases = (
 				C24FB486F3B269C6B2F0BDF5 /* [CP] Check Pods Manifest.lock */,
 				A2CE339E1D192549003CDE63 /* Sources */,
@@ -194,14 +194,14 @@
 			);
 			dependencies = (
 			);
-			name = MorMap;
-			productName = MorMap;
-			productReference = A2CE33A21D192549003CDE63 /* MorMap.app */;
+			name = MorTeam;
+			productName = MorTeam;
+			productReference = A2CE33A21D192549003CDE63 /* MorTeam.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A2CE33B51D19254B003CDE63 /* MorMapTests */ = {
+		A2CE33B51D19254B003CDE63 /* MorTeamTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */;
+			buildConfigurationList = A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeamTests" */;
 			buildPhases = (
 				BE209345421AC297B9E10E37 /* [CP] Check Pods Manifest.lock */,
 				A2CE33B21D19254B003CDE63 /* Sources */,
@@ -215,14 +215,14 @@
 			dependencies = (
 				A2CE33B81D19254B003CDE63 /* PBXTargetDependency */,
 			);
-			name = MorMapTests;
-			productName = MorMapTests;
-			productReference = A2CE33B61D19254B003CDE63 /* MorMapTests.xctest */;
+			name = MorTeamTests;
+			productName = MorTeamTests;
+			productReference = A2CE33B61D19254B003CDE63 /* MorTeamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A2CE33C01D19254B003CDE63 /* MorMapUITests */ = {
+		A2CE33C01D19254B003CDE63 /* MorTeamUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */;
+			buildConfigurationList = A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeamUITests" */;
 			buildPhases = (
 				4EBA836E78B624630986FD75 /* [CP] Check Pods Manifest.lock */,
 				A2CE33BD1D19254B003CDE63 /* Sources */,
@@ -235,9 +235,9 @@
 			dependencies = (
 				A2CE33C31D19254B003CDE63 /* PBXTargetDependency */,
 			);
-			name = MorMapUITests;
-			productName = MorMapUITests;
-			productReference = A2CE33C11D19254B003CDE63 /* MorMapUITests.xctest */;
+			name = MorTeamUITests;
+			productName = MorTeamUITests;
+			productReference = A2CE33C11D19254B003CDE63 /* MorTeamUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -264,7 +264,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorMap" */;
+			buildConfigurationList = A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorTeam" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -277,9 +277,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A2CE33A11D192549003CDE63 /* MorMap */,
-				A2CE33B51D19254B003CDE63 /* MorMapTests */,
-				A2CE33C01D19254B003CDE63 /* MorMapUITests */,
+				A2CE33A11D192549003CDE63 /* MorTeam */,
+				A2CE33B51D19254B003CDE63 /* MorTeamTests */,
+				A2CE33C01D19254B003CDE63 /* MorTeamUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMap/Pods-MorMap-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		311E304CEFDE197FF48896BE /* [CP] Embed Pods Frameworks */ = {
@@ -339,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMap/Pods-MorMap-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4EBA836E78B624630986FD75 /* [CP] Check Pods Manifest.lock */ = {
@@ -369,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapUITests/Pods-MorMapUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9E203DC5451E96DCCB27FD7C /* [CP] Copy Pods Resources */ = {
@@ -384,7 +384,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE209345421AC297B9E10E37 /* [CP] Check Pods Manifest.lock */ = {
@@ -429,7 +429,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorMapTests/Pods-MorMapTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -451,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2CE33BB1D19254B003CDE63 /* MorMapTests.swift in Sources */,
+				A2CE33BB1D19254B003CDE63 /* MorTeamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2CE33C61D19254B003CDE63 /* MorMapUITests.swift in Sources */,
+				A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,12 +468,12 @@
 /* Begin PBXTargetDependency section */
 		A2CE33B81D19254B003CDE63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2CE33A11D192549003CDE63 /* MorMap */;
+			target = A2CE33A11D192549003CDE63 /* MorTeam */;
 			targetProxy = A2CE33B71D19254B003CDE63 /* PBXContainerItemProxy */;
 		};
 		A2CE33C31D19254B003CDE63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2CE33A11D192549003CDE63 /* MorMap */;
+			target = A2CE33A11D192549003CDE63 /* MorTeam */;
 			targetProxy = A2CE33C21D19254B003CDE63 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -585,7 +585,7 @@
 		};
 		A2CE33CB1D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A8F1739CE09385FED45763D /* Pods-MorMap.debug.xcconfig */;
+			baseConfigurationReference = 1A8F1739CE09385FED45763D /* Pods-MorTeam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -594,10 +594,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
 				);
-				INFOPLIST_FILE = MorMap/Info.plist;
+				INFOPLIST_FILE = MorTeam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -605,7 +605,7 @@
 		};
 		A2CE33CC1D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0DE4DA910C35DDD7FA578D2A /* Pods-MorMap.release.xcconfig */;
+			baseConfigurationReference = 0DE4DA910C35DDD7FA578D2A /* Pods-MorTeam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -614,10 +614,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Frameworks",
 				);
-				INFOPLIST_FILE = MorMap/Info.plist;
+				INFOPLIST_FILE = MorTeam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -625,58 +625,58 @@
 		};
 		A2CE33CE1D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8392616A1E17694D7C19E224 /* Pods-MorMapTests.debug.xcconfig */;
+			baseConfigurationReference = 8392616A1E17694D7C19E224 /* Pods-MorTeamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MorMapTests/Info.plist;
+				INFOPLIST_FILE = MorTeamTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeamTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorMap.app/MorMap";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorTeam.app/MorTeam";
 			};
 			name = Debug;
 		};
 		A2CE33CF1D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AA9CB80D68D72E09FCCD703 /* Pods-MorMapTests.release.xcconfig */;
+			baseConfigurationReference = 9AA9CB80D68D72E09FCCD703 /* Pods-MorTeamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MorMapTests/Info.plist;
+				INFOPLIST_FILE = MorTeamTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeamTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorMap.app/MorMap";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MorTeam.app/MorTeam";
 			};
 			name = Release;
 		};
 		A2CE33D11D19254B003CDE63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44F41CBEDE67A1C962F223F8 /* Pods-MorMapUITests.debug.xcconfig */;
+			baseConfigurationReference = 44F41CBEDE67A1C962F223F8 /* Pods-MorTeamUITests.debug.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = MorMapUITests/Info.plist;
+				INFOPLIST_FILE = MorTeamUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeamUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MorMap;
+				TEST_TARGET_NAME = MorTeam;
 			};
 			name = Debug;
 		};
 		A2CE33D21D19254B003CDE63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2980A2335157D5E95F599EF /* Pods-MorMapUITests.release.xcconfig */;
+			baseConfigurationReference = E2980A2335157D5E95F599EF /* Pods-MorTeamUITests.release.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = MorMapUITests/Info.plist;
+				INFOPLIST_FILE = MorTeamUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.mormap.MorMapUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mortorq.morteam.MorTeamUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = MorMap;
+				TEST_TARGET_NAME = MorTeam;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorMap" */ = {
+		A2CE339D1D192549003CDE63 /* Build configuration list for PBXProject "MorTeam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2CE33C81D19254B003CDE63 /* Debug */,
@@ -685,7 +685,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMap" */ = {
+		A2CE33CA1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2CE33CB1D19254B003CDE63 /* Debug */,
@@ -694,7 +694,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapTests" */ = {
+		A2CE33CD1D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeamTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2CE33CE1D19254B003CDE63 /* Debug */,
@@ -703,7 +703,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorMapUITests" */ = {
+		A2CE33D01D19254B003CDE63 /* Build configuration list for PBXNativeTarget "MorTeamUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2CE33D11D19254B003CDE63 /* Debug */,

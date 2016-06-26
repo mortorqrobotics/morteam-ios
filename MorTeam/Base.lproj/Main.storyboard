@@ -9,7 +9,7 @@
         <!--Announcements-->
         <scene sceneID="N0A-L3-sUV">
             <objects>
-                <viewController id="dPT-6b-scW" customClass="FeedViewController" customModule="MorMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dPT-6b-scW" customClass="FeedViewController" customModule="MorTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bh7-Se-dEW"/>
                         <viewControllerLayoutGuide type="bottom" id="ioM-Z5-zyI"/>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="4468" y="4796"/>
         </scene>
-        <!--MorMap-->
+        <!--MorTeam-->
         <scene sceneID="EPg-SD-AEV">
             <objects>
-                <viewController id="l7c-vc-7u8" customClass="MapViewController" customModule="MorMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l7c-vc-7u8" customClass="MapViewController" customModule="MorTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MQ2-AK-sce"/>
                         <viewControllerLayoutGuide type="bottom" id="Cnc-7v-cSl"/>
@@ -127,7 +127,7 @@
                             <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="swx-Ft-7N2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MorMap" id="OyN-Ru-ibp"/>
+                    <navigationItem key="navigationItem" title="MorTeam" id="OyN-Ru-ibp"/>
                     <connections>
                         <outlet property="MapUI" destination="AKp-Ub-Dz2" id="yxG-tc-XRE"/>
                         <outlet property="searchBar" destination="JqS-2e-ysY" id="FYz-aZ-6y0"/>
@@ -142,7 +142,7 @@
         <!--Team Profile-->
         <scene sceneID="tOi-qE-mVa">
             <objects>
-                <viewController storyboardIdentifier="TeamProfile" title="Team Profile" id="JzS-tF-gVo" customClass="TeamProfileVC" customModule="MorMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TeamProfile" title="Team Profile" id="JzS-tF-gVo" customClass="TeamProfileVC" customModule="MorTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LW8-E2-VYR"/>
                         <viewControllerLayoutGuide type="bottom" id="TFc-C7-65R"/>

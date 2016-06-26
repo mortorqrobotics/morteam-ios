@@ -2,19 +2,19 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '9.0'
 
-target 'MorMap' do
+target 'MorTeam' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MorMap
+  # Pods for MorTeam
   pod 'GoogleMaps'
 	
-  target 'MorMapTests' do
+  target 'MorTeamTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'MorMapUITests' do
+  target 'MorTeamUITests' do
     inherit! :search_paths
     # Pods for testing
   end

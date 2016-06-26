@@ -1,6 +1,6 @@
 //
-//  MorMapUITests.swift
-//  MorMapUITests
+//  MorTeamUITests.swift
+//  MorTeamUITests
 //
 //  Created by arvin zadeh on 6/21/16.
 //  Copyright © 2016 MorTorq. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class MorMapUITests: XCTestCase {
+class MorTeamUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

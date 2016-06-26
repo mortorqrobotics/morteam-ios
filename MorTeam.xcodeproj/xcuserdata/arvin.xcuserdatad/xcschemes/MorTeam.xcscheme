@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2CE33A11D192549003CDE63"
-               BuildableName = "MorMap.app"
-               BlueprintName = "MorMap"
-               ReferencedContainer = "container:MorMap.xcodeproj">
+               BuildableName = "MorTeam.app"
+               BlueprintName = "MorTeam"
+               ReferencedContainer = "container:MorTeam.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2CE33B51D19254B003CDE63"
-               BuildableName = "MorMapTests.xctest"
-               BlueprintName = "MorMapTests"
-               ReferencedContainer = "container:MorMap.xcodeproj">
+               BuildableName = "MorTeamTests.xctest"
+               BlueprintName = "MorTeamTests"
+               ReferencedContainer = "container:MorTeam.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2CE33C01D19254B003CDE63"
-               BuildableName = "MorMapUITests.xctest"
-               BlueprintName = "MorMapUITests"
-               ReferencedContainer = "container:MorMap.xcodeproj">
+               BuildableName = "MorTeamUITests.xctest"
+               BlueprintName = "MorTeamUITests"
+               ReferencedContainer = "container:MorTeam.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2CE33A11D192549003CDE63"
-            BuildableName = "MorMap.app"
-            BlueprintName = "MorMap"
-            ReferencedContainer = "container:MorMap.xcodeproj">
+            BuildableName = "MorTeam.app"
+            BlueprintName = "MorTeam"
+            ReferencedContainer = "container:MorTeam.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2CE33A11D192549003CDE63"
-            BuildableName = "MorMap.app"
-            BlueprintName = "MorMap"
-            ReferencedContainer = "container:MorMap.xcodeproj">
+            BuildableName = "MorTeam.app"
+            BlueprintName = "MorTeam"
+            ReferencedContainer = "container:MorTeam.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A2CE33A11D192549003CDE63"
-            BuildableName = "MorMap.app"
-            BlueprintName = "MorMap"
-            ReferencedContainer = "container:MorMap.xcodeproj">
+            BuildableName = "MorTeam.app"
+            BlueprintName = "MorTeam"
+            ReferencedContainer = "container:MorTeam.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,8 +1,8 @@
 //
-//  TeamProfileVC.swift
-//  MorMap
+//  MapViewController.swift
+//  MorTeam
 //
-//  Created by arvin zadeh on 6/22/16.
+//  Created by arvin zadeh on 6/21/16.
 //  Copyright © 2016 MorTorq. All rights reserved.
 //
 
@@ -10,15 +10,13 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class TeamProfileVC: UIViewController {
-        
-    var teamNumber = Int(); //Gets value from MapViewController
+class FeedViewController: UIViewController {
     
+    let morTeamURL = "http://www.morteam.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.title = "Team " + String(teamNumber) + " Profile"
-        
+
     }
     
     override func didReceiveMemoryWarning() {
