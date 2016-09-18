@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jwV-Zd-vvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jwV-Zd-vvK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Announcements-->
@@ -15,9 +15,9 @@
                         <viewControllerLayoutGuide type="bottom" id="ioM-Z5-zyI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ymN-OV-si8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Announcements" id="gtl-nz-Fzm"/>
                 </viewController>
@@ -30,15 +30,15 @@
             <objects>
                 <tableViewController id="Y7c-c7-0nh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wrO-Ty-G5T">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wen-rM-d0f">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wen-rM-d0f" id="LwA-SL-aru">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -79,22 +79,20 @@
                         <viewControllerLayoutGuide type="bottom" id="Cnc-7v-cSl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K9W-hz-zVQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKp-Ub-Dz2" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-qF-0aT">
-                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="70" id="Y8a-93-soa">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y8a-93-soa" id="xrd-hj-82a">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                            <frame key="frameInset" width="375" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -105,26 +103,26 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="Search Teams and Regionals" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-2e-ysY">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="l7c-vc-7u8" id="oed-iG-8Jq"/>
                                 </connections>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xdY-qF-0aT" secondAttribute="trailing" constant="-20" id="3Pp-bU-zPb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AKp-Ub-Dz2" secondAttribute="trailing" constant="-20" id="3sB-FE-gwf"/>
-                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leadingMargin" constant="-20" id="B3p-au-LHL"/>
-                            <constraint firstItem="Cnc-7v-cSl" firstAttribute="top" secondItem="xdY-qF-0aT" secondAttribute="bottom" id="Itq-oh-VCc"/>
-                            <constraint firstItem="JqS-2e-ysY" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leadingMargin" constant="-20" id="LJy-z1-k47"/>
-                            <constraint firstItem="Cnc-7v-cSl" firstAttribute="top" secondItem="AKp-Ub-Dz2" secondAttribute="bottom" id="OXj-2Z-vyl"/>
-                            <constraint firstItem="JqS-2e-ysY" firstAttribute="top" secondItem="MQ2-AK-sce" secondAttribute="bottom" id="Ucc-rw-eHv"/>
-                            <constraint firstItem="xdY-qF-0aT" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="VFt-7l-l0R"/>
-                            <constraint firstItem="xdY-qF-0aT" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leadingMargin" constant="-20" id="dkb-dl-vo6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JqS-2e-ysY" secondAttribute="trailing" constant="-20" id="nta-OB-8wc"/>
-                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="swx-Ft-7N2"/>
+                            <constraint firstAttribute="trailing" secondItem="JqS-2e-ysY" secondAttribute="trailing" id="8ak-dv-ZVg"/>
+                            <constraint firstItem="xdY-qF-0aT" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="Ay4-ZZ-TfF"/>
+                            <constraint firstItem="JqS-2e-ysY" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leading" id="BGX-1I-UEj"/>
+                            <constraint firstAttribute="trailing" secondItem="AKp-Ub-Dz2" secondAttribute="trailing" id="BUM-KM-GLq"/>
+                            <constraint firstItem="xdY-qF-0aT" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="CAT-OK-cT4"/>
+                            <constraint firstItem="JqS-2e-ysY" firstAttribute="top" secondItem="MQ2-AK-sce" secondAttribute="bottom" id="CjF-Nu-y8z"/>
+                            <constraint firstItem="Cnc-7v-cSl" firstAttribute="top" secondItem="AKp-Ub-Dz2" secondAttribute="bottom" id="Qhj-FF-KOO"/>
+                            <constraint firstItem="Cnc-7v-cSl" firstAttribute="top" secondItem="xdY-qF-0aT" secondAttribute="bottom" id="YM8-lD-KEH"/>
+                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="top" secondItem="JqS-2e-ysY" secondAttribute="bottom" id="YQS-QY-4b5"/>
+                            <constraint firstAttribute="trailing" secondItem="xdY-qF-0aT" secondAttribute="trailing" id="bQN-et-vlt"/>
+                            <constraint firstItem="AKp-Ub-Dz2" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leading" id="hXD-AV-3qp"/>
+                            <constraint firstItem="xdY-qF-0aT" firstAttribute="leading" secondItem="K9W-hz-zVQ" secondAttribute="leading" id="sII-8I-KwH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="OyN-Ru-ibp"/>
@@ -137,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTN-7a-D7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="666" y="1334"/>
+            <point key="canvasLocation" x="664.5" y="1333.5"/>
         </scene>
         <!--Team Profile-->
         <scene sceneID="tOi-qE-mVa">
@@ -148,9 +146,9 @@
                         <viewControllerLayoutGuide type="bottom" id="TFc-C7-65R"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8SH-9z-9EY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team Profile" id="R2c-XM-GHk"/>
                 </viewController>
@@ -165,7 +163,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9IA-fy-BVO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="4eD-a2-zuf" kind="relationship" relationship="viewControllers" id="PnS-YP-0Wq"/>
@@ -226,9 +224,9 @@
                         <viewControllerLayoutGuide type="bottom" id="zIx-En-ypn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3pJ-R8-gOD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="cMk-je-RWQ"/>
                 </viewController>
@@ -264,9 +262,9 @@
                         <viewControllerLayoutGuide type="bottom" id="OVa-ps-s5y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZQe-42-aoA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="nBL-Dw-CBd"/>
                 </viewController>
@@ -302,9 +300,9 @@
                         <viewControllerLayoutGuide type="bottom" id="pYS-MO-cGG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a03-af-yTr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Drive" id="d2M-pY-Nwq"/>
                 </viewController>
@@ -357,5 +355,5 @@
         <image name="map" width="30" height="30"/>
         <image name="menu" width="30" height="30"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

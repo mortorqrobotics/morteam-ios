@@ -11,12 +11,12 @@
 import Foundation
 import UIKit
 
-let storage = NSUserDefaults.standardUserDefaults()
+let storage = UserDefaults.standard
 
-func parseJSON(text: String) -> [String:AnyObject]? {
-    if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+func parseJSON(_ text: String) -> [String:AnyObject]? {
+    if let data = text.data(using: String.Encoding.utf8) {
         do {
-            return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
+            return try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
         } catch let error as NSError {
             print(error)
         }
@@ -25,17 +25,17 @@ func parseJSON(text: String) -> [String:AnyObject]? {
 }
 
 
-func UIColorFromHex( hexOld: String) -> UIColor {
+func UIColorFromHex( _ hexOld: String) -> UIColor {
     
     var hex = String();
     if hexOld.hasPrefix("#") {
-        hex = hexOld.substringWithRange(Range<String.Index>(start: hexOld.startIndex.advancedBy(1), end: hexOld.endIndex))
+        hex = hexOld.substring(with: (hexOld.characters.index(hexOld.startIndex, offsetBy: 1) ..< hexOld.endIndex))
     }
     
     //get each color
-    let r = hex.substringWithRange(Range<String.Index>(start: hex.startIndex, end: hex.startIndex.advancedBy(2)))
-    let g = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(2), end: hex.startIndex.advancedBy(4)))
-    let b = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(4), end: hex.startIndex.advancedBy(6)))
+    let r = hex.substring(with: (hex.startIndex ..< hex.characters.index(hex.startIndex, offsetBy: 2)))
+    let g = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 2) ..< hex.characters.index(hex.startIndex, offsetBy: 4)))
+    let b = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 4) ..< hex.characters.index(hex.startIndex, offsetBy: 6)))
     
     //convert to decimal
     let rd = UInt8(strtoul(r, nil, 16))
@@ -50,16 +50,16 @@ func UIColorFromHex( hexOld: String) -> UIColor {
     return UIColor(red: rdFloat/255, green: gdFloat/255, blue: bdFloat/255, alpha: 1)
 }
 
-func UIColorFromHex( hexGiven: String, alpha: Double) -> UIColor {
+func UIColorFromHex( _ hexGiven: String, alpha: Double) -> UIColor {
     var hex = String();
     if hexGiven.hasPrefix("#") {
-        hex = hexGiven.substringWithRange(Range<String.Index>(start: hexGiven.startIndex.advancedBy(1), end: hexGiven.endIndex))
+        hex = hexGiven.substring(with: (hexGiven.characters.index(hexGiven.startIndex, offsetBy: 1) ..< hexGiven.endIndex))
     }
     
     //get each color
-    let r = hex.substringWithRange(Range<String.Index>(start: hex.startIndex, end: hex.startIndex.advancedBy(2)))
-    let g = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(2), end: hex.startIndex.advancedBy(4)))
-    let b = hex.substringWithRange(Range<String.Index>(start: hex.startIndex.advancedBy(4), end: hex.startIndex.advancedBy(6)))
+    let r = hex.substring(with: (hex.startIndex ..< hex.characters.index(hex.startIndex, offsetBy: 2)))
+    let g = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 2) ..< hex.characters.index(hex.startIndex, offsetBy: 4)))
+    let b = hex.substring(with: (hex.characters.index(hex.startIndex, offsetBy: 4) ..< hex.characters.index(hex.startIndex, offsetBy: 6)))
     
     //convert to decimal
     let rd = UInt8(strtoul(r, nil, 16))
@@ -74,25 +74,25 @@ func UIColorFromHex( hexGiven: String, alpha: Double) -> UIColor {
     return UIColor(red: rdFloat/255, green: gdFloat/255, blue: bdFloat/255, alpha: CGFloat(alpha))
 }
 
-func httpRequest(url: String, type: String, data: [String: String], cb: (responseText: String) -> Void ){
+func httpRequest(_ url: String, type: String, data: [String: String], cb: @escaping (_ responseText: String) -> Void ){
     
-    let requestUrl = NSURL(string: url)
-    let request = NSMutableURLRequest(URL: requestUrl!)
-    request.HTTPMethod = type
+    let requestUrl = URL(string: url)
+    let request = NSMutableURLRequest(url: requestUrl!)
+    request.httpMethod = type
     var postData = ""
     for(key, value) in data{
         postData += key + "=" + value + "&"
     }
     postData = String(postData.characters.dropLast())
     
-    request.HTTPBody = postData.dataUsingEncoding(NSUTF8StringEncoding)
+    request.httpBody = postData.data(using: String.Encoding.utf8)
     request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
     
-    if let sid = storage.stringForKey("connect.sid"){
+    if let sid = storage.string(forKey: "connect.sid"){
         request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
     }
     
-    let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+    let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
         data, response, error in
         
         if error != nil {
@@ -100,44 +100,44 @@ func httpRequest(url: String, type: String, data: [String: String], cb: (respons
             return
         }
         
-        if let httpResponse = response as? NSHTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
-            let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(fields, forURL: response!.URL!)
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: response!.URL!, mainDocumentURL: nil)
+        if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: response!.url!)
+            HTTPCookieStorage.shared.setCookies(cookies, for: response!.url!, mainDocumentURL: nil)
             for cookie in cookies {
-                var cookieProperties = [String: AnyObject]()
-                cookieProperties[NSHTTPCookieName] = cookie.name
-                cookieProperties[NSHTTPCookieValue] = cookie.value
-                cookieProperties[NSHTTPCookieDomain] = cookie.domain
-                cookieProperties[NSHTTPCookiePath] = cookie.path
-                cookieProperties[NSHTTPCookieVersion] = NSNumber(integer: cookie.version)
-                cookieProperties[NSHTTPCookieExpires] = NSDate().dateByAddingTimeInterval(31536000)
+                var cookieProperties = [HTTPCookiePropertyKey: AnyObject]()
+                cookieProperties[HTTPCookiePropertyKey.name] = cookie.name as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.value] = cookie.value as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.domain] = cookie.domain as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.path] = cookie.path as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.version] = NSNumber(value: cookie.version as Int) as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.expires] = Date().addingTimeInterval(31536000) as AnyObject?
                 
-                let newCookie = NSHTTPCookie(properties: cookieProperties)
-                NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(newCookie!)
+                let newCookie = HTTPCookie(properties: cookieProperties)
+                HTTPCookieStorage.shared.setCookie(newCookie!)
                 
-                storage.setObject(cookie.value, forKey: cookie.name)
+                storage.set(cookie.value, forKey: cookie.name)
             }
         }
         
-        let responseText = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        let responseText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
-        cb(responseText: responseText! as String);
-    }
+        cb(responseText! as String);
+    }) 
     
     task.resume()
 }
 
-func httpRequest(url: String, type: String, cb: (responseText: String) -> Void ){
+func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: String) -> Void ){
     
-    let requestUrl = NSURL(string: url)
-    let request = NSMutableURLRequest(URL: requestUrl!)
-    request.HTTPMethod = type
+    let requestUrl = URL(string: url)
+    let request = NSMutableURLRequest(url: requestUrl!)
+    request.httpMethod = type
     
-    if let sid = storage.stringForKey("connect.sid"){
+    if let sid = storage.string(forKey: "connect.sid"){
         request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
     }
     
-    let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+    let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
         data, response, error in
         
         if error != nil {
@@ -145,29 +145,30 @@ func httpRequest(url: String, type: String, cb: (responseText: String) -> Void )
             return
         }
         
-        if let httpResponse = response as? NSHTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
-            let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(fields, forURL: response!.URL!)
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(cookies, forURL: response!.URL!, mainDocumentURL: nil)
+        if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: response!.url!)
+            HTTPCookieStorage.shared.setCookies(cookies, for: response!.url!, mainDocumentURL: nil)
             for cookie in cookies {
-                var cookieProperties = [String: AnyObject]()
-                cookieProperties[NSHTTPCookieName] = cookie.name
-                cookieProperties[NSHTTPCookieValue] = cookie.value
-                cookieProperties[NSHTTPCookieDomain] = cookie.domain
-                cookieProperties[NSHTTPCookiePath] = cookie.path
-                cookieProperties[NSHTTPCookieVersion] = NSNumber(integer: cookie.version)
-                cookieProperties[NSHTTPCookieExpires] = NSDate().dateByAddingTimeInterval(31536000)
+                var cookieProperties = [HTTPCookiePropertyKey
+                    : AnyObject]()
+                cookieProperties[HTTPCookiePropertyKey.name] = cookie.name as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.value] = cookie.value as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.domain] = cookie.domain as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.path] = cookie.path as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.version] = NSNumber(value: cookie.version as Int) as AnyObject?
+                cookieProperties[HTTPCookiePropertyKey.expires] = Date().addingTimeInterval(31536000) as AnyObject?
                 
-                let newCookie = NSHTTPCookie(properties: cookieProperties)
-                NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(newCookie!)
+                let newCookie = HTTPCookie(properties: cookieProperties)
+                HTTPCookieStorage.shared.setCookie(newCookie!)
                 
-                storage.setObject(cookie.value, forKey: cookie.name)
+                storage.set(cookie.value, forKey: cookie.name)
             }
         }
         
-        let responseText = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        let responseText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
-        cb(responseText: responseText! as String);
-    }
+        cb(responseText! as String);
+    }) 
     
     task.resume()
 }

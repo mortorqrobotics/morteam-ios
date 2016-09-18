@@ -21,27 +21,27 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchResultsTableView.hidden = true
+        searchResultsTableView.isHidden = true
         
         // Do any additional setup after loading the view, typically from a nib.
         //Set camera
         
-        dispatch_async(dispatch_get_main_queue(), {
-            let camera = GMSCameraPosition.cameraWithLatitude(34.06, longitude: -118.41, zoom: 5);
-            let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera);
-            mapView.myLocationEnabled = true;
+        DispatchQueue.main.async(execute: {
+            let camera = GMSCameraPosition.camera(withLatitude: 34.06, longitude: -118.41, zoom: 5);
+            let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera);
+            mapView.isMyLocationEnabled = true;
             
             //Get locations
             httpRequest(self.morTeamURL+"/js/teamLocations.js", type: "GET") { responseText in
                 //Parse response
-                let textNoVar = responseText.substringFromIndex(responseText.startIndex.advancedBy(11))
-                let noSemi = textNoVar.substringToIndex(textNoVar.endIndex.advancedBy(-2))
+                let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 11))
+                let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
                 let teams = parseJSON(noSemi)
                 //Place markers
                 for (team, location) in teams! {
                     let lat = location["latitude"] as! Double
                     let long = location["longitude"] as! Double
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         let marker = GMSMarker()
                         marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IS FIXED
                         marker.title = "Team " + team
@@ -55,66 +55,66 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
         })
     }
     
-    func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker){
-        let teamNumber = Int((marker.title?.substringFromIndex(marker.title!.startIndex.advancedBy(5)))!)!
-        dispatch_async(dispatch_get_main_queue(),{
-            let vc: TeamProfileVC! = self.storyboard!.instantiateViewControllerWithIdentifier("TeamProfile") as! TeamProfileVC
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker){
+        let teamNumber = Int((marker.title?.substring(from: marker.title!.characters.index(marker.title!.startIndex, offsetBy: 5)))!)!
+        DispatchQueue.main.async(execute: {
+            let vc: TeamProfileVC! = self.storyboard!.instantiateViewController(withIdentifier: "TeamProfile") as! TeamProfileVC
             vc.teamNumber = teamNumber
-            self.showViewController(vc as UIViewController, sender: vc)
+            self.show(vc as UIViewController, sender: vc)
         })
     }
     
     //<Search Bar
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        MapUI.hidden = true
-        searchResultsTableView.hidden = false
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        MapUI.isHidden = true
+        searchResultsTableView.isHidden = false
         searchBar.showsCancelButton = true
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar){
-        MapUI.hidden = false
-        searchResultsTableView.hidden = true
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+        MapUI.isHidden = false
+        searchResultsTableView.isHidden = true
         searchBar.showsCancelButton = false
         searchBar.text = "";
         clearDataFromTable()
         searchBar.resignFirstResponder()
     }
    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         //This is where the request will be sent to get search results
         addDataToTable([searchText]) //For testing purposes
     }
     
-    func addDataToTable(arr: [Any]){
+    func addDataToTable(_ arr: [Any]){
         self.resultsTableData += arr
-        dispatch_async(dispatch_get_main_queue(),{
+        DispatchQueue.main.async(execute: {
             self.searchResultsTableView.reloadData()
         })
     }
     
     func clearDataFromTable(){
         self.resultsTableData = [Any]()
-        dispatch_async(dispatch_get_main_queue(),{
+        DispatchQueue.main.async(execute: {
             self.searchResultsTableView.reloadData()
         })
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         //Consider hiding search when there are no table elements
         searchBar.resignFirstResponder()
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.resultsTableData.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = searchResultsTableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let row = indexPath.row
-        cell.textLabel?.text = self.resultsTableData[row] as! String //The warning on this line will go away when search is truly implemented
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchResultsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let row = (indexPath as NSIndexPath).row
+        cell.textLabel?.text = self.resultsTableData[row] as? String //The warning on this line will go away when search is truly implemented
         return cell
     }
     //Search Bar>
