@@ -18,6 +18,7 @@
 		A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */; };
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
+		A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		E2980A2335157D5E95F599EF /* Pods-MorTeamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 		A226C48A1D20985E0083971D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
+				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
 				A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
