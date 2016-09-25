@@ -8,7 +8,8 @@ target 'MorTeam' do
 
   # Pods for MorTeam
   pod 'GoogleMaps'
-	
+  pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
+
   target 'MorTeamTests' do
     inherit! :search_paths
     # Pods for testing

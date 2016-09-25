@@ -1,12 +1,25 @@
 PODS:
   - GoogleMaps (1.13.2)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - GoogleMaps
+  - SwiftyJSON (from `https://github.com/acegreen/SwiftyJSON.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :branch: swift3
+    :git: https://github.com/acegreen/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 8971384559780e631b041ac91b16734a396d4c14
+    :git: https://github.com/acegreen/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: f8b4bb11817ce34ff6c617559825ecb02289393e
+PODFILE CHECKSUM: 15b27445ff25a98fbec0b2419a96c471908dfb42
 
 COCOAPODS: 1.0.1

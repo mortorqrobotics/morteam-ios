@@ -180,7 +180,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Tns-ll-qxk" customClass="AnnouncementCell" customModule="MorTeam" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="0.0" width="316" height="149"/>
+                                        <rect key="frame" x="29.5" y="0.0" width="316" height="149"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="316" height="149"/>
@@ -214,6 +214,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="nKf-IQ-XqY" id="LeA-np-7ys"/>
+                                    <outlet property="delegate" destination="nKf-IQ-XqY" id="Wha-hL-GiN"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -225,6 +229,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kLC-Lj-slM"/>
+                    <connections>
+                        <outlet property="announcementCollectionView" destination="201-gi-OPZ" id="8oZ-kw-avs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9f-rj-iJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

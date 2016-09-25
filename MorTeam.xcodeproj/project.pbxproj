@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B4BEB5CFFE4D539F1A8F01C /* Pods_MorTeamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC2CE36CC966D083CA3EE91 /* Pods_MorTeamUITests.framework */; };
 		A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206D511D1B43340023BC10 /* TeamProfileVC.swift */; };
 		A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
@@ -19,6 +20,10 @@
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
 		A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */; };
+		A2F9C6EA1D987CF3006299D9 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6E91D987CF3006299D9 /* Announcement.swift */; };
+		A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */; };
+		A60831DD57C5D7192D65C5DA /* Pods_MorTeam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C24625C7B5F43B5F0D9CF80 /* Pods_MorTeam.framework */; };
+		C1243BD4D70F5AA85E132BE0 /* Pods_MorTeamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFED760166860881758BF1B4 /* Pods_MorTeamTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +46,9 @@
 /* Begin PBXFileReference section */
 		0DE4DA910C35DDD7FA578D2A /* Pods-MorTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.release.xcconfig"; sourceTree = "<group>"; };
 		1A8F1739CE09385FED45763D /* Pods-MorTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.debug.xcconfig"; sourceTree = "<group>"; };
+		2CC2CE36CC966D083CA3EE91 /* Pods_MorTeamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44F41CBEDE67A1C962F223F8 /* Pods-MorTeamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C24625C7B5F43B5F0D9CF80 /* Pods_MorTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8392616A1E17694D7C19E224 /* Pods-MorTeamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9AA9CB80D68D72E09FCCD703 /* Pods-MorTeamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamTests/Pods-MorTeamTests.release.xcconfig"; sourceTree = "<group>"; };
 		A2206D511D1B43340023BC10 /* TeamProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProfileVC.swift; sourceTree = "<group>"; };
@@ -62,7 +69,11 @@
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
+		A2F9C6E91D987CF3006299D9 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		A2F9C6EF1D988050006299D9 /* SwiftyJSON */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftyJSON; path = Pods/SwiftyJSON; sourceTree = "<group>"; };
+		A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		E2980A2335157D5E95F599EF /* Pods-MorTeamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeamUITests/Pods-MorTeamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EFED760166860881758BF1B4 /* Pods_MorTeamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AAFFD11D193B3500503FF0 /* GoogleMaps.framework in Frameworks */,
+				A60831DD57C5D7192D65C5DA /* Pods_MorTeam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1243BD4D70F5AA85E132BE0 /* Pods_MorTeamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4BEB5CFFE4D539F1A8F01C /* Pods_MorTeamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +131,7 @@
 		A226C4891D2097AC0083971D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */,
 				A2EDBEE61D19E454003D9851 /* Util.swift */,
 				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
 			);
@@ -126,6 +141,7 @@
 		A226C48A1D20985E0083971D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A2F9C6E91D987CF3006299D9 /* Announcement.swift */,
 				A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */,
 			);
 			name = Models;
@@ -188,7 +204,11 @@
 		A882F49CF8877078A954EC52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2F9C6EF1D988050006299D9 /* SwiftyJSON */,
 				A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */,
+				7C24625C7B5F43B5F0D9CF80 /* Pods_MorTeam.framework */,
+				EFED760166860881758BF1B4 /* Pods_MorTeamTests.framework */,
+				2CC2CE36CC966D083CA3EE91 /* Pods_MorTeamUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -462,7 +482,9 @@
 				A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */,
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
+				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
+				A2F9C6EA1D987CF3006299D9 /* Announcement.swift in Sources */,
 				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
 				A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */,
 			);

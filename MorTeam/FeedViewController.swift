@@ -10,7 +10,12 @@ import UIKit
 import Foundation
 import GoogleMaps
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet var announcementCollectionView: UICollectionView!
+    
+    
+    
     
     let morTeamURL = "http://www.morteam.com"
     override func viewDidLoad() {
