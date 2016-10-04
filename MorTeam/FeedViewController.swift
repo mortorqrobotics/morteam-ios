@@ -51,7 +51,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     func getAnnouncements() {
         httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
             "username": "1",
-            "password": "azaz"
+            "password": a
         ]){responseText in
             self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id") //TEMPORARY
             httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
@@ -82,7 +82,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             isRefreshing = true
             httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
                 "username": "1",
-                "password": "azaz"
+                "password": a
             ]){responseText in
                 httpRequest(self.morTeamURL+"/announcements?skip=0", type: "GET"){
                     responseText2 in

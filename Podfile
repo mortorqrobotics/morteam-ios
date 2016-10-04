@@ -9,7 +9,7 @@ target 'MorTeam' do
   # Pods for MorTeam
   pod 'GoogleMaps'
   # pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
-
+  # pod 'Kingfisher', '~> 1.8'
   # pod 'ZSSRichTextEditor'
 
 

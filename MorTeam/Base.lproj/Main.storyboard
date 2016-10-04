@@ -7,6 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Exo2-Light.ttf">
+            <string>Exo2-Light</string>
+        </array>
         <array key="Exo2-Regular.ttf">
             <string>Exo2-Regular</string>
         </array>
@@ -385,16 +388,55 @@
                                     <outlet property="delegate" destination="tGq-do-Ync" id="KIJ-qi-GrH"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mc3-4K-VUQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mc3-4K-VUQ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="Dc4-ps-djJ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="79" id="Dc4-ps-djJ" customClass="ChatListCell" customModule="MorTeam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dc4-ps-djJ" id="vDo-1C-TpS">
-                                            <frame key="frameInset" width="375" height="87"/>
+                                            <frame key="frameInset" width="375" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNj-Yj-XE2">
+                                                    <frame key="frameInset" minX="76" minY="13" width="291" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-rs-xsh">
+                                                    <frame key="frameInset" minX="76" minY="42" width="268" height="25"/>
+                                                    <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="13"/>
+                                                    <color key="textColor" red="0.45171400498550357" green="0.46774737936223004" blue="0.5158475024924094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="USV-rK-Q5c">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="AL5-aX-d9t"/>
+                                                        <constraint firstAttribute="width" constant="60" id="jze-Bv-oIC"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="L4A-rs-xsh" firstAttribute="top" secondItem="WNj-Yj-XE2" secondAttribute="bottom" constant="8" id="783-q2-C1K"/>
+                                                <constraint firstItem="USV-rK-Q5c" firstAttribute="leading" secondItem="vDo-1C-TpS" secondAttribute="leadingMargin" id="ETx-qO-zTG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="L4A-rs-xsh" secondAttribute="bottom" constant="3" id="Qd0-qa-7WP"/>
+                                                <constraint firstItem="WNj-Yj-XE2" firstAttribute="leading" secondItem="USV-rK-Q5c" secondAttribute="trailing" constant="8" id="T9t-4A-jSg"/>
+                                                <constraint firstItem="L4A-rs-xsh" firstAttribute="leading" secondItem="USV-rK-Q5c" secondAttribute="trailing" constant="8" id="cU0-Jm-cAc"/>
+                                                <constraint firstItem="L4A-rs-xsh" firstAttribute="leading" secondItem="USV-rK-Q5c" secondAttribute="trailing" constant="8" id="cY9-SP-tV3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="USV-rK-Q5c" secondAttribute="bottom" constant="2" id="ecE-74-Rif"/>
+                                                <constraint firstItem="L4A-rs-xsh" firstAttribute="top" secondItem="WNj-Yj-XE2" secondAttribute="bottom" constant="8" id="jkM-xb-8mQ"/>
+                                                <constraint firstItem="WNj-Yj-XE2" firstAttribute="top" secondItem="vDo-1C-TpS" secondAttribute="topMargin" constant="5" id="kmD-Gp-Z7Q"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="L4A-rs-xsh" secondAttribute="trailing" constant="23" id="mUQ-Aj-JoE"/>
+                                                <constraint firstItem="USV-rK-Q5c" firstAttribute="top" secondItem="vDo-1C-TpS" secondAttribute="topMargin" id="mjc-hf-BQL"/>
+                                                <constraint firstItem="WNj-Yj-XE2" firstAttribute="trailing" secondItem="vDo-1C-TpS" secondAttribute="trailingMargin" id="sfG-Is-dLz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lastMessage" destination="L4A-rs-xsh" id="ydn-1C-xAt"/>
+                                            <outlet property="name" destination="WNj-Yj-XE2" id="s6b-mC-48Q"/>
+                                            <outlet property="profilePic" destination="USV-rK-Q5c" id="y41-4Z-4ik"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -405,14 +447,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4Qc-85-cTw" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="63j-Fh-pQO"/>
-                            <constraint firstAttribute="trailing" secondItem="mc3-4K-VUQ" secondAttribute="trailing" id="Ndw-jw-1Tq"/>
-                            <constraint firstItem="4Qc-85-cTw" firstAttribute="top" secondItem="F2R-f9-88C" secondAttribute="bottom" id="Qe8-TM-KkU"/>
-                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="YpT-aN-g1e"/>
-                            <constraint firstItem="zIx-En-ypn" firstAttribute="top" secondItem="mc3-4K-VUQ" secondAttribute="bottom" id="Zmx-hk-p94"/>
-                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="aXQ-8A-sAh"/>
-                            <constraint firstAttribute="trailing" secondItem="4Qc-85-cTw" secondAttribute="trailing" id="eh3-Wk-4R2"/>
-                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="zBV-Dz-MqF"/>
+                            <constraint firstAttribute="trailing" secondItem="mc3-4K-VUQ" secondAttribute="trailing" id="AkD-Vk-pVa"/>
+                            <constraint firstItem="zIx-En-ypn" firstAttribute="top" secondItem="mc3-4K-VUQ" secondAttribute="bottom" id="D0z-3w-Xkt"/>
+                            <constraint firstItem="4Qc-85-cTw" firstAttribute="top" secondItem="F2R-f9-88C" secondAttribute="bottom" id="E6E-7W-M1V"/>
+                            <constraint firstAttribute="trailing" secondItem="4Qc-85-cTw" secondAttribute="trailing" id="FaV-1e-jxE"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="GGl-pd-nIp"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="J2J-UU-38O"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="fr5-2F-nsb"/>
+                            <constraint firstItem="4Qc-85-cTw" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="o2c-Ty-Uuk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="cMk-je-RWQ">
@@ -430,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6e3-Im-Liu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="852" y="2815"/>
+            <point key="canvasLocation" x="852" y="2814.2428785607199"/>
         </scene>
         <!--Chat-->
         <scene sceneID="yHF-Hn-Lru">

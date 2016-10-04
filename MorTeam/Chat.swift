@@ -12,7 +12,7 @@ class Chat {
     let _id: String
     let name: String
     let isTwoPeople : Bool
-    let lastMessage: String
+    var lastMessage: String
     let updatedAt: String
     var imagePath: String
     
@@ -21,6 +21,9 @@ class Chat {
         self._id = String( describing: chatJSON["_id"] )
         self.isTwoPeople = chatJSON["isTwoPeople"].boolValue
         self.lastMessage = String( describing: chatJSON["messages"][0]["content"] )
+        if (self.lastMessage == "null"){
+            self.lastMessage = "No messages to display"
+        }
         self.updatedAt = String( describing: chatJSON["updated_at"] )
         
         if (!self.isTwoPeople) {

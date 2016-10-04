@@ -14,6 +14,7 @@
 		A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23426151DA0C8EF00FBDE74 /* BadgeTableViewCell.swift */; };
 		A23982351DA330F20082B5A1 /* ChatListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23982341DA330F20082B5A1 /* ChatListVC.swift */; };
 		A23982371DA334190082B5A1 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23982361DA334190082B5A1 /* Chat.swift */; };
+		A23982391DA342CE0082B5A1 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23982381DA342CE0082B5A1 /* ChatListCell.swift */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* MapViewController.swift */; };
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		A23426151DA0C8EF00FBDE74 /* BadgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTableViewCell.swift; sourceTree = "<group>"; };
 		A23982341DA330F20082B5A1 /* ChatListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListVC.swift; sourceTree = "<group>"; };
 		A23982361DA334190082B5A1 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		A23982381DA342CE0082B5A1 /* ChatListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				A23426131DA0887500FBDE74 /* Group.swift */,
 				A23426151DA0C8EF00FBDE74 /* BadgeTableViewCell.swift */,
 				A23982361DA334190082B5A1 /* Chat.swift */,
+				A23982381DA342CE0082B5A1 /* ChatListCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */,
 				A23426121DA0865100FBDE74 /* User.swift in Sources */,
 				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
+				A23982391DA342CE0082B5A1 /* ChatListCell.swift in Sources */,
 				A2F9C70C1D9B8874006299D9 /* PostAnnouncementVC.swift in Sources */,
 				A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */,
 			);

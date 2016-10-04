@@ -20,6 +20,8 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let morTeamURL = "http://www.morteam.com:8080/api"
     
+    var imageCache = [String:UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -80,11 +82,50 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = chatListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = chatListTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChatListCell
+        
         cell.accessoryType = .disclosureIndicator
+        
         let row = (indexPath as NSIndexPath).row
         let chat = self.chats[row] as! Chat
-        cell.textLabel?.text = chat.name
+        cell.name.text = chat.name
+        cell.lastMessage.text = chat.lastMessage
+        
+        let imagePath = (self.chats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
+        let profPicUrl = URL(string: "http://www.morteam.com:8080"+imagePath)
+        
+        //Fix this mess with KF
+        if let img = self.imageCache[imagePath] {
+            cell.profilePic.image = img
+        }else{
+            let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
+            if let sid = storage.string(forKey: "connect.sid"){
+                request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+            }
+            let mainQueue = OperationQueue.main
+            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+                if error == nil {
+                    
+                    let image = UIImage(data: data!)
+                    
+                    self.imageCache[imagePath] = image
+                    
+                    DispatchQueue.main.async(execute: {
+                        cell.profilePic.image = image
+                    })
+                }
+                else {
+                    print("Error: \(error!.localizedDescription)")
+                }
+            })
+        }
+
+       
+        
+        cell.profilePic.layer.masksToBounds = false
+        cell.profilePic.layer.cornerRadius = 4.2
+        cell.profilePic.clipsToBounds = true
+        //cell.contentView.backgroundColor = UIColorFromHex("#F9F9F9")
         return cell
     }
 
