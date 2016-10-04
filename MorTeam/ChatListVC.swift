@@ -119,14 +119,22 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
             })
         }
-
-       
         
+
         cell.profilePic.layer.masksToBounds = false
         cell.profilePic.layer.cornerRadius = 4.2
         cell.profilePic.clipsToBounds = true
-        //cell.contentView.backgroundColor = UIColorFromHex("#F9F9F9")
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chatListTableView.deselectRow(at: indexPath, animated: true)
+        if let cell = chatListTableView.cellForRow(at: indexPath) as? ChatListCell {
+            DispatchQueue.main.async(execute: {
+                let vc: ChatConvoVC! = self.storyboard!.instantiateViewController(withIdentifier: "ChatConvo") as! ChatConvoVC
+                vc.chatName = cell.name.text!
+                self.show(vc as UIViewController, sender: vc)
+            })
+        }
     }
 
     @IBAction func newChatButtonClicked(_ sender: AnyObject) {
