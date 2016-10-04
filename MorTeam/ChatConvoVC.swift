@@ -12,6 +12,7 @@ import Foundation
 class ChatConvoVC: UIViewController {
         
     var chatName = String()
+    var chatId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()

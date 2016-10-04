@@ -148,13 +148,14 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chatListTableView.deselectRow(at: indexPath, animated: true)
-        if let cell = chatListTableView.cellForRow(at: indexPath) as? ChatListCell {
-            DispatchQueue.main.async(execute: {
-                let vc: ChatConvoVC! = self.storyboard!.instantiateViewController(withIdentifier: "ChatConvo") as! ChatConvoVC
-                vc.chatName = cell.name.text!
-                self.show(vc as UIViewController, sender: vc)
-            })
-        }
+        DispatchQueue.main.async(execute: {
+            let vc: ChatConvoVC! = self.storyboard!.instantiateViewController(withIdentifier: "ChatConvo") as! ChatConvoVC
+            let row = (indexPath as NSIndexPath).row
+            let chat = self.showingChats[row] as! Chat
+            vc.chatName = chat.name
+            vc.chatId = chat._id
+            self.show(vc as UIViewController, sender: vc)
+        })
     }
 
     @IBAction func newChatButtonClicked(_ sender: AnyObject) {
