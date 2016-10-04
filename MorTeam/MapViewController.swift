@@ -36,7 +36,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
                 //Parse response
                 let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 11))
                 let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
-                let teams = parseJSON(noSemi)
+                let teams = parseJSONMap(noSemi)
                 //Place markers
                 for (team, location) in teams! {
                     let lat = location["latitude"] as! Double

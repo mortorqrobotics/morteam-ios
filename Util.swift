@@ -13,7 +13,11 @@ import UIKit
 
 let storage = UserDefaults.standard
 
-func parseJSON(_ text: String) -> [String:AnyObject]? {
+func parseJSON(_ string: String) -> JSON {
+    let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+    return JSON(data: data!)
+}
+func parseJSONMap(_ text: String) -> [String:AnyObject]? {
     if let data = text.data(using: String.Encoding.utf8) {
         do {
             return try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
@@ -23,6 +27,7 @@ func parseJSON(_ text: String) -> [String:AnyObject]? {
     }
     return nil
 }
+
 
 
 func UIColorFromHex( _ hexOld: String) -> UIColor {
@@ -74,20 +79,25 @@ func UIColorFromHex( _ hexGiven: String, alpha: Double) -> UIColor {
     return UIColor(red: rdFloat/255, green: gdFloat/255, blue: bdFloat/255, alpha: CGFloat(alpha))
 }
 
-func httpRequest(_ url: String, type: String, data: [String: String], cb: @escaping (_ responseText: String) -> Void ){
+func httpRequest(_ url: String, type: String, data: [String: Any], cb: @escaping (_ responseText: String) -> Void ){
     
     let requestUrl = URL(string: url)
     let request = NSMutableURLRequest(url: requestUrl!)
     request.httpMethod = type
-    var postData = ""
-    for(key, value) in data{
-        postData += key + "=" + value + "&"
+//    var postData = ""
+//    for(key, value) in data{
+//        postData += key + "=" + value + "&"
+//    }
+//    postData = String(postData.characters.dropLast())
+    do {
+        request.httpBody = try JSONSerialization.data(withJSONObject: data, options: [])
     }
-    postData = String(postData.characters.dropLast())
-    
-    request.httpBody = postData.data(using: String.Encoding.utf8)
-    request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-    
+    catch{
+        
+    }
+    //request.httpBody = try JSONSerialization.data(withJSONObject: data, options: []) //postData.data(using: String.Encoding.utf8)
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    //x-www-form-urlencoded
     if let sid = storage.string(forKey: "connect.sid"){
         request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
     }

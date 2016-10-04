@@ -14,4 +14,6 @@ class AnnouncementCell: UICollectionViewCell {
     @IBOutlet var profilePic: UIImageView!
     @IBOutlet var name: UILabel!
     @IBOutlet var content: UITextView!
+    @IBOutlet var date: UILabel!
+    
 }
