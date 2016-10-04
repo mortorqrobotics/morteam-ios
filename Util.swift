@@ -28,6 +28,16 @@ func parseJSONMap(_ text: String) -> [String:AnyObject]? {
     return nil
 }
 
+func getUserOtherThanSelf(_ userMembers: JSON) -> User {
+    if let _id = storage.string(forKey: "_id") {
+        if(String(describing: userMembers[0]["_id"]) == _id){
+            return User(userJSON: userMembers[1])
+        }else{
+            return User(userJSON: userMembers[0])
+        }
+    }
+    return User(userJSON: userMembers[1])
+}
 
 
 func UIColorFromHex( _ hexOld: String) -> UIColor {

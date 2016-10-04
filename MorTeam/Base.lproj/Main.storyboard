@@ -354,7 +354,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lfr-XE-nfX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="u7L-KG-h7Q"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Sah-Xb-HGU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sah-Xb-HGU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -370,7 +370,7 @@
         <!--Chat-->
         <scene sceneID="jbw-s9-sXL">
             <objects>
-                <viewController id="tGq-do-Ync" sceneMemberID="viewController">
+                <viewController id="tGq-do-Ync" customClass="ChatListVC" customModule="MorTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F2R-f9-88C"/>
                         <viewControllerLayoutGuide type="bottom" id="zIx-En-ypn"/>
@@ -378,13 +378,59 @@
                     <view key="view" contentMode="scaleToFill" id="3pJ-R8-gOD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Chats" translatesAutoresizingMaskIntoConstraints="NO" id="4Qc-85-cTw">
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tGq-do-Ync" id="KIJ-qi-GrH"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mc3-4K-VUQ">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="88" id="Dc4-ps-djJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dc4-ps-djJ" id="vDo-1C-TpS">
+                                            <frame key="frameInset" width="375" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tGq-do-Ync" id="0IE-zi-xgX"/>
+                                    <outlet property="delegate" destination="tGq-do-Ync" id="heN-tR-x4L"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Qc-85-cTw" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="63j-Fh-pQO"/>
+                            <constraint firstAttribute="trailing" secondItem="mc3-4K-VUQ" secondAttribute="trailing" id="Ndw-jw-1Tq"/>
+                            <constraint firstItem="4Qc-85-cTw" firstAttribute="top" secondItem="F2R-f9-88C" secondAttribute="bottom" id="Qe8-TM-KkU"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="leading" secondItem="3pJ-R8-gOD" secondAttribute="leading" id="YpT-aN-g1e"/>
+                            <constraint firstItem="zIx-En-ypn" firstAttribute="top" secondItem="mc3-4K-VUQ" secondAttribute="bottom" id="Zmx-hk-p94"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="aXQ-8A-sAh"/>
+                            <constraint firstAttribute="trailing" secondItem="4Qc-85-cTw" secondAttribute="trailing" id="eh3-Wk-4R2"/>
+                            <constraint firstItem="mc3-4K-VUQ" firstAttribute="top" secondItem="4Qc-85-cTw" secondAttribute="bottom" id="zBV-Dz-MqF"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="cMk-je-RWQ"/>
+                    <navigationItem key="navigationItem" title="Chat" id="cMk-je-RWQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="h2F-aJ-Fj6">
+                            <connections>
+                                <action selector="newChatButtonClicked:" destination="tGq-do-Ync" id="DOS-41-vOm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chatListTableView" destination="mc3-4K-VUQ" id="h9m-0s-5Ba"/>
+                        <outlet property="newChatButton" destination="h2F-aJ-Fj6" id="XdQ-GN-y6n"/>
+                        <outlet property="searchChatsBar" destination="4Qc-85-cTw" id="IBg-GS-3Cz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6e3-Im-Liu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="2822"/>
+            <point key="canvasLocation" x="852" y="2815"/>
         </scene>
         <!--Chat-->
         <scene sceneID="yHF-Hn-Lru">
@@ -392,7 +438,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NTB-yC-c4O" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chat" image="chat" id="vSw-6d-IDI"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Zso-Rd-LEa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zso-Rd-LEa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -430,7 +476,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wyL-VE-W7e" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="menu" id="ZB3-ch-Q8U"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eVx-F4-IYO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eVx-F4-IYO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -467,7 +513,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Avy-jN-z99" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wCg-GZ-xdQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wCg-GZ-xdQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -486,7 +532,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BiL-xf-gcg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Drive" image="drive" id="BmR-iH-KF0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aFJ-tH-3cC">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aFJ-tH-3cC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -505,7 +551,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bCP-De-Vsf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Announcements" image="announcements" selectedImage="announcements" id="f8q-PA-RHd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kbr-qJ-AoW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kbr-qJ-AoW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -523,7 +569,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BUi-ad-g42" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4aw-oX-8wb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4aw-oX-8wb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -591,7 +637,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dse-34-L3B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XAI-FT-4hu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XAI-FT-4hu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -609,7 +655,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UrQ-ij-kMr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6AR-zc-Flp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6AR-zc-Flp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
