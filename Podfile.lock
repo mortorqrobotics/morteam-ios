@@ -1,12 +1,31 @@
 PODS:
-  - GoogleMaps (1.13.2)
+  - Alamofire (4.0.1)
+  - GoogleMaps (2.1.0):
+    - GoogleMaps/Maps (= 2.1.0)
+  - GoogleMaps/Base (2.1.0)
+  - GoogleMaps/Maps (2.1.0):
+    - GoogleMaps/Base (= 2.1.0)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - Kingfisher (3.1.1)
+  - Socket.IO-Client-Swift (8.0.2)
 
 DEPENDENCIES:
+  - Alamofire
   - GoogleMaps
+  - JSQMessagesViewController
+  - Kingfisher
+  - Socket.IO-Client-Swift
 
 SPEC CHECKSUMS:
-  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
+  Socket.IO-Client-Swift: 136598e4a81a42b0e6855e7f94a0e5a6efdc5ff8
 
-PODFILE CHECKSUM: 9fe6aad5cdc48c67eb95503e0686997837655d85
+PODFILE CHECKSUM: 647352608a5cce987fd99853c3e70cc5c1de337f
 
 COCOAPODS: 1.0.1

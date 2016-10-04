@@ -1,26 +1,11 @@
-# Uncomment this line to define a global platform for your project
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, ’10.0’
+platform :ios, “10.0”
+workspace 'MorTeam'
+use_frameworks!
 
 target 'MorTeam' do
-  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for MorTeam
-  pod 'GoogleMaps'
-  # pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
-  # pod 'Kingfisher', '~> 1.8'
-  # pod 'ZSSRichTextEditor'
-
-
-  target 'MorTeamTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MorTeamUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+    	pod 'Alamofire'
+	pod 'Kingfisher'
+	pod 'JSQMessagesViewController’
+	pod 'Socket.IO-Client-Swift'
+	pod 'GoogleMaps'
 end

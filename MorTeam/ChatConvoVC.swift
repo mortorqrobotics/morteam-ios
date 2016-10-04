@@ -8,8 +8,10 @@
 
 import UIKit
 import Foundation
+import JSQMessagesViewController
 
-class ChatConvoVC: UIViewController {
+
+class ChatConvoVC: JSQMessagesViewController {
         
     var chatName = String()
     var chatId = String()
