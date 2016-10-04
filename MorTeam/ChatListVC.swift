@@ -17,6 +17,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var newChatButton: UIBarButtonItem!
     
     var chats = [Any]()
+    var showingChats = [Any]()
     
     let morTeamURL = "http://www.morteam.com:8080/api"
     
@@ -36,16 +37,35 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
             self.chats = []
             let newChats = parseJSON(responseText)
-            print(responseText)
+
             for(_, subJson):(String, JSON) in newChats {
                 self.chats += [Chat(chatJSON: subJson)]
             }
-            
+            self.showingChats = self.chats
             DispatchQueue.main.async(execute: {
                 self.chatListTableView.reloadData()
             })
             
         }
+    }
+    
+    func updateTableWithAllChats() {
+        self.showingChats = self.chats
+        DispatchQueue.main.async(execute: {
+            self.chatListTableView.reloadData()
+        })
+    }
+    
+    func updateTableBySearching(forText: String){
+        self.showingChats = []
+        for chat in self.chats {
+            if ((chat as! Chat).name.lowercased().range(of: forText.lowercased()) != nil) {
+                self.showingChats.append(chat)
+            }
+        }
+        DispatchQueue.main.async(execute: {
+            self.chatListTableView.reloadData()
+        })
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -56,15 +76,15 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.searchChatsBar.showsCancelButton = false
         self.searchChatsBar.resignFirstResponder()
         self.searchChatsBar.text = ""
-        //self.updateTableWithAllBadges()
+        self.updateTableWithAllChats()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         if (searchText == ""){
-            //self.updateTableWithAllBadges()
+            self.updateTableWithAllChats()
         }
         else {
-            //self.updateTableBySearching(forText: searchText)
+            self.updateTableBySearching(forText: searchText)
         }
     }
     
@@ -78,7 +98,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.chats.count
+        return self.showingChats.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,7 +107,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType = .disclosureIndicator
         
         let row = (indexPath as NSIndexPath).row
-        let chat = self.chats[row] as! Chat
+        let chat = self.showingChats[row] as! Chat
         cell.name.text = chat.name
         cell.lastMessage.text = chat.lastMessage
         
