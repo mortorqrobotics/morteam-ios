@@ -60,6 +60,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 for(_, subJson):(String, JSON) in newChats {
                     self.chats += [Chat(chatJSON: subJson)]
                 }
+                print(self.chats)
                 if (self.searchChatsBar.text != ""){
                     self.updateTableBySearching(forText: self.searchChatsBar.text!)
                 }

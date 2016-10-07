@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.0.1)
+  - CVCalendar (1.4.0)
   - GoogleMaps (2.1.0):
     - GoogleMaps/Maps (= 2.1.0)
   - GoogleMaps/Base (2.1.0)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CVCalendar (~> 1.4.0)
   - GoogleMaps
   - JSQMessagesViewController
   - Kingfisher
@@ -20,12 +22,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  CVCalendar: ec1a06a508f99d8e5067258754f811a8a1433a3f
   GoogleMaps: 06589b9a38097bce0cd6e90f0fd9b5e4b4a9344c
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Kingfisher: 12b755ae697cc9f0fd3e550db8417fa1233e09ab
   Socket.IO-Client-Swift: 136598e4a81a42b0e6855e7f94a0e5a6efdc5ff8
 
-PODFILE CHECKSUM: 647352608a5cce987fd99853c3e70cc5c1de337f
+PODFILE CHECKSUM: 13ad3de7c7a3f02a375a3841d8ed099b77d0298a
 
 COCOAPODS: 1.0.1
