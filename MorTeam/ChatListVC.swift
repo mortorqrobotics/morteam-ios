@@ -18,34 +18,59 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var chats = [Any]()
     var showingChats = [Any]()
+    var onlineUsers = [String]()
     
     let morTeamURL = "http://www.morteam.com:8080/api"
     
     var imageCache = [String:UIImage]()
+    var isGettingChats = false //To avoid double getChats() 
+    var isLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        self.setupSocketIO()
+        getChats(update: true)
         
-        self.getChats()
-        
+       
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if (isLoad){
+            isLoad = false
+        }
+        else {
+            getClientsAndGetChats()
+        }
     }
     
-    func getChats() {
-        httpRequest(self.morTeamURL+"/chats", type: "GET"){
-            responseText in
-            
-            self.chats = []
-            let newChats = parseJSON(responseText)
+    func getClientsAndGetChats(){
+        SocketIOManager.sharedInstance.socket.emit("get clients")
+    }
+    
+    func getChats(update: Bool) {
+        if (!isGettingChats){
+            isGettingChats = true
+            httpRequest(self.morTeamURL+"/chats", type: "GET"){responseText in
+                
+                self.chats = []
+                let newChats = parseJSON(responseText)
 
-            for(_, subJson):(String, JSON) in newChats {
-                self.chats += [Chat(chatJSON: subJson)]
+                for(_, subJson):(String, JSON) in newChats {
+                    self.chats += [Chat(chatJSON: subJson)]
+                }
+                if (self.searchChatsBar.text != ""){
+                    self.updateTableBySearching(forText: self.searchChatsBar.text!)
+                }
+                else {
+                    self.updateTableWithAllChats()
+                }
+                self.isGettingChats = false
+                if (update){
+                    self.getClientsAndGetChats()
+                }
             }
-            self.showingChats = self.chats
-            DispatchQueue.main.async(execute: {
-                self.chatListTableView.reloadData()
-            })
-            
         }
     }
     
@@ -55,6 +80,37 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             self.chatListTableView.reloadData()
         })
     }
+    
+    func setupSocketIO() {
+        
+        SocketIOManager.sharedInstance.socket.on("message"){data, ack in
+            let id = String(describing: JSON(data)[0]["chatId"])
+            if (!unreadChatIds.contains(id)){
+                unreadChatIds.append(id)
+            }
+            self.getChats(update: false)
+        }
+        
+        SocketIOManager.sharedInstance.socket.on("get clients"){data, ack in
+            self.onlineUsers = data[0] as! [String]
+            self.getChats(update: false) //Revise
+        }
+        
+        
+        SocketIOManager.sharedInstance.socket.on("joined"){data, ack in
+            let id = String(describing: JSON(data)[0]["_id"])
+            self.onlineUsers.append(id)
+            self.getChats(update: false)
+        }
+        
+        SocketIOManager.sharedInstance.socket.on("left"){data, ack in
+            let id = String(describing: JSON(data)[0]["_id"])
+            self.onlineUsers = self.onlineUsers.filter() {$0 != id}
+            self.getChats(update: false)
+        }
+        
+    }
+
     
     func updateTableBySearching(forText: String){
         self.showingChats = []
@@ -108,7 +164,6 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let row = (indexPath as NSIndexPath).row
         let chat = self.showingChats[row] as! Chat
-        cell.name.text = chat.name
         cell.lastMessage.text = chat.lastMessage
         
         let imagePath = (self.chats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
@@ -139,6 +194,26 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 }
             })
         }
+        if (chat.isTwoPeople){
+            cell.profilePic.layer.borderColor = UIColor.red.cgColor
+            cell.profilePic.layer.borderWidth = 3.0
+            if (self.onlineUsers.contains(chat.otherUserId!)){
+                cell.profilePic.layer.borderColor = UIColor.green.cgColor
+            }
+        }
+        else {
+            cell.profilePic.layer.borderWidth = 0.0
+        }
+        
+        
+        cell.name.font = UIFont(name: "Exo2-Regular", size: 17.0)
+        cell.lastMessage.font = UIFont(name: "Exo2-Light", size: 13.0)
+        cell.name.text = chat.name
+        if (unreadChatIds.contains(chat._id)){
+            cell.name.font = UIFont(name: "Exo2-SemiBold", size: 17.0)
+            cell.lastMessage.font = UIFont(name: "Exo2-SemiBold", size: 13.0)
+            cell.name.text = chat.name + " (New Messages)"
+        }
         
 
         cell.profilePic.layer.masksToBounds = false
@@ -154,11 +229,16 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             let chat = self.showingChats[row] as! Chat
             vc.chatName = chat.name
             vc.chatId = chat._id
+            vc.hidesBottomBarWhenPushed = true
             self.show(vc as UIViewController, sender: vc)
         })
     }
 
     @IBAction func newChatButtonClicked(_ sender: AnyObject) {
+        DispatchQueue.main.async(execute: {
+            let vc: ComposeChatVC! = self.storyboard!.instantiateViewController(withIdentifier: "ComposeChat") as! ComposeChatVC
+            self.show(vc as UIViewController, sender: vc)
+        })
     }
     
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import SocketIO
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,4 +51,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+class SocketIOManager {
+    
+    static let sharedInstance = SocketIOManager()
+    
+    var socket: SocketIOClient
+    
+    init() {
+        
+        print("socket init")
+        
+        if let sid = storage.string(forKey: "connect.sid") {
+            
+            
+            let configOption = SocketIOClientOption.extraHeaders(["Cookie": "connect.sid="+sid])
+            
+            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com:8080")!, config: [.forcePolling(true), configOption])
+
+            
+           
+        
+        }else{
+            //self.socket = SocketIOClient(socketURL: URL("http://www.morteam.com:8080"))
+            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com:8080")!)
+        }
+        
+        
+    }
+    
+    
+    func connectSocket() {
+        self.socket.connect()
+    }
+    func disconnectSocket() {
+        self.socket.disconnect()
+    }
+    func socketStatus() -> SocketIOClientStatus {
+        return socket.status
+    }
+    
+}
+
 

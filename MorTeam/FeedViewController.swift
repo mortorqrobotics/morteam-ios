@@ -30,7 +30,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     let morTeamURL = "http://www.morteam.com:8080/api"
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.setup();
         self.getAnnouncements();
 
@@ -54,6 +54,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             "password": "aa"
         ]){responseText in
             self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id") //TEMPORARY
+            self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
+            SocketIOManager.sharedInstance.connectSocket()
             httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
                 responseText2 in
                 

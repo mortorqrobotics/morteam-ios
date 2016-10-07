@@ -13,6 +13,8 @@ import UIKit
 
 let storage = UserDefaults.standard
 
+var unreadChatIds = [String]()
+
 func parseJSON(_ string: String) -> JSON {
     let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
     return JSON(data: data!)
@@ -64,6 +66,7 @@ func UIColorFromHex( _ hexOld: String) -> UIColor {
     
     return UIColor(red: rdFloat/255, green: gdFloat/255, blue: bdFloat/255, alpha: 1)
 }
+
 
 func UIColorFromHex( _ hexGiven: String, alpha: Double) -> UIColor {
     var hex = String();

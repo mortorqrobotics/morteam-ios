@@ -15,6 +15,7 @@ class Chat {
     var lastMessage: String
     let updatedAt: String
     var imagePath: String
+    var otherUserId: String?
     
     init(chatJSON: JSON){
         
@@ -32,6 +33,7 @@ class Chat {
         }
         else {
             let otherUser = getUserOtherThanSelf(chatJSON["audience"]["users"])
+            self.otherUserId = otherUser._id
             self.name = otherUser.firstname + " " + otherUser.lastname
             self.imagePath = otherUser.profPicPath + "-60"
         }
