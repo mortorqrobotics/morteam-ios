@@ -67,8 +67,7 @@ class ChatConvoVC: JSQMessagesViewController {
         self.inputToolbar.contentView.leftBarButtonItem = nil
         self.inputToolbar.contentView.textView.becomeFirstResponder()
     }
-    
-    
+
     func loadMessages(scrollToBottom: Bool) {
         httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20), type: "GET"){
             responseText in

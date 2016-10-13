@@ -24,6 +24,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var page = 0;
     var isRefreshing = false;
     var refreshControl: UIRefreshControl!
+    var didLoadOnce = false
+    var cellHeights = [CGFloat]()
     
     
     
@@ -41,17 +43,19 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func setup() {
-        self.view.backgroundColor = UIColorFromHex("#E9E9E9");
+        self.announcementCollectionView.backgroundColor = UIColorFromHex("#E9E9E9");
         self.refreshControl = UIRefreshControl();
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh");
         self.refreshControl.addTarget(self, action: #selector(FeedViewController.refresh(_:)), for: UIControlEvents.valueChanged)
         self.announcementCollectionView.addSubview(refreshControl)
     }
     
+   
+    
     func getAnnouncements() {
         httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
             "username": "1",
-            "password": "aaa"
+            "password": "zzz"
         ]){responseText in
             self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id") //TEMPORARY
             self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
@@ -69,6 +73,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
                     self.announcementCollectionView.reloadData()
                 })
                 
+                
+                
                 self.page += 1;
             }
 
@@ -84,7 +90,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             isRefreshing = true
             httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
                 "username": "1",
-                "password": "aaa"
+                "password": "zzz"
             ]){responseText in
                 httpRequest(self.morTeamURL+"/announcements?skip=0", type: "GET"){
                     responseText2 in
@@ -93,15 +99,16 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
                     self.announcements = []
                     
                     for(_, json):(String, JSON) in newAnnouncements {
-                       
                         self.announcements.append(Announcement(announcementJSON: json))
                     }
                     
                     DispatchQueue.main.async(execute: {
+                        self.cellHeights = []
                         self.announcementCollectionView.reloadData()
                         self.isRefreshing = false
                         self.refreshControl.endRefreshing()
                     })
+                    
                     
                     self.page = 1
                     
@@ -120,7 +127,6 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.show(vc as UIViewController, sender: vc)
         })
     }
-
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
@@ -164,6 +170,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             cell.profilePic.image = UIImage(named: "user")
             
+            
             cell.backgroundColor = UIColor.white
             
             let profPicUrlString = "http://www.morteam.com:8080"+String(describing: announcementAtIndex.author["profpicpath"])+"-60"
@@ -201,11 +208,29 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.layer.shadowRadius = 2.0
             cell.layer.shadowOpacity = 0.2
             cell.layer.masksToBounds = false
-            
             cell.profilePic.layer.cornerRadius = 4.2
             cell.profilePic.clipsToBounds = true
+            
+            
+            //For some reason, contentHeight can't be set up here to be used down there, ignore the repetition
+            if (!self.cellHeights.indices.contains(indexPath.row)){
+                DispatchQueue.main.async(execute: {
+                    let contentHeight = cell.content.sizeThatFits(cell.content.contentSize).height
+                    self.cellHeights.append(contentHeight)
+                    self.announcementCollectionView.reloadItems(at: [indexPath])
+                })
+            }
+            else { //Fixes the oddity
+                if (cell.content.sizeThatFits(cell.content.contentSize).height != self.cellHeights[indexPath.row]){
+                    DispatchQueue.main.async(execute: {
+                        let contentHeight = cell.content.sizeThatFits(cell.content.contentSize).height
+                        self.cellHeights[indexPath.row] = contentHeight
+                        self.announcementCollectionView.reloadItems(at: [indexPath])
+                    })
+                }
+            }
+            
         }
-        
         
         return cell
     }
@@ -214,6 +239,10 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize{
+        
+        if (cellHeights.indices.contains(indexPath.row)){
+            return CGSize(width: self.screenSize.width-10, height: cellHeights[indexPath.row]+57.0)
+        }
         return CGSize(width: self.screenSize.width-10, height: 200.0)
         
     }

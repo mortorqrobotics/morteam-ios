@@ -19,6 +19,7 @@
 		A239823B1DA359330082B5A1 /* ChatConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239823A1DA359330082B5A1 /* ChatConvoVC.swift */; };
 		A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE951DA41C5B001229E7 /* KeyboardLayoutConstraint.swift */; };
 		A269AE981DA5CC61001229E7 /* ComposeChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */; };
+		A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE991DA84DC6001229E7 /* CalendarVC.swift */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* MapViewController.swift */; };
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		A239823A1DA359330082B5A1 /* ChatConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatConvoVC.swift; sourceTree = "<group>"; };
 		A269AE951DA41C5B001229E7 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeChatVC.swift; sourceTree = "<group>"; };
+		A269AE991DA84DC6001229E7 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		A293FD421DA3687500752518 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = MorTeam.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 				A23982341DA330F20082B5A1 /* ChatListVC.swift */,
 				A239823A1DA359330082B5A1 /* ChatConvoVC.swift */,
 				A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */,
+				A269AE991DA84DC6001229E7 /* CalendarVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			files = (
 				A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */,
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
+				A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */,
 				A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
