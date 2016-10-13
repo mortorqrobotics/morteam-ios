@@ -13,7 +13,7 @@ class AttendanceObject {
     let status: String
 
     init(objectJSON: JSON){
-        self.users = String(describing: objectJSON["user"])
+        self.user = String(describing: objectJSON["user"])
         self.status = String(describing: objectJSON["status"])
     }
 }
