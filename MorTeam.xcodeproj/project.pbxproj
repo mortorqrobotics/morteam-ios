@@ -28,6 +28,9 @@
 		A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */; };
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
+		A2F2ACFB1DAF4E400054E331 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFA1DAF4E400054E331 /* Event.swift */; };
+		A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFC1DAF4E840054E331 /* Audience.swift */; };
+		A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */; };
 		A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */; };
 		A2F9C6EA1D987CF3006299D9 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6E91D987CF3006299D9 /* Announcement.swift */; };
 		A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */; };
@@ -100,6 +103,9 @@
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A2F2ACFA1DAF4E400054E331 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A2F2ACFC1DAF4E840054E331 /* Audience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audience.swift; sourceTree = "<group>"; };
+		A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceObject.swift; sourceTree = "<group>"; };
 		A2F9C6E71D983C7E006299D9 /* AnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		A2F9C6E91D987CF3006299D9 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 				A23982361DA334190082B5A1 /* Chat.swift */,
 				A23982381DA342CE0082B5A1 /* ChatListCell.swift */,
 				A20E6BBA1DA371EB00330F9C /* Message.swift */,
+				A2F2ACFA1DAF4E400054E331 /* Event.swift */,
+				A2F2ACFC1DAF4E840054E331 /* Audience.swift */,
+				A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -576,7 +585,9 @@
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
+				A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */,
 				A23982371DA334190082B5A1 /* Chat.swift in Sources */,
+				A2F2ACFB1DAF4E400054E331 /* Event.swift in Sources */,
 				A269AE981DA5CC61001229E7 /* ComposeChatVC.swift in Sources */,
 				A23426101DA07DA700FBDE74 /* ChooseAudienceVC.swift in Sources */,
 				A20E6BBB1DA371EB00330F9C /* Message.swift in Sources */,
@@ -586,6 +597,7 @@
 				A2F9C70E1D9B9166006299D9 /* EditorTextView.swift in Sources */,
 				A239823B1DA359330082B5A1 /* ChatConvoVC.swift in Sources */,
 				A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */,
+				A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */,
 				A23426121DA0865100FBDE74 /* User.swift in Sources */,
 				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
 				A23982391DA342CE0082B5A1 /* ChatListCell.swift in Sources */,
