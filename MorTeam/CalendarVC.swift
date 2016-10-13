@@ -31,6 +31,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var selectedDay:DayView!
     
+    var showingEvents = [Event]()
     
     let morTeamUrl = "http://www.morteam.com:8080/api"
     
@@ -53,7 +54,12 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         httpRequest(self.morTeamUrl+"/events/startYear/\(year)/startMonth/\(month-1)/endYear/\(year)/endMonth/\(month-1)", type: "GET"){
             responseText in
             
-            print(responseText)
+            let events = parseJSON(responseText)
+            self.showingEvents = []
+            
+            for(_, json):(String, JSON) in events {
+                self.showingEvents.append(Event(eventJSON: json))
+            }
             
         }
     }
