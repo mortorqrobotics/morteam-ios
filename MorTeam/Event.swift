@@ -15,6 +15,7 @@ class Event {
     let audience: Audience
     let date: String
     let day: Int //Very helpful
+    let month: Int
     var attendance: [AttendanceObject]
     
     init(eventJSON: JSON){
@@ -34,9 +35,12 @@ class Event {
         formatter.timeZone = TimeZone(abbreviation: "UTC")
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let date = formatter.date(from: self.date)
+        
         let day = NSCalendar.current.component(.day, from: date!)
+        let month = NSCalendar.current.component(.month, from: date!)
         
         self.day = day
+        self.month = month
         
     }
 }

@@ -185,8 +185,9 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
         let day = dayView.date.day
+        let month = dayView.date.month
         for event in self.showingEvents {
-            if (day == event.day){
+            if (day == event.day && month == event.month){
                 return true
             }
         }
