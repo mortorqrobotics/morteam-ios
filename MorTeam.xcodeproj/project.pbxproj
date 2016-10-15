@@ -20,6 +20,7 @@
 		A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE951DA41C5B001229E7 /* KeyboardLayoutConstraint.swift */; };
 		A269AE981DA5CC61001229E7 /* ComposeChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */; };
 		A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE991DA84DC6001229E7 /* CalendarVC.swift */; };
+		A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* MapViewController.swift */; };
 		A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33A91D19254B003CDE63 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 		A269AE991DA84DC6001229E7 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		A293FD421DA3687500752518 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = MorTeam.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE33A71D19254B003CDE63 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				A2F2ACFA1DAF4E400054E331 /* Event.swift */,
 				A2F2ACFC1DAF4E840054E331 /* Audience.swift */,
 				A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */,
+				A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */,
 				A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
+				A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
 				A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */,

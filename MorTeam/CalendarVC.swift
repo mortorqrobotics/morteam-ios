@@ -51,6 +51,14 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     func loadEvents(month: Int, year: Int){
+        DispatchQueue.main.async(execute: {
+            //For early empty and refresh
+            self.showingEvents = []
+            self.eventTableView.reloadData()
+            if let cc = self.calendarView.contentController as? CVCalendarMonthContentViewController {
+                cc.refreshPresentedMonth()
+            }
+        })
         httpRequest(self.morTeamUrl+"/events/startYear/\(year)/startMonth/\(month-1)/endYear/\(year)/endMonth/\(month-1)", type: "GET"){
             responseText in
             
@@ -60,16 +68,31 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             for(_, json):(String, JSON) in events {
                 self.showingEvents.append(Event(eventJSON: json))
             }
+            DispatchQueue.main.async(execute: {
+                self.eventTableView.reloadData()
+                if let cc = self.calendarView.contentController as? CVCalendarMonthContentViewController {
+                    cc.refreshPresentedMonth()
+                }
+            })
             
         }
     }
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.showingEvents.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = eventTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = eventTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CalendarTableViewCell
+        
+        let row = (indexPath as NSIndexPath).row
+        let event = self.showingEvents[row]
+        
+        cell.dayView.text = "\(event.day)" //Thanks, type safety
+        cell.eventTitleLabel.text = event.name
+        cell.eventDescriptionLabel.text = event.description
+        
+       
         
         return cell
     }
@@ -117,8 +140,10 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         
         if monthLabel.text != date.globalDescription && self.animationFinished {
             
-            self.loadEvents(month: date.month, year: date.year)
-            
+            DispatchQueue.main.async(execute: {
+                self.loadEvents(month: date.month, year: date.year)
+                
+            })
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
             updatedMonthLabel.font = monthLabel.font
@@ -161,11 +186,11 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
         let day = dayView.date.day
-        let randomDay = Int(arc4random_uniform(31))
-        if day == randomDay {
-            return true
+        for event in self.showingEvents {
+            if (day == event.day){
+                return true
+            }
         }
-        
         return false
     }
     
@@ -224,7 +249,7 @@ extension CalendarVC: CVCalendarViewAppearanceDelegate {
     }
     
     func spaceBetweenDayViews() -> CGFloat {
-        return 2
+        return 0.0
     }
     
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont { return UIFont.systemFont(ofSize: 14) }

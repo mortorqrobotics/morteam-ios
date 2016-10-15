@@ -90,7 +90,7 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
         
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": "1",
-            "password": "zzz"
+            "password": "aaa"
         ]){responseText in
             httpRequest(self.morTeamURL+"/announcements", type: "POST", data: [
                 "content": (text?.replace(target:"\n",withString:"<br>"))! as String,
