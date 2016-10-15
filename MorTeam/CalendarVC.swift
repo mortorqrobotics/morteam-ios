@@ -142,7 +142,6 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
             
             DispatchQueue.main.async(execute: {
                 self.loadEvents(month: date.month, year: date.year)
-                
             })
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
