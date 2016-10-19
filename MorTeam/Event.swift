@@ -16,6 +16,7 @@ class Event {
     let date: String
     let day: Int //Very helpful
     let month: Int
+    let year: Int
     var attendance: [AttendanceObject]
     
     init(eventJSON: JSON){
@@ -38,7 +39,9 @@ class Event {
         
         let day = NSCalendar.current.component(.day, from: date!)
         let month = NSCalendar.current.component(.month, from: date!)
+        let year = NSCalendar.current.component(.year, from: date!)
         
+        self.year = year
         self.day = day
         self.month = month
         

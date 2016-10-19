@@ -82,6 +82,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.showingEvents.count
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = eventTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CalendarTableViewCell
         
@@ -134,6 +135,25 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         print("\(dayView.date.commonDescription) is selected!")
         selectedDay = dayView
+        
+        
+        let day = dayView.date.day
+        let month = dayView.date.month
+        let year = dayView.date.year
+        
+        
+        for (index, event) in self.showingEvents.enumerated() {
+            if (event.day == day && event.year == year && event.month == month){
+                let indexPath = IndexPath(row: index, section: 1)
+                self.eventTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                
+            }
+        }
+        
+        
+        
+        
+        
     }
     
     func presentedDateUpdated(_ date: CVDate) {

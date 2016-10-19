@@ -41,7 +41,7 @@ class ChooseAudienceVC: UIViewController, UITableViewDataSource, UITableViewDele
     func loadBadges(){
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": "1",
-            "password": "aaa"
+            "password": "a"
         ]){responseText in
             httpRequest(self.morTeamURL+"/groups", type: "GET"){
                 responseTextGroups in
