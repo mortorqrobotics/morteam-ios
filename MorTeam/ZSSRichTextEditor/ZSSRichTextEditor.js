@@ -354,7 +354,7 @@ zss_editor.insertLink = function(url, title) {
     if (sel.toString().length != 0) {
         if (sel.rangeCount) {
             
-            var el = document.createElement("a");
+            var el = document.createElement("aaa");
             el.setAttribute("href", url);
             el.setAttribute("title", title);
             

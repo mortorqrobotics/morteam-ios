@@ -79,7 +79,7 @@ public struct JSON {
     
     /**
      Create a JSON from JSON string
-     - parameter string: Normal json string like '{"a":"b"}'
+     - parameter string: Normal json string like '{"aaa":"b"}'
      
      - returns: The created JSON
      */

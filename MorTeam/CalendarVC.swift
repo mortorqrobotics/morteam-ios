@@ -144,7 +144,7 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         
         for (index, event) in self.showingEvents.enumerated() {
             if (event.day == day && event.year == year && event.month == month){
-                let indexPath = IndexPath(row: index, section: 1)
+                let indexPath = IndexPath(row: index, section: 0)
                 self.eventTableView.scrollToRow(at: indexPath, at: .top, animated: true)
                 
             }
