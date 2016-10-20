@@ -143,13 +143,10 @@ extension CalendarVC: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
             if (event.day == day && event.year == year && event.month == month){
                 let indexPath = IndexPath(row: index, section: 0)
                 self.eventTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                break
                 
             }
         }
-        
-        
-        
-        
         
     }
     
