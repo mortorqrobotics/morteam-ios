@@ -79,6 +79,14 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     
+    @IBAction func didClickAddEvent(_ sender: AnyObject) {
+        DispatchQueue.main.async(execute: {
+            let vc: AddEventVC! = self.storyboard!.instantiateViewController(withIdentifier: "AddEvent") as! AddEventVC
+            
+            self.show(vc as UIViewController, sender: vc)
+        })
+        
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.showingEvents.count
     }
