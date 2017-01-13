@@ -20,7 +20,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var showingChats = [Any]()
     var onlineUsers = [String]()
     
-    let morTeamURL = "http://www.morteam.com:8080/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     var imageCache = [String:UIImage]()
     var isGettingChats = false //To avoid double getChats() 
@@ -168,7 +168,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.lastMessage.text = chat.lastMessage
         
         let imagePath = (self.chats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
-        let profPicUrl = URL(string: "http://www.morteam.com:8080"+imagePath)
+        let profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
         
         //Fix this mess with KF
         if let img = self.imageCache[imagePath] {

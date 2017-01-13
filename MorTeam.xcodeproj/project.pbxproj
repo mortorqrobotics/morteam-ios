@@ -30,6 +30,7 @@
 		A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */; };
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
+		A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F030EC1E247060004EED7E /* TeamViewVC.swift */; };
 		A2F2ACFB1DAF4E400054E331 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFA1DAF4E400054E331 /* Event.swift */; };
 		A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFC1DAF4E840054E331 /* Audience.swift */; };
 		A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */; };
@@ -107,6 +108,7 @@
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		A2F030EC1E247060004EED7E /* TeamViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewVC.swift; sourceTree = "<group>"; };
 		A2F2ACFA1DAF4E400054E331 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A2F2ACFC1DAF4E840054E331 /* Audience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audience.swift; sourceTree = "<group>"; };
 		A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceObject.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				A2206D511D1B43340023BC10 /* TeamProfileVC.swift */,
 				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
 				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
+				A2F030EC1E247060004EED7E /* TeamViewVC.swift */,
 				A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */,
 				A234260F1DA07DA700FBDE74 /* ChooseAudienceVC.swift */,
 				A23982341DA330F20082B5A1 /* ChatListVC.swift */,
@@ -606,6 +609,7 @@
 				A239823B1DA359330082B5A1 /* ChatConvoVC.swift in Sources */,
 				A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */,
 				A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */,
+				A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */,
 				A23426121DA0865100FBDE74 /* User.swift in Sources */,
 				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
 				A23982391DA342CE0082B5A1 /* ChatListCell.swift in Sources */,

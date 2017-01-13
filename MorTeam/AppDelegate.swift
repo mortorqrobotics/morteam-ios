@@ -23,6 +23,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         UISearchBar.appearance().barTintColor = UIColorFromHex("#FFC547")
         UITabBar.appearance().tintColor = UIColorFromHex("#E5B13F")
+        
+        
+        let revealVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+        //let loginVC : UIViewController! = mainStoryboard.instantiateViewControllerWithIdentifier("login")
+        
+        if let _ = storage.string(forKey: "connect.sid"){
+            //logged in
+            //if storage.bool(forKey: "noTeam") {
+                //logoutSilently()
+                //self.window?.rootViewController = loginVC
+            //}
+            //else{
+                self.window?.rootViewController = revealVC
+            //}
+        }
+        else{
+            //not logged in
+            //self.window?.rootViewController = loginVC
+        }
+        
+        
+        
             
         return true
     }
@@ -67,14 +89,14 @@ class SocketIOManager {
             
             let configOption = SocketIOClientOption.extraHeaders(["Cookie": "connect.sid="+sid])
             
-            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com:8080")!, config: [.forcePolling(true), configOption])
+            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com")!, config: [.forcePolling(true), configOption])
 
             
            
         
         }else{
-            //self.socket = SocketIOClient(socketURL: URL("http://www.morteam.com:8080"))
-            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com:8080")!)
+            //self.socket = SocketIOClient(socketURL: URL("http://www.morteam.com"))
+            self.socket = SocketIOClient(socketURL: URL(string: "http://www.morteam.com")!)
         }
         
         

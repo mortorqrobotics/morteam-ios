@@ -29,7 +29,7 @@ class ChooseAudienceVC: UIViewController, UITableViewDataSource, UITableViewDele
     
     weak var delegate: SelectionDelegate? = nil
     
-    let morTeamURL = "http://www.morteam.com:8080/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,8 @@ class ChooseAudienceVC: UIViewController, UITableViewDataSource, UITableViewDele
     func loadBadges(){
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": "1",
-            "password": "zzz"
+            "password": passwordstuff,
+            "rememberMe": true
         ]){responseText in
             httpRequest(self.morTeamURL+"/groups", type: "GET"){
                 responseTextGroups in

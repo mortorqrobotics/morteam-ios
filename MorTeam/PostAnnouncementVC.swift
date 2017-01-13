@@ -28,7 +28,7 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
     var selectedMembers = [String]();
     var selectedGroups = [String]();
     
-    let morTeamURL = "http://www.morteam.com:8080/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,11 +86,12 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
 //        print(text)
         
         
-        
+        self.postButton.isEnabled = false;
         
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": "1",
-            "password": "zzz"
+            "password": passwordstuff,
+            "rememberMe": true
         ]){responseText in
             httpRequest(self.morTeamURL+"/announcements", type: "POST", data: [
                 "content": (text?.replace(target:"\n",withString:"<br>"))! as String,
@@ -99,7 +100,9 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
                     "users":self.selectedMembers
                 ]
             ]){responseText2 in
-                print(responseText2)
+                DispatchQueue.main.async(execute: {
+                    self.navigationController?.popViewController(animated: true)
+                })
             }
             
         }

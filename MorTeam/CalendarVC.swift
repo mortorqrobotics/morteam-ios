@@ -33,7 +33,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var showingEvents = [Event]()
     
-    let morTeamUrl = "http://www.morteam.com:8080/api"
+    let morTeamUrl = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func setup(){
         self.view.backgroundColor = UIColor.white
-        
         self.eventTableView.backgroundColor = UIColor.white
         self.eventTableView.separatorInset = .zero
     }
@@ -97,6 +96,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let row = (indexPath as NSIndexPath).row
         let event = self.showingEvents[row]
         
+        cell.selectionStyle = .none
         cell.dayView.text = "\(event.day)" //Thanks, type safety
         cell.eventTitleLabel.text = event.name
         cell.eventDescriptionLabel.text = event.description

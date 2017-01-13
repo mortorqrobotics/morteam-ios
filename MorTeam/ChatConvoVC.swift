@@ -27,7 +27,7 @@ class ChatConvoVC: JSQMessagesViewController {
     var typingTimer = Timer()
     
     
-    let morteamURL = "http://www.morteam.com:8080/api"
+    let morteamURL = "http://www.morteam.com/api"
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -101,7 +101,7 @@ class ChatConvoVC: JSQMessagesViewController {
             }
             
             for user in users {
-                self.downloadImage("http://www.morteam.com:8080"+user.profPicPath+"-60") {
+                self.downloadImage("http://www.morteam.com"+user.profPicPath+"-60") {
                     image in
                     
                     self.profilePics[user._id] = image

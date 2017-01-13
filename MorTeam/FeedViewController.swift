@@ -29,7 +29,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     
-    let morTeamURL = "http://www.morteam.com:8080/api"
+    let morTeamURL = "http://www.morteam.com/api"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -53,16 +53,19 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
    
     
     func getAnnouncements() {
-        httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
+        httpRequest("http://www.morteam.com/api/login", type: "POST", data: [
             "username": "1",
-            "password": "zzz"
+            "password": passwordstuff,
+            "rememberMe": true
         ]){responseText in
+            print("ONE" + responseText)
             self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id") //TEMPORARY
             self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
             SocketIOManager.sharedInstance.connectSocket()
             httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
                 responseText2 in
                 
+                print("TWO"+responseText2)
             
                 let newAnnouncements = parseJSON(responseText2)
                 
@@ -80,17 +83,14 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         }
         
-            
-            
-        
     }
     
     func refresh(_ sender: AnyObject){
         if (!isRefreshing){
             isRefreshing = true
-            httpRequest("http://www.morteam.com:8080/api/login", type: "POST", data: [
+            httpRequest("http://www.morteam.com/api/login", type: "POST", data: [
                 "username": "1",
-                "password": "zzz"
+                "password": passwordstuff
             ]){responseText in
                 httpRequest(self.morTeamURL+"/announcements?skip=0", type: "GET"){
                     responseText2 in
@@ -120,6 +120,15 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         return self.announcements.count
     }
     
+    
+    
+    @IBAction func teamButtonClicked(_ sender: AnyObject) {
+        DispatchQueue.main.async(execute: {
+            let vc: TeamViewVC! = self.storyboard!.instantiateViewController(withIdentifier: "TeamView") as! TeamViewVC
+            self.show(vc as UITableViewController, sender: vc)
+        })
+        
+    }
     
     @IBAction func postButtonClicked(_ sender: AnyObject) {
         DispatchQueue.main.async(execute: {
@@ -173,7 +182,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             cell.backgroundColor = UIColor.white
             
-            let profPicUrlString = "http://www.morteam.com:8080"+String(describing: announcementAtIndex.author["profpicpath"])+"-60"
+            let profPicUrlString = "http://www.morteam.com"+String(describing: announcementAtIndex.author["profpicpath"])+"-60"
             let profPicUrl = URL(string: profPicUrlString)
             
             if let img = imageCache[profPicUrlString] {

@@ -12,9 +12,7 @@ import UIKit
 class AddEventVC: UIViewController, SelectionDelegate {
     
     @IBOutlet var chooseAudienceButton: UIButton!
-    
     @IBOutlet var eventNameBox: UITextView!
-    
     @IBOutlet var eventDescriptionBox: UITextView!
     
     var selectedMembers = [String]();
@@ -55,6 +53,6 @@ class AddEventVC: UIViewController, SelectionDelegate {
         super.didReceiveMemoryWarning()
         
     }
-    
+        
     
 }
