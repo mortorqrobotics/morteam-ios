@@ -167,7 +167,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let chat = self.showingChats[row] as! Chat
         cell.lastMessage.text = chat.lastMessage
         
-        let imagePath = (self.chats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
+        let imagePath = (self.showingChats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
         let profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
         
         //Fix this mess with KF

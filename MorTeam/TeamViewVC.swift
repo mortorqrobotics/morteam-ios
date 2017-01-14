@@ -64,7 +64,7 @@ class TeamViewVC: UITableViewController  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let cell = UITableViewCell() //Why. Just why.
-        
+        cell.accessoryType = .disclosureIndicator
         if (indexPath.section == 1){
             cell.textLabel?.text = self.yourGroups[indexPath.row].name
         }
@@ -76,6 +76,33 @@ class TeamViewVC: UITableViewController  {
         }
         
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        var groupSelected:Group? = nil
+        var isAllMembers = false
+        if (indexPath.section == 0){
+            isAllMembers = true
+        }
+        else if (indexPath.section == 1){
+            groupSelected = self.yourGroups[indexPath.row]
+        }
+        else {
+            groupSelected = self.otherGroups[indexPath.row]
+        }
+        DispatchQueue.main.async(execute: {
+            let vc: GroupVC! = self.storyboard!.instantiateViewController(withIdentifier: "Group") as! GroupVC
+            
+            vc.isAllMembers = isAllMembers
+            if (!isAllMembers){
+                vc.groupId = (groupSelected?._id)!
+                vc.groupName = (groupSelected?.name)!
+            }
+            
+            self.show(vc as UIViewController, sender: vc)
+        })
     }
     
     

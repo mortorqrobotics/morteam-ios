@@ -31,6 +31,8 @@
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
 		A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F030EC1E247060004EED7E /* TeamViewVC.swift */; };
+		A2F030EF1E299B1E004EED7E /* GroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F030EE1E299B1E004EED7E /* GroupVC.swift */; };
+		A2F030F11E29B1DB004EED7E /* UserItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F030F01E29B1DB004EED7E /* UserItemCell.swift */; };
 		A2F2ACFB1DAF4E400054E331 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFA1DAF4E400054E331 /* Event.swift */; };
 		A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFC1DAF4E840054E331 /* Audience.swift */; };
 		A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */; };
@@ -109,6 +111,8 @@
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A2F030EC1E247060004EED7E /* TeamViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewVC.swift; sourceTree = "<group>"; };
+		A2F030EE1E299B1E004EED7E /* GroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupVC.swift; sourceTree = "<group>"; };
+		A2F030F01E29B1DB004EED7E /* UserItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemCell.swift; sourceTree = "<group>"; };
 		A2F2ACFA1DAF4E400054E331 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		A2F2ACFC1DAF4E840054E331 /* Audience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audience.swift; sourceTree = "<group>"; };
 		A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceObject.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A2206D511D1B43340023BC10 /* TeamProfileVC.swift */,
+				A2F030EE1E299B1E004EED7E /* GroupVC.swift */,
 				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
 				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
 				A2F030EC1E247060004EED7E /* TeamViewVC.swift */,
@@ -211,6 +216,7 @@
 				A23426151DA0C8EF00FBDE74 /* BadgeTableViewCell.swift */,
 				A23982361DA334190082B5A1 /* Chat.swift */,
 				A23982381DA342CE0082B5A1 /* ChatListCell.swift */,
+				A2F030F01E29B1DB004EED7E /* UserItemCell.swift */,
 				A20E6BBA1DA371EB00330F9C /* Message.swift */,
 				A2F2ACFA1DAF4E400054E331 /* Event.swift */,
 				A2F2ACFC1DAF4E840054E331 /* Audience.swift */,
@@ -593,12 +599,14 @@
 				A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A21149DD1DBACCD10054BFB2 /* AddEventVC.swift in Sources */,
+				A2F030EF1E299B1E004EED7E /* GroupVC.swift in Sources */,
 				A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
 				A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */,
 				A23982371DA334190082B5A1 /* Chat.swift in Sources */,
 				A2F2ACFB1DAF4E400054E331 /* Event.swift in Sources */,
+				A2F030F11E29B1DB004EED7E /* UserItemCell.swift in Sources */,
 				A269AE981DA5CC61001229E7 /* ComposeChatVC.swift in Sources */,
 				A23426101DA07DA700FBDE74 /* ChooseAudienceVC.swift in Sources */,
 				A20E6BBB1DA371EB00330F9C /* Message.swift in Sources */,
