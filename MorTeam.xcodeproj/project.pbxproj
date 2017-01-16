@@ -53,7 +53,6 @@
 		A2F9C70A1D9B81AE006299D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C7091D9B81AE006299D9 /* Assets.xcassets */; };
 		A2F9C70C1D9B8874006299D9 /* PostAnnouncementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */; };
 		A2F9C70E1D9B9166006299D9 /* EditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C70D1D9B9166006299D9 /* EditorTextView.swift */; };
-		A2F9C7111D9B982C006299D9 /* ZSSRichTextEditor in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C7101D9B982C006299D9 /* ZSSRichTextEditor */; };
 		A2F9C7131D9B98E7006299D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F9C7121D9B98E7006299D9 /* CoreGraphics.framework */; };
 		A2F9C7151D9B98F7006299D9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F9C7141D9B98F7006299D9 /* CoreText.framework */; };
 		C29A56FAB7DBD524339F0FE9 /* Pods_MorTeam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5489431B097FB13458840C /* Pods_MorTeam.framework */; };
@@ -133,7 +132,6 @@
 		A2F9C7091D9B81AE006299D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementVC.swift; sourceTree = "<group>"; };
 		A2F9C70D1D9B9166006299D9 /* EditorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTextView.swift; sourceTree = "<group>"; };
-		A2F9C7101D9B982C006299D9 /* ZSSRichTextEditor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ZSSRichTextEditor; sourceTree = "<group>"; };
 		A2F9C7121D9B98E7006299D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A2F9C7141D9B98F7006299D9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -200,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				A2F9C6F11D9882E8006299D9 /* SwiftyJSON.swift */,
-				A2F9C70F1D9B9810006299D9 /* ZSS */,
 				A2EDBEE61D19E454003D9851 /* Util.swift */,
 				A2CE33A51D19254B003CDE63 /* AppDelegate.swift */,
 				A269AE951DA41C5B001229E7 /* KeyboardLayoutConstraint.swift */,
@@ -298,14 +295,6 @@
 				A2F9C6FF1D98E13A006299D9 /* TitilliumWeb-SemiBold.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		A2F9C70F1D9B9810006299D9 /* ZSS */ = {
-			isa = PBXGroup;
-			children = (
-				A2F9C7101D9B982C006299D9 /* ZSSRichTextEditor */,
-			);
-			name = ZSS;
 			sourceTree = "<group>";
 		};
 		A882F49CF8877078A954EC52 /* Frameworks */ = {
@@ -447,7 +436,6 @@
 				A2F9C7031D98E13A006299D9 /* Exo2-SemiBold.ttf in Resources */,
 				A2F9C7061D98E13A006299D9 /* TitilliumWeb-Light.ttf in Resources */,
 				A2F9C70A1D9B81AE006299D9 /* Assets.xcassets in Resources */,
-				A2F9C7111D9B982C006299D9 /* ZSSRichTextEditor in Resources */,
 				A2F9C7041D98E13A006299D9 /* Exo2-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
