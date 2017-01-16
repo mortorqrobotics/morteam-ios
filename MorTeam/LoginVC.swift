@@ -40,6 +40,7 @@ class LoginVC: UIViewController {
     let morTeamURL = "http://www.morteam.com/api"
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -49,6 +50,9 @@ class LoginVC: UIViewController {
     
     @IBAction func loginButtonClicked(_ sender: AnyObject) {
         
+        loginButton.isEnabled = false
+        
+        
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": self.usernameBox.text!,
             "password": self.passwordBox.text!,
@@ -57,6 +61,8 @@ class LoginVC: UIViewController {
             if (responseCode > 199 && responseCode < 300){
                 self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id")
                 self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
+                
+                SocketIOManager.sharedInstance.connectSocket()
                 
                 
                 DispatchQueue.main.async(execute: {
@@ -68,12 +74,11 @@ class LoginVC: UIViewController {
             }
             else {
                 alert(title: "Failed Login", message: "Please try again", buttonText: "OK", viewController: self)
+                
+                self.loginButton.isEnabled = true
             }
             
-            
         }
-        
-        
         
     }
     override func didReceiveMemoryWarning() {
