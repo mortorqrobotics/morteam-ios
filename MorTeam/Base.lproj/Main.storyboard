@@ -50,7 +50,7 @@
                                     <outlet property="delegate" destination="l7c-vc-7u8" id="Hef-22-TFt"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search Teams and Regionals" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-2e-ysY">
+                            <searchBar contentMode="redraw" placeholder="Search Teams" translatesAutoresizingMaskIntoConstraints="NO" id="JqS-2e-ysY">
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="l7c-vc-7u8" id="oed-iG-8Jq"/>
