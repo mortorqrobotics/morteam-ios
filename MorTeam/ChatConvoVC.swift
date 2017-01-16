@@ -220,7 +220,11 @@ class ChatConvoVC: JSQMessagesViewController {
             //change font to Exo2
             cell.textView!.textColor = UIColor.black
             cell.textView!.linkTextAttributes = [NSForegroundColorAttributeName : cell.textView!.textColor!,NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
+            
+            cell.textView.font = UIFont(name: "Exo2-Light", size: 17.0)
         }
+        
+        
         
         return cell
     }
