@@ -32,18 +32,19 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
             mapView.isMyLocationEnabled = true;
             
             //Get locations
-            httpRequest(self.morTeamURL+"/teamLocations.js", type: "GET") { responseText, responseCode in
+            httpRequest(self.morTeamURL+"/teamLocations.json", type: "GET") { responseText, responseCode in
                 //Parse response
-                let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 20))
-                let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
-                let teams = parseJSONMap(noSemi)
+                
+                //let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 20))
+                //let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
+                let teams = parseJSONMap(responseText)
                 //Place markers
                 for (team, location) in teams! {
-                    let lat = location["latitude"] as! Double
-                    let long = location["longitude"] as! Double
+                    let lat = location["lat"] as! Double
+                    let long = location["lng"] as! Double
                     DispatchQueue.main.async(execute: {
                         let marker = GMSMarker()
-                        marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IS FIXED
+                        marker.position = CLLocationCoordinate2DMake(lat, long)
                         marker.title = "Team " + team
                         //marker.snippet = "View Team Profile >"
                         marker.map = self.MapUI
