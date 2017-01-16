@@ -10,6 +10,23 @@ import UIKit
 import Foundation
 import GoogleMaps
 
+class LoginTextField: UITextField {
+    
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
+    
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return UIEdgeInsetsInsetRect(bounds, padding)
+    }
+}
+
 class LoginVC: UIViewController {
     
     @IBOutlet var usernameBox: UITextField!
@@ -40,6 +57,7 @@ class LoginVC: UIViewController {
             if (responseCode > 199 && responseCode < 300){
                 self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id")
                 self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
+                
                 
                 DispatchQueue.main.async(execute: {
                     let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "main")
