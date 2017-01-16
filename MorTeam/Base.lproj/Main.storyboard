@@ -117,7 +117,6 @@
                         <segue destination="bCP-De-Vsf" kind="relationship" relationship="viewControllers" id="xkV-fm-kYu"/>
                         <segue destination="NTB-yC-c4O" kind="relationship" relationship="viewControllers" id="FSA-uc-Xk4"/>
                         <segue destination="xqe-YF-ks8" kind="relationship" relationship="viewControllers" id="rs4-ME-wA2"/>
-                        <segue destination="BiL-xf-gcg" kind="relationship" relationship="viewControllers" id="59d-A2-XH9"/>
                         <segue destination="lfr-XE-nfX" kind="relationship" relationship="viewControllers" id="Llo-Lb-Cve"/>
                     </connections>
                 </tabBarController>
@@ -1019,7 +1018,13 @@
                             <outlet property="delegate" destination="198-Od-ALs" id="Z3e-y7-EAQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Team" id="LZe-FN-xBw"/>
+                    <navigationItem key="navigationItem" title="Your Team" id="LZe-FN-xBw">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" style="done" id="pRM-sP-vE0">
+                            <connections>
+                                <action selector="logoutButtonClicked:" destination="198-Od-ALs" id="21t-mu-M5h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="GCS-tC-Omf" kind="show" id="Kae-4n-giP"/>
                     </connections>
@@ -1104,23 +1109,77 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="hPQ-tz-nGj">
-                        <barButtonItem key="rightBarButtonItem" title="Join Group" style="done" id="KcT-rZ-S3a">
-                            <connections>
-                                <action selector="statusButtonClicked:" destination="KTl-Ye-9zW" id="Wau-GT-nSE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="hPQ-tz-nGj"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchUsersBar" destination="kCh-ST-JZx" id="5Wu-b4-uf6"/>
-                        <outlet property="statusButton" destination="KcT-rZ-S3a" id="yHr-Tw-tUs"/>
                         <outlet property="userTable" destination="unH-SK-284" id="TOO-fq-ccu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ids-5S-aSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2613.5999999999999" y="631.93403298350825"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="O0r-2f-xbA">
+            <objects>
+                <viewController storyboardIdentifier="login" id="trs-DL-49n" customClass="LoginVC" customModule="MorTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cYq-8N-N8j"/>
+                        <viewControllerLayoutGuide type="bottom" id="gP2-4f-kvo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NTj-HQ-oNN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MorTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-xR-Udp">
+                                <frame key="frameInset" minX="77" minY="73" width="221" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEG-Gi-pEV">
+                                <frame key="frameInset" minX="58" minY="183" width="259" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-x8-MvV">
+                                <frame key="frameInset" minX="58" minY="351" width="259" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.5362189798" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="24"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="trs-DL-49n" eventType="touchUpInside" id="OQv-6H-avH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhK-nE-J8j">
+                                <frame key="frameInset" minX="58" minY="257" width="259" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="sp5-x8-MvV" id="sez-B1-gWM"/>
+                        <outlet property="passwordBox" destination="vhK-nE-J8j" id="42w-zC-AOP"/>
+                        <outlet property="usernameBox" destination="DEG-Gi-pEV" id="c3Q-4L-HbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V3K-9d-aso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="1389.3553223388308"/>
         </scene>
         <!--Map-->
         <scene sceneID="ztg-ut-Vb9">
@@ -1621,7 +1680,7 @@
         <image name="present-100" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RMH-fh-zxt"/>
+        <segue reference="b3V-ef-0Q8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

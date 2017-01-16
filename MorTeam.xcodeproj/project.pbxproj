@@ -28,6 +28,7 @@
 		A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */; };
 		A2CE33BB1D19254B003CDE63 /* MorTeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33BA1D19254B003CDE63 /* MorTeamTests.swift */; };
 		A2CE33C61D19254B003CDE63 /* MorTeamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */; };
+		A2EA33E71E2C088300ECF809 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EA33E61E2C088300ECF809 /* LoginVC.swift */; };
 		A2EDBEE71D19E454003D9851 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE61D19E454003D9851 /* Util.swift */; };
 		A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */; };
 		A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F030EC1E247060004EED7E /* TeamViewVC.swift */; };
@@ -108,6 +109,7 @@
 		A2CE33C11D19254B003CDE63 /* MorTeamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MorTeamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33C51D19254B003CDE63 /* MorTeamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorTeamUITests.swift; sourceTree = "<group>"; };
 		A2CE33C71D19254B003CDE63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2EA33E61E2C088300ECF809 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A2EDBEE61D19E454003D9851 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = ../Util.swift; sourceTree = "<group>"; };
 		A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		A2F030EC1E247060004EED7E /* TeamViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewVC.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				A2F030EE1E299B1E004EED7E /* GroupVC.swift */,
 				A2CE33A71D19254B003CDE63 /* MapViewController.swift */,
 				A2EDBEE81D1A3065003D9851 /* FeedViewController.swift */,
+				A2EA33E61E2C088300ECF809 /* LoginVC.swift */,
 				A2F030EC1E247060004EED7E /* TeamViewVC.swift */,
 				A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */,
 				A234260F1DA07DA700FBDE74 /* ChooseAudienceVC.swift */,
@@ -593,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2EA33E71E2C088300ECF809 /* LoginVC.swift in Sources */,
 				A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */,
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
 				A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */,

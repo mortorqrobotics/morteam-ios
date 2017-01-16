@@ -27,6 +27,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var didLoadOnce = false
     var cellHeights = [CGFloat]()
     
+    var isSecond = false
+    
     
     
     let morTeamURL = "http://www.morteam.com/api"
@@ -34,8 +36,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
 
         self.setup();
-        self.getAnnouncements();
-
+        self.getAnnouncements()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,67 +55,60 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
    
     
     func getAnnouncements() {
-        httpRequest("http://www.morteam.com/api/login", type: "POST", data: [
-            "username": "1",
-            "password": passwordstuff,
-            "rememberMe": true
-        ]){responseText in
-            print("ONE" + responseText)
-            self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id") //TEMPORARY
-            self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
-            SocketIOManager.sharedInstance.connectSocket()
-            httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
-                responseText2 in
-                
-                print("TWO"+responseText2)
+        
+        SocketIOManager.sharedInstance.connectSocket()
+        httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
+            responseText2, responseCode in
             
-                let newAnnouncements = parseJSON(responseText2)
-                
-                for(_, json):(String, JSON) in newAnnouncements {
-                    self.announcements.append(Announcement(announcementJSON: json))
-                }
-                DispatchQueue.main.async(execute: {
-                    self.announcementCollectionView.reloadData()
-                })
-                
-                
-                
-                self.page += 1;
+            
+            let newAnnouncements = parseJSON(responseText2)
+            
+            for(_, json):(String, JSON) in newAnnouncements {
+                self.announcements.append(Announcement(announcementJSON: json))
             }
-
+            DispatchQueue.main.async(execute: {
+                self.announcementCollectionView.reloadData()
+                //self.refreshFeed()
+            })
+            
+            self.page += 1;
+            
         }
+
+        
+        
+    }
+    
+    func refreshFeed(){
         
     }
     
     func refresh(_ sender: AnyObject){
         if (!isRefreshing){
             isRefreshing = true
-            httpRequest("http://www.morteam.com/api/login", type: "POST", data: [
-                "username": "1",
-                "password": passwordstuff
-            ]){responseText in
-                httpRequest(self.morTeamURL+"/announcements?skip=0", type: "GET"){
-                    responseText2 in
-                    
-                    let newAnnouncements = parseJSON(responseText2)
-                    self.announcements = []
-                    
-                    for(_, json):(String, JSON) in newAnnouncements {
-                        self.announcements.append(Announcement(announcementJSON: json))
-                    }
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.cellHeights = []
-                        self.announcementCollectionView.reloadData()
-                        self.isRefreshing = false
-                        self.refreshControl.endRefreshing()
-                    })
-                    
-                    
-                    self.page = 1
-                    
+            
+            httpRequest(self.morTeamURL+"/announcements?skip=0", type: "GET"){
+                responseText2, responseCode in
+                
+                let newAnnouncements = parseJSON(responseText2)
+                self.announcements = []
+                
+                for(_, json):(String, JSON) in newAnnouncements {
+                    self.announcements.append(Announcement(announcementJSON: json))
                 }
+                
+                DispatchQueue.main.async(execute: {
+                    self.cellHeights = []
+                    self.announcementCollectionView.reloadData()
+                    self.isRefreshing = false
+                    self.refreshControl.endRefreshing()
+                })
+                
+                
+                self.page = 1
+                
             }
+            
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -241,6 +236,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             
         }
         
+        
+        
+        //self.announcementCollectionView.reloadItems(at: [indexPath])
         return cell
     }
     

@@ -88,24 +88,20 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
         
         self.postButton.isEnabled = false;
         
-        httpRequest(self.morTeamURL+"/login", type: "POST", data: [
-            "username": "1",
-            "password": passwordstuff,
-            "rememberMe": true
-        ]){responseText in
-            httpRequest(self.morTeamURL+"/announcements", type: "POST", data: [
-                "content": (text?.replace(target:"\n",withString:"<br>"))! as String,
-                "audience": [
-                    "groups":self.selectedGroups,
-                    "users":self.selectedMembers
-                ]
-            ]){responseText2 in
-                DispatchQueue.main.async(execute: {
-                    self.navigationController?.popViewController(animated: true)
-                })
-            }
-            
+        
+        httpRequest(self.morTeamURL+"/announcements", type: "POST", data: [
+            "content": (text?.replace(target:"\n",withString:"<br>"))! as String,
+            "audience": [
+                "groups":self.selectedGroups,
+                "users":self.selectedMembers
+            ]
+        ]){responseText2, responseCode in
+            DispatchQueue.main.async(execute: {
+                self.navigationController?.popViewController(animated: true)
+            })
         }
+        
+        
 
     }
     

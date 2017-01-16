@@ -16,8 +16,10 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var groupId = String()
     var groupName = String()
     var isAllMembers = Bool()
+    var isInGroup = Bool()
     
-    @IBOutlet var statusButton: UIBarButtonItem!
+    var storage = UserDefaults.standard
+    
     
     @IBOutlet var userTable: UITableView!
     
@@ -40,16 +42,48 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     //   /groups/normal/id/:groupId/users/id/:userId DELETE
     
     
-    @IBAction func statusButtonClicked(_ sender: AnyObject) {
-        
+    
+    
+    func joinGroupButtonClicked(_ sender: UIBarButtonItem) {
+        httpRequest(self.morTeamURL+"/groups/normal/id/\(self.groupId)/join", type: "POST"){
+            responseText, responseCode in
+            DispatchQueue.main.async(execute: {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Leave Group", style: .done, target: self, action: #selector(GroupVC.leaveGroupButtonClicked(_:)))
+            })
+        }
     }
     
+    func leaveGroupButtonClicked(_ sender: UIBarButtonItem) {
+        httpRequest(self.morTeamURL+"/groups/normal/id/\(self.groupId)/users/id/\(self.storage.string(forKey: "_id")!)", type: "DELETE"){
+            responseText, responseCode in
+            DispatchQueue.main.async(execute: {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join Group", style: .done, target: self, action: #selector(GroupVC.joinGroupButtonClicked(_:)))
+            })
+            
+            
+        }
+    }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if (self.isAllMembers){
-            self.groupName = "All Members"
+            //Essentially hides it
+            self.navigationItem.rightBarButtonItem?.title = ""
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+        if (self.isInGroup && !self.isAllMembers){
+            DispatchQueue.main.async(execute: {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Leave Group", style: .done, target: self, action: #selector(GroupVC.leaveGroupButtonClicked(_:)))
+            })
+        }
+        else if (!self.isInGroup){
+            DispatchQueue.main.async(execute: {
+               self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Join Group", style: .done, target: self, action: #selector(GroupVC.joinGroupButtonClicked(_:)))
+            })
         }
         self.title = self.groupName
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         self.loadUsers()
     }
 
@@ -61,7 +95,7 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
         
         httpRequest(self.morTeamURL+path, type: "GET"){
-                responseText in
+                responseText, responseCode in
             
             let users = parseJSON(responseText)
             for(_, json):(String, JSON) in users {

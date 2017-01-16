@@ -32,9 +32,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
             mapView.isMyLocationEnabled = true;
             
             //Get locations
-            httpRequest(self.morTeamURL+"/js/teamLocations.js", type: "GET") { responseText in
+            httpRequest(self.morTeamURL+"/teamLocations.js", type: "GET") { responseText, responseCode in
                 //Parse response
-                let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 11))
+                let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 20))
                 let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
                 let teams = parseJSONMap(noSemi)
                 //Place markers
@@ -45,7 +45,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
                         let marker = GMSMarker()
                         marker.position = CLLocationCoordinate2DMake(long, lat)//SWITCH THESE WHEN teamLocations.js IS FIXED
                         marker.title = "Team " + team
-                        marker.snippet = "View Team Profile >"
+                        //marker.snippet = "View Team Profile >"
                         marker.map = self.MapUI
                         self.MapUI.addSubview(mapView)
                         self.MapUI.delegate = self

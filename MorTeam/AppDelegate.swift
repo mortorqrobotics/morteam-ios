@@ -25,8 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColorFromHex("#E5B13F")
         
         
-        let revealVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+        let mainVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "main")
+        
+        let loginVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login")
+        
         //let loginVC : UIViewController! = mainStoryboard.instantiateViewControllerWithIdentifier("login")
+        
+        
         
         if let _ = storage.string(forKey: "connect.sid"){
             //logged in
@@ -35,12 +40,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //self.window?.rootViewController = loginVC
             //}
             //else{
-                self.window?.rootViewController = revealVC
+                //self.window?.rootViewController = revealVC
+            self.window?.rootViewController = mainVC
             //}
         }
         else{
             //not logged in
-            //self.window?.rootViewController = loginVC
+            self.window?.rootViewController = loginVC
         }
         
         

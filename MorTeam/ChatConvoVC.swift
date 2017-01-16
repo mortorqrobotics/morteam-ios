@@ -69,8 +69,8 @@ class ChatConvoVC: JSQMessagesViewController {
     }
 
     func loadMessages(scrollToBottom: Bool) {
-        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20), type: "GET"){
-            responseText in
+        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20), type: "GET"){responseText, responseCode in
+           
             let responseMessages = parseJSON(responseText)
             for (_, json) in responseMessages {
                 let message = Message(messageJSON: json)
@@ -91,7 +91,7 @@ class ChatConvoVC: JSQMessagesViewController {
     
     func loadProfilePictures() {
         httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/allMembers", type: "GET") {
-            responseText in
+            responseText, responseCode in
             
             let usersJSON = parseJSON(responseText)
             

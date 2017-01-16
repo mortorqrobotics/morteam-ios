@@ -16,8 +16,10 @@ class User {
     let email: String
     let phone: String
     let profPicPath: String
+    let groups: [String]? //maybe populate later, how to make optional
     
     init(userJSON: JSON){
+        var allGroupIds = [String]()
         self._id = String( describing: userJSON["_id"] )
         self.firstname = String( describing: userJSON["firstname"] )
         self.lastname = String( describing: userJSON["lastname"] )
@@ -25,6 +27,10 @@ class User {
         self.email = String( describing: userJSON["email"] )
         self.phone = String( describing: userJSON["phone"] )
         self.profPicPath = String( describing: userJSON["profpicpath"] )
+        for(_, json):(String, JSON) in userJSON["groups"] {
+            allGroupIds.append(String(describing: json))
+        }
+        self.groups = allGroupIds
     }
     init(_id: String, firstname: String, lastname: String, username: String, email: String, phone: String, profPicPath: String){
         self._id = _id
@@ -34,5 +40,6 @@ class User {
         self.email = email
         self.phone = phone
         self.profPicPath = profPicPath
+        self.groups = [String]() //hmm
     }
 }

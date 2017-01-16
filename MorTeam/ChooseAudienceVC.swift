@@ -39,39 +39,35 @@ class ChooseAudienceVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func loadBadges(){
-        httpRequest(self.morTeamURL+"/login", type: "POST", data: [
-            "username": "1",
-            "password": passwordstuff,
-            "rememberMe": true
-        ]){responseText in
-            httpRequest(self.morTeamURL+"/groups", type: "GET"){
-                responseTextGroups in
-                httpRequest(self.morTeamURL+"/teams/current/users", type: "GET"){
-                    responseTextUsers in
-
-                    let groups = parseJSON(responseTextGroups)
-                    
-                    for(_, json):(String, JSON) in groups {
-                        let group = Group(groupJSON: json)
-                        self.badges.append(group)
-                    }
+        
+        httpRequest(self.morTeamURL+"/groups", type: "GET"){
+            responseTextGroups, responseCode in
+            httpRequest(self.morTeamURL+"/teams/current/users", type: "GET"){
+                responseTextUsers, responseCode in
                 
-                    let users = parseJSON(responseTextUsers)
-                    
-                    for(_, json):(String, JSON) in users {
-                        let user = User(userJSON: json)
-                        self.badges.append(user)
-                    }
-                    
-                    self.showingBadges = self.badges
-                    
-                    DispatchQueue.main.async(execute: {
-                        self.badgesTableView.reloadData()
-                    })
+                let groups = parseJSON(responseTextGroups)
+                
+                for(_, json):(String, JSON) in groups {
+                    let group = Group(groupJSON: json)
+                    self.badges.append(group)
                 }
+                
+                let users = parseJSON(responseTextUsers)
+                
+                for(_, json):(String, JSON) in users {
+                    let user = User(userJSON: json)
+                    self.badges.append(user)
+                }
+                
+                self.showingBadges = self.badges
+                
+                DispatchQueue.main.async(execute: {
+                    self.badgesTableView.reloadData()
+                })
             }
-            
         }
+        
+        
     }
     
     func editView(){

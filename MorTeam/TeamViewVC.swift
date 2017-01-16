@@ -19,13 +19,33 @@ class TeamViewVC: UITableViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.loadGroups()
         
+        
+    }
+    
+    @IBAction func logoutButtonClicked(_ sender: AnyObject) {
+        
+        logout()
+        DispatchQueue.main.async(execute: {
+            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "login")
+            self.present(vc as! UIViewController, animated: true, completion: nil)
+            
+        })
+        
+        
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        //Don't try putting this in viewWillAppear because the table is not yet loaded and it will crash
+        self.loadGroups()
     }
     
     func loadGroups(){
         httpRequest(self.morTeamURL+"/groups/normal", type: "GET"){
-            responseText in
+            responseText, responseCode in
+            
+            self.yourGroups = []
+            self.otherGroups = []
             
             let yours = parseJSON(responseText)
             for(_, json):(String, JSON) in yours {
@@ -33,7 +53,7 @@ class TeamViewVC: UITableViewController  {
             }
             
             httpRequest(self.morTeamURL+"/groups/other", type: "GET"){
-                responseText2 in
+                responseText2, responseCode in
                 
                 let others = parseJSON(responseText2)
                 for(_, json):(String, JSON) in others {
@@ -81,26 +101,30 @@ class TeamViewVC: UITableViewController  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc: GroupVC! = self.storyboard!.instantiateViewController(withIdentifier: "Group") as! GroupVC
         var groupSelected:Group? = nil
-        var isAllMembers = false
+        vc.isAllMembers = false
         if (indexPath.section == 0){
-            isAllMembers = true
+            //Done here for speed
+            vc.isAllMembers = true
+            vc.groupName = "All Members"
+            vc.isInGroup = true //Technically
         }
         else if (indexPath.section == 1){
             groupSelected = self.yourGroups[indexPath.row]
+            vc.isInGroup = true
         }
         else {
             groupSelected = self.otherGroups[indexPath.row]
+            vc.isInGroup = false
+        }
+        
+        if (!vc.isAllMembers){
+            vc.groupId = (groupSelected?._id)!
+            vc.groupName = (groupSelected?.name)!
         }
         DispatchQueue.main.async(execute: {
-            let vc: GroupVC! = self.storyboard!.instantiateViewController(withIdentifier: "Group") as! GroupVC
-            
-            vc.isAllMembers = isAllMembers
-            if (!isAllMembers){
-                vc.groupId = (groupSelected?._id)!
-                vc.groupName = (groupSelected?.name)!
-            }
-            
             self.show(vc as UIViewController, sender: vc)
         })
     }

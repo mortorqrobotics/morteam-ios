@@ -52,7 +52,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func getChats(update: Bool) {
         if (!isGettingChats){
             isGettingChats = true
-            httpRequest(self.morTeamURL+"/chats", type: "GET"){responseText in
+            httpRequest(self.morTeamURL+"/chats", type: "GET"){responseText, responseCode in
                 
                 self.chats = []
                 let newChats = parseJSON(responseText)
@@ -60,7 +60,6 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 for(_, subJson):(String, JSON) in newChats {
                     self.chats += [Chat(chatJSON: subJson)]
                 }
-                print(self.chats)
                 if (self.searchChatsBar.text != ""){
                     self.updateTableBySearching(forText: self.searchChatsBar.text!)
                 }

@@ -15,6 +15,8 @@ let storage = UserDefaults.standard
 
 var unreadChatIds = [String]()
 
+let morTeamURL = "http://www.morteam.com/api"
+
 func parseJSON(_ string: String) -> JSON {
     let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
     return JSON(data: data!)
@@ -93,10 +95,13 @@ func UIColorFromHex( _ hexGiven: String, alpha: Double) -> UIColor {
     return UIColor(red: rdFloat/255, green: gdFloat/255, blue: bdFloat/255, alpha: CGFloat(alpha))
 }
 
-func httpRequest(_ url: String, type: String, data: [String: Any], cb: @escaping (_ responseText: String) -> Void ){
+func httpRequest(_ url: String, type: String, data: [String: Any], cb: @escaping (_ responseText: String, _ responseCode: Int) -> Void ){
     
     let requestUrl = URL(string: url)
     let request = NSMutableURLRequest(url: requestUrl!)
+    
+    var responseCode = Int()
+    
     request.httpMethod = type
 //    var postData = ""
 //    for(key, value) in data{
@@ -127,6 +132,9 @@ func httpRequest(_ url: String, type: String, data: [String: Any], cb: @escaping
         if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: response!.url!)
             HTTPCookieStorage.shared.setCookies(cookies, for: response!.url!, mainDocumentURL: nil)
+            
+            responseCode = httpResponse.statusCode
+            
             for cookie in cookies {
                 var cookieProperties = [HTTPCookiePropertyKey: AnyObject]()
                 cookieProperties[HTTPCookiePropertyKey.name] = cookie.name as AnyObject?
@@ -145,13 +153,33 @@ func httpRequest(_ url: String, type: String, data: [String: Any], cb: @escaping
         
         let responseText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
-        cb(responseText! as String);
+        cb(responseText! as String, responseCode);
     }) 
     
     task.resume()
 }
 
-func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: String) -> Void ){
+func alert(title: String, message: String, buttonText: String, viewController: UIViewController) {
+     DispatchQueue.main.async(execute: {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: buttonText, style: UIAlertActionStyle.default, handler: nil))
+        viewController.present(alert, animated: true, completion: nil)
+    })
+}
+
+func logout() {
+    for key in storage.dictionaryRepresentation().keys {
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+    httpRequest(morTeamURL+"/logout", type: "POST"){ responseText, responseCode in
+        
+    }
+}
+
+
+func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: String, _ responseCode: Int) -> Void ){
+    
+    var responseCode = Int()
     
     let requestUrl = URL(string: url)
     let request = NSMutableURLRequest(url: requestUrl!)
@@ -164,6 +192,7 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
     let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
         data, response, error in
         
+        
         if error != nil {
             print(error)
             return
@@ -172,6 +201,7 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
         if let httpResponse = response as? HTTPURLResponse, let fields = httpResponse.allHeaderFields as? [String : String] {
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: response!.url!)
             HTTPCookieStorage.shared.setCookies(cookies, for: response!.url!, mainDocumentURL: nil)
+            responseCode = httpResponse.statusCode
             for cookie in cookies {
                 var cookieProperties = [HTTPCookiePropertyKey
                     : AnyObject]()
@@ -191,7 +221,7 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
         
         let responseText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
-        cb(responseText! as String);
+        cb(responseText! as String, responseCode );
     }) 
     
     task.resume()
