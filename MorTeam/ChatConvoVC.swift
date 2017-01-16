@@ -69,9 +69,9 @@ class ChatConvoVC: JSQMessagesViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //unreadChatIds = unreadChatIds.filter() {$0 != self.chatId}
-        //self.inputToolbar.contentView.leftBarButtonItem = nil
-        //self.inputToolbar.contentView.textView.becomeFirstResponder()
+        unreadChatIds = unreadChatIds.filter() {$0 != self.chatId}
+        self.inputToolbar.contentView.leftBarButtonItem = nil
+        self.inputToolbar.contentView.textView.becomeFirstResponder()
         
     }
 
