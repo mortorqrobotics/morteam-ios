@@ -37,7 +37,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
                 
                 //let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 20))
                 //let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
-                let teams = parseJSONMap(responseText)
+                var teams = parseJSONMap(responseText)
                 //Place markers
                 for (team, location) in teams! {
                     let lat = location["lat"] as! Double
@@ -120,9 +120,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
     }
     //Search Bar>
     
+    override func viewDidDisappear(_ animated: Bool) {
+        //Use later?
+    }
+    
    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+        //Actually use this
+        
         // Dispose of any resources that can be recreated.
     }
     

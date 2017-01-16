@@ -37,12 +37,14 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        self.setupSocketIO()
         if (isLoad){
             isLoad = false
         }
         else {
             getClientsAndGetChats()
         }
+        
     }
     
     func getClientsAndGetChats(){

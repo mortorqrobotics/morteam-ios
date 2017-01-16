@@ -171,6 +171,7 @@ func logout() {
     for key in storage.dictionaryRepresentation().keys {
         UserDefaults.standard.removeObject(forKey: key)
     }
+    SocketIOManager.sharedInstance.disconnectSocket()
     httpRequest(morTeamURL+"/logout", type: "POST"){ responseText, responseCode in
         
     }
@@ -187,10 +188,17 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
     
     if let sid = storage.string(forKey: "connect.sid"){
         request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+        
     }
+
+    print(request.description)
+    print("request here")
+    
     
     let task = URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
         data, response, error in
+        
+        print("request here2")
         
         
         if error != nil {
@@ -202,6 +210,7 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: response!.url!)
             HTTPCookieStorage.shared.setCookies(cookies, for: response!.url!, mainDocumentURL: nil)
             responseCode = httpResponse.statusCode
+            print(responseCode)
             for cookie in cookies {
                 var cookieProperties = [HTTPCookiePropertyKey
                     : AnyObject]()
@@ -218,11 +227,15 @@ func httpRequest(_ url: String, type: String, cb: @escaping (_ responseText: Str
                 storage.set(cookie.value, forKey: cookie.name)
             }
         }
+        print("request here3")
         
         let responseText = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
         
+        
         cb(responseText! as String, responseCode );
-    }) 
+    })
+    
+    print("request here4")
     
     task.resume()
 }

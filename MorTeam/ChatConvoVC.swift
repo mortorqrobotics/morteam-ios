@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import JSQMessagesViewController
+import Alamofire
 
 
 class ChatConvoVC: JSQMessagesViewController {
@@ -23,6 +24,7 @@ class ChatConvoVC: JSQMessagesViewController {
     var messages = [Message]()
     var profilePics = [String: UIImage]()
     var page = 0
+    
     
     var typingTimer = Timer()
     
@@ -40,9 +42,10 @@ class ChatConvoVC: JSQMessagesViewController {
         self.setup()
         self.loadMessages(scrollToBottom: true)
         self.setupSocketIO()
-        self.loadProfilePictures()
+        //self.loadProfilePictures()  Uncommenting this line will cause a major memory spike unless things are changed
     }
-        func reloadMessagesView() {
+    
+    func reloadMessagesView() {
         self.collectionView?.reloadData()
     }
     
@@ -57,60 +60,98 @@ class ChatConvoVC: JSQMessagesViewController {
         
         
         self.collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero;
+       
         
         
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        unreadChatIds = unreadChatIds.filter() {$0 != self.chatId}
-        self.inputToolbar.contentView.leftBarButtonItem = nil
-        self.inputToolbar.contentView.textView.becomeFirstResponder()
+        //unreadChatIds = unreadChatIds.filter() {$0 != self.chatId}
+        //self.inputToolbar.contentView.leftBarButtonItem = nil
+        //self.inputToolbar.contentView.textView.becomeFirstResponder()
+        
     }
 
     func loadMessages(scrollToBottom: Bool) {
-        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20), type: "GET"){responseText, responseCode in
-           
-            let responseMessages = parseJSON(responseText)
-            for (_, json) in responseMessages {
-                let message = Message(messageJSON: json)
-                self.messages.insert(message, at: 0)
+        
+        //This code refuses to not be a major problem
+        
+//        print("wants to load")
+//        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20), type: "GET"){responseText, responseCode in
+//            
+//            print("does load")
+//            
+//           
+//            let responseMessages = parseJSON(responseText)
+//            for (_, json) in responseMessages {
+//                let message = Message(messageJSON: json)
+//                self.messages.insert(message, at: 0)
+//            }
+//            DispatchQueue.main.async(execute: {
+//                self.reloadMessagesView()
+//                if responseMessages.count == 20 {
+//                    self.showLoadEarlierMessagesHeader = true
+//                }
+//                self.page += 1
+//                if (scrollToBottom) {
+//                    self.scrollToBottom(animated: false)
+//                }
+//            })
+//        }
+        Alamofire.request(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20)).response { response in
+            
+//            print("Request: \(response.request)")
+//            print("Response: \(response.response)")
+//            print("Error: \(response.error)")
+            
+            if let data = response.data, let responseDataText = String(data: data, encoding: .utf8) {
+                
+                let responseMessages = parseJSON(responseDataText)
+                
+                for (_, json) in responseMessages {
+                    let message = Message(messageJSON: json)
+                    self.messages.insert(message, at: 0)
+                }
+                DispatchQueue.main.async(execute: {
+                    self.reloadMessagesView()
+                    if responseMessages.count == 20 {
+                        self.showLoadEarlierMessagesHeader = true
+                    }
+                    self.page += 1
+                    if (scrollToBottom) {
+                        self.scrollToBottom(animated: false)
+                    }
+                })
+
+                
+                
             }
-            DispatchQueue.main.async(execute: {
-                self.reloadMessagesView()
-                if responseMessages.count == 20 {
-                    self.showLoadEarlierMessagesHeader = true
-                }
-                self.page += 1
-                if scrollToBottom {
-                    self.scrollToBottom(animated: false)
-                }
-            })
         }
     }
     
-    func loadProfilePictures() {
-        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/allMembers", type: "GET") {
-            responseText, responseCode in
-            
-            let usersJSON = parseJSON(responseText)
-            
-            var users: [User] = []
-            for (_, userJSON):(String, JSON) in usersJSON {
-                users += [User(userJSON: userJSON)]
-            }
-            
-            for user in users {
-                self.downloadImage("http://www.morteam.com"+user.profPicPath+"-60") {
-                    image in
-                    
-                    self.profilePics[user._id] = image
-                    self.reloadMessagesView()
-                }
-            }
-            
-        }
-    }
+//    func loadProfilePictures() {
+//        httpRequest(self.morteamURL+"/chats/id/"+self.chatId+"/allMembers", type: "GET") {
+//            responseText, responseCode in
+//            
+//            let usersJSON = parseJSON(responseText)
+//            
+//            var users: [User] = []
+//            for (_, userJSON):(String, JSON) in usersJSON {
+//                users += [User(userJSON: userJSON)]
+//            }
+//            
+//            for user in users {
+//                self.downloadImage("http://www.morteam.com"+user.profPicPath+"-60") {
+//                    image in
+//                    
+//                    self.profilePics[user._id] = image
+//                    self.reloadMessagesView()
+//                }
+//            }
+//            
+//        }
+//    }
     
     func setupSocketIO() {
         SocketIOManager.sharedInstance.socket.on("message"){data, ack in
@@ -144,28 +185,28 @@ class ChatConvoVC: JSQMessagesViewController {
         }
     }
     
-    func downloadImage(_ urlString: String, cb: @escaping (_ image: UIImage) -> Void ) {
-        if let url = URL(string: urlString) {
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
-            if let sid = storage.string(forKey: "connect.sid"){
-                request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
-            }
-            let mainQueue = OperationQueue.main
-            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
-                if error == nil {
-                    //let image = UIImage(data: data!)
-                    //cb(image!)
-                    cb(UIImage(named: "user")!)
-                    
-                }
-                else {
-                    print("Error: \(error!.localizedDescription)")
-                }
-            })
-        }else{
-            cb(UIImage(named: "user")!)
-        }
-    }
+//    func downloadImage(_ urlString: String, cb: @escaping (_ image: UIImage) -> Void ) {
+//        if let url = URL(string: urlString) {
+//            let request: NSMutableURLRequest = NSMutableURLRequest(url: url)
+//            if let sid = storage.string(forKey: "connect.sid"){
+//                request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+//            }
+//            let mainQueue = OperationQueue.main
+//            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+//                if error == nil {
+//                    //let image = UIImage(data: data!)
+//                    //cb(image!)
+//                    cb(UIImage(named: "user")!)
+//                    
+//                }
+//                else {
+//                    print("Error: \(error!.localizedDescription)")
+//                }
+//            })
+//        }else{
+//            cb(UIImage(named: "user")!)
+//        }
+//    }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -56,7 +56,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func getAnnouncements() {
         
-        SocketIOManager.sharedInstance.connectSocket()
+        
         httpRequest(self.morTeamURL+"/announcements?skip="+String(self.page*20), type: "GET"){
             responseText2, responseCode in
             
