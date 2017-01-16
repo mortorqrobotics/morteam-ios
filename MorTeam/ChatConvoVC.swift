@@ -46,6 +46,8 @@ class ChatConvoVC: JSQMessagesViewController {
     }
     
     func reloadMessagesView() {
+        //should i invalidate?
+        self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView?.reloadData()
     }
     
@@ -372,7 +374,8 @@ class ChatConvoVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
         
         //Add something here
-        self.collectionView!.reloadItems(at: [indexPath])
+        //self.collectionView.collectionViewLayout.invalidateLayout()
+        //self.collectionView!.reloadItems(at: [indexPath])
     }
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
