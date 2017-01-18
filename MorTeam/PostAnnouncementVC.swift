@@ -108,6 +108,7 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
     func didFinishSelecting(groups: [String], members: [String]) {
         self.selectedMembers = members
         self.selectedGroups = groups
+        print(self.chooseAudience.bounds.height)
     }
     
     @IBAction func chooseAudienceClicked(_ sender: AnyObject) {

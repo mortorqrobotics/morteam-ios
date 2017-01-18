@@ -107,28 +107,38 @@ class ChatConvoVC: JSQMessagesViewController {
 //            print("Response: \(response.response)")
 //            print("Error: \(response.error)")
             
-            if let data = response.data, let responseDataText = String(data: data, encoding: .utf8) {
-                
-                let responseMessages = parseJSON(responseDataText)
-                
-                for (_, json) in responseMessages {
-                    let message = Message(messageJSON: json)
-                    self.messages.insert(message, at: 0)
-                }
+            
+            //Won't work?
+            if let error = response.error {
                 DispatchQueue.main.async(execute: {
-                    self.reloadMessagesView()
-                    if responseMessages.count == 20 {
-                        self.showLoadEarlierMessagesHeader = true
-                    }
-                    self.page += 1
-                    if (scrollToBottom) {
-                        self.scrollToBottom(animated: false)
-                    }
+                    self.navigationController?.popViewController(animated: true)
                 })
-
-                
-                
             }
+            else {
+                if let data = response.data, let responseDataText = String(data: data, encoding: .utf8) {
+                    
+                    let responseMessages = parseJSON(responseDataText)
+                    
+                    for (_, json) in responseMessages {
+                        let message = Message(messageJSON: json)
+                        self.messages.insert(message, at: 0)
+                    }
+                    DispatchQueue.main.async(execute: {
+                        self.reloadMessagesView()
+                        if responseMessages.count == 20 {
+                            self.showLoadEarlierMessagesHeader = true
+                        }
+                        self.page += 1
+                        if (scrollToBottom) {
+                            self.scrollToBottom(animated: false)
+                        }
+                    })
+                    
+                    
+                }
+            }
+            
+            
         }
     }
     

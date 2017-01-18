@@ -14,8 +14,15 @@ class ComposeChatVC: UIViewController, SelectionDelegate {
     
     @IBOutlet var chooseAudienceButton: UIButton!
     
+    @IBOutlet var chatNameBox: LoginTextField!
+    @IBOutlet var composeChatButton: UIBarButtonItem!
     var selectedMembers = [String]()
     var selectedGroups = [String]()
+    
+    var storage = UserDefaults.standard
+    
+    let morTeamURL = "http://www.morteam.com/api"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -39,9 +46,68 @@ class ComposeChatVC: UIViewController, SelectionDelegate {
             })
     }
     
+    
+
+    @IBAction func composeChatButtonClicked(_ sender: AnyObject) {
+        
+        self.selectedMembers = self.selectedMembers.filter() {$0 != storage.string(forKey: "_id")}
+        
+        if (self.selectedGroups.count == 0 && self.selectedMembers.count == 1){
+            
+            httpRequest(self.morTeamURL+"/chats", type: "POST", data: [
+                "isTwoPeople": true,
+                "otherUser": self.selectedMembers[0]
+            ]){responseText, responseCode in
+                
+                DispatchQueue.main.async(execute: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+
+            }
+            
+        }
+        else {
+            httpRequest(self.morTeamURL+"/chats", type: "POST", data: [
+                "isTwoPeople": false,
+                "name": self.chatNameBox.text!,
+                "audience":[
+                    "users": self.selectedMembers,
+                    "groups": self.selectedGroups
+                ]
+            ]){responseText, responseCode in
+
+                
+                DispatchQueue.main.async(execute: {
+                    self.navigationController?.popViewController(animated: true)
+                })
+                
+            }
+        }
+        
+        
+        
+        
+    }
+    
     func didFinishSelecting(groups: [String], members: [String]) {
         self.selectedMembers = members
         self.selectedGroups = groups
+        
+        self.selectedMembers = self.selectedMembers.filter() {$0 != storage.string(forKey: "_id")}
+        
+        if (self.selectedGroups.count > 0 || self.selectedMembers.count > 1){
+            DispatchQueue.main.async(execute: {
+                self.chatNameBox.isHidden = false
+            })
+        }
+        else {
+            DispatchQueue.main.async(execute: {
+                self.chatNameBox.isHidden = true
+            })
+        }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

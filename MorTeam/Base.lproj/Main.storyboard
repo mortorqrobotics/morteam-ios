@@ -274,14 +274,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jNR-hd-dHb" firstAttribute="top" secondItem="tJe-fy-ttN" secondAttribute="bottom" constant="20" id="2MA-LS-9dt"/>
-                            <constraint firstItem="jNR-hd-dHb" firstAttribute="trailing" secondItem="OBX-bt-6iY" secondAttribute="trailingMargin" id="AGF-zo-wrv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tJe-fy-ttN" secondAttribute="trailing" constant="56" id="FdG-TB-hAA"/>
-                            <constraint firstItem="tJe-fy-ttN" firstAttribute="top" secondItem="fD6-Zj-EcE" secondAttribute="bottom" constant="20" id="OXa-Xu-gOG"/>
-                            <constraint firstItem="jNR-hd-dHb" firstAttribute="top" secondItem="tJe-fy-ttN" secondAttribute="bottom" constant="20" id="cl0-Or-sPW"/>
-                            <constraint firstItem="tJe-fy-ttN" firstAttribute="leading" secondItem="OBX-bt-6iY" secondAttribute="leadingMargin" constant="55" id="iFg-1f-oJu"/>
-                            <constraint firstItem="jNR-hd-dHb" firstAttribute="leading" secondItem="OBX-bt-6iY" secondAttribute="leadingMargin" id="neS-Ax-V38"/>
-                            <constraint firstItem="Hma-gs-NGJ" firstAttribute="top" secondItem="jNR-hd-dHb" secondAttribute="bottom" constant="276" id="zdO-Lr-Ito"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tJe-fy-ttN" secondAttribute="trailing" constant="56" id="4O5-YB-Gfx"/>
+                            <constraint firstItem="jNR-hd-dHb" firstAttribute="top" secondItem="tJe-fy-ttN" secondAttribute="bottom" constant="24" id="5Lw-Y0-qqv"/>
+                            <constraint firstItem="jNR-hd-dHb" firstAttribute="top" secondItem="tJe-fy-ttN" secondAttribute="bottom" constant="24" id="9qO-Iz-INM"/>
+                            <constraint firstItem="Hma-gs-NGJ" firstAttribute="top" secondItem="jNR-hd-dHb" secondAttribute="bottom" constant="227" id="MJu-fi-0eF"/>
+                            <constraint firstItem="tJe-fy-ttN" firstAttribute="leading" secondItem="OBX-bt-6iY" secondAttribute="leadingMargin" constant="55" id="YCI-VS-PNF"/>
+                            <constraint firstItem="jNR-hd-dHb" firstAttribute="trailing" secondItem="OBX-bt-6iY" secondAttribute="trailingMargin" id="bgJ-hk-htm"/>
+                            <constraint firstItem="jNR-hd-dHb" firstAttribute="leading" secondItem="OBX-bt-6iY" secondAttribute="leadingMargin" id="hoh-Ku-kHq"/>
+                            <constraint firstItem="tJe-fy-ttN" firstAttribute="top" secondItem="fD6-Zj-EcE" secondAttribute="bottom" constant="16" id="r5Y-9l-ery"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="Tbj-8J-82i">
@@ -1489,10 +1489,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2P-tf-1lb">
-                                <frame key="frameInset" minX="71" minY="80" width="232" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2P-tf-1lb">
                                 <color key="backgroundColor" red="1" green="0.5362189798" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="00C-OE-B6C"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
                                 <state key="normal" title="Choose Audience"/>
                                 <connections>
@@ -1500,12 +1501,37 @@
                                     <action selector="chooseAudienceClicked:" destination="X5J-av-4h4" eventType="touchUpInside" id="fB4-VC-hSv"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyU-TQ-zEq" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tyU-TQ-zEq" firstAttribute="top" secondItem="g2P-tf-1lb" secondAttribute="bottom" constant="16" id="2oL-32-PtC"/>
+                            <constraint firstItem="g2P-tf-1lb" firstAttribute="top" secondItem="sJF-EW-jo1" secondAttribute="bottom" constant="16" id="Ihx-iW-wnF"/>
+                            <constraint firstItem="g2P-tf-1lb" firstAttribute="top" secondItem="sJF-EW-jo1" secondAttribute="bottom" constant="16" id="J0I-P6-cBD"/>
+                            <constraint firstItem="wFd-al-uNi" firstAttribute="top" secondItem="tyU-TQ-zEq" secondAttribute="bottom" constant="449" id="NZq-H1-eiP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g2P-tf-1lb" secondAttribute="trailing" constant="56" id="OBV-4L-VBa"/>
+                            <constraint firstItem="tyU-TQ-zEq" firstAttribute="trailing" secondItem="X6t-Zq-o1b" secondAttribute="trailingMargin" id="S6P-7M-Oai"/>
+                            <constraint firstItem="g2P-tf-1lb" firstAttribute="leading" secondItem="X6t-Zq-o1b" secondAttribute="leadingMargin" constant="55" id="Sbx-Bx-3LJ"/>
+                            <constraint firstItem="tyU-TQ-zEq" firstAttribute="top" secondItem="g2P-tf-1lb" secondAttribute="bottom" constant="16" id="XES-RP-mjn"/>
+                            <constraint firstItem="tyU-TQ-zEq" firstAttribute="leading" secondItem="X6t-Zq-o1b" secondAttribute="leadingMargin" id="yGx-Uq-xPl"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="New Chat" id="KJE-db-wrF"/>
+                    <navigationItem key="navigationItem" title="New Chat" id="KJE-db-wrF">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="feY-kj-Hqn">
+                            <connections>
+                                <action selector="composeChatButtonClicked:" destination="Dyd-ZJ-QxQ" id="5Rg-hv-C4j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="chatNameBox" destination="tyU-TQ-zEq" id="oSi-QQ-QUh"/>
                         <outlet property="chooseAudienceButton" destination="g2P-tf-1lb" id="mMl-gu-k8o"/>
+                        <outlet property="composeChatButton" destination="feY-kj-Hqn" id="z8m-xV-BVl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS2-tS-cFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
