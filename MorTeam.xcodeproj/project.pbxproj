@@ -21,6 +21,8 @@
 		A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE951DA41C5B001229E7 /* KeyboardLayoutConstraint.swift */; };
 		A269AE981DA5CC61001229E7 /* ComposeChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */; };
 		A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A269AE991DA84DC6001229E7 /* CalendarVC.swift */; };
+		A2AD0D301E2DDD45008EECBA /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD0D2F1E2DDD45008EECBA /* UserProfileVC.swift */; };
+		A2AD0D321E2EE2C2008EECBA /* UserAttendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD0D311E2EE2C1008EECBA /* UserAttendance.swift */; };
 		A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */; };
 		A2CE33A61D19254B003CDE63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A51D19254B003CDE63 /* AppDelegate.swift */; };
 		A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE33A71D19254B003CDE63 /* MapViewController.swift */; };
@@ -95,6 +97,8 @@
 		A269AE991DA84DC6001229E7 /* CalendarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		A293FD421DA3687500752518 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = MorTeam.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
 		A2AAFFD01D193B3500503FF0 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		A2AD0D2F1E2DDD45008EECBA /* UserProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		A2AD0D311E2EE2C1008EECBA /* UserAttendance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAttendance.swift; sourceTree = "<group>"; };
 		A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		A2CE33A21D192549003CDE63 /* MorTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MorTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE33A51D19254B003CDE63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				A269AE971DA5CC60001229E7 /* ComposeChatVC.swift */,
 				A269AE991DA84DC6001229E7 /* CalendarVC.swift */,
 				A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */,
+				A2AD0D2F1E2DDD45008EECBA /* UserProfileVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				A2F2ACFC1DAF4E840054E331 /* Audience.swift */,
 				A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */,
 				A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */,
+				A2AD0D311E2EE2C1008EECBA /* UserAttendance.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 				A2F030EF1E299B1E004EED7E /* GroupVC.swift in Sources */,
 				A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
+				A2AD0D321E2EE2C2008EECBA /* UserAttendance.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
 				A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */,
 				A23982371DA334190082B5A1 /* Chat.swift in Sources */,
@@ -607,6 +614,7 @@
 				A2F9C6EA1D987CF3006299D9 /* Announcement.swift in Sources */,
 				A2F9C70E1D9B9166006299D9 /* EditorTextView.swift in Sources */,
 				A239823B1DA359330082B5A1 /* ChatConvoVC.swift in Sources */,
+				A2AD0D301E2DDD45008EECBA /* UserProfileVC.swift in Sources */,
 				A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */,
 				A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */,
 				A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */,

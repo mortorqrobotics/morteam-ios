@@ -36,6 +36,8 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.loadUsers()
+        
     }
     
     //   /groups/normal/id/:groupId/join POST
@@ -84,7 +86,7 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.loadUsers()
+        
     }
 
     func loadUsers() {
@@ -96,6 +98,9 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         
         httpRequest(self.morTeamURL+path, type: "GET"){
                 responseText, responseCode in
+            
+            self.users = []
+            self.showingUsers = []
             
             let users = parseJSON(responseText)
             for(_, json):(String, JSON) in users {
@@ -214,6 +219,24 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         else {
             self.updateTableBySearching(forText: searchText)
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.userTable.deselectRow(at: indexPath, animated: true)
+        
+        
+        let user = self.showingUsers[indexPath.row]
+        
+        
+        DispatchQueue.main.async(execute: {
+            let vc: UserProfileVC! = self.storyboard!.instantiateViewController(withIdentifier: "User") as! UserProfileVC
+            
+            vc.user = user
+            
+            self.show(vc as UIViewController, sender: vc)
+        })
     }
     
 
