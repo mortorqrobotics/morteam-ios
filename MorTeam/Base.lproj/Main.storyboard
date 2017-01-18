@@ -440,14 +440,14 @@
                                                     <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-7m-x1R">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RY3-7m-x1R">
                                                     <frame key="frameInset" minX="66" minY="10" width="274" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo2-SemiBold" family="Exo 2" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-DC-gG9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1o-DC-gG9">
                                                     <frame key="frameInset" minX="66" minY="33" width="274" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="14"/>
@@ -1265,25 +1265,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MorTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-xR-Udp">
-                                <frame key="frameInset" minX="77" minY="73" width="221" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MorTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-xR-Udp">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="221" id="F5A-Pe-ObT"/>
+                                    <constraint firstAttribute="height" constant="76" id="Pfj-76-I38"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEG-Gi-pEV" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
-                                <frame key="frameInset" minX="58" minY="183" width="259" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEG-Gi-pEV" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Afs-Px-Ui3"/>
+                                    <constraint firstAttribute="width" constant="259" id="WI5-UU-2Ce"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-x8-MvV">
-                                <frame key="frameInset" minX="58" minY="351" width="259" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-x8-MvV">
                                 <color key="backgroundColor" red="1" green="0.5362189798" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="Hhk-GK-M0J"/>
+                                    <constraint firstAttribute="height" constant="46" id="KuC-aA-Er8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="24"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1293,16 +1299,36 @@
                                     <action selector="loginButtonClicked:" destination="trs-DL-49n" eventType="touchUpInside" id="OQv-6H-avH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhK-nE-J8j" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
-                                <frame key="frameInset" minX="58" minY="257" width="259" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhK-nE-J8j" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0qw-zN-76D"/>
+                                    <constraint firstAttribute="width" constant="259" id="a3h-6Q-ub4"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sp5-x8-MvV" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="42" id="0Zl-1m-S5c"/>
+                            <constraint firstItem="vhK-nE-J8j" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="1EE-Ai-wBd"/>
+                            <constraint firstItem="DEG-Gi-pEV" firstAttribute="top" secondItem="LYC-xR-Udp" secondAttribute="bottom" constant="34" id="5tT-DO-oKX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sp5-x8-MvV" secondAttribute="trailing" constant="42" id="AkU-z5-Qw8"/>
+                            <constraint firstItem="DEG-Gi-pEV" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="42" id="Fye-gk-Lo6"/>
+                            <constraint firstItem="sp5-x8-MvV" firstAttribute="top" secondItem="vhK-nE-J8j" secondAttribute="bottom" constant="49" id="Ks5-Qr-dsd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DEG-Gi-pEV" secondAttribute="trailing" constant="42" id="OAp-qr-pdw"/>
+                            <constraint firstItem="vhK-nE-J8j" firstAttribute="top" secondItem="DEG-Gi-pEV" secondAttribute="bottom" constant="29" id="TGM-bK-jEd"/>
+                            <constraint firstItem="LYC-xR-Udp" firstAttribute="top" secondItem="cYq-8N-N8j" secondAttribute="bottom" constant="53" id="UJt-8O-iVh"/>
+                            <constraint firstItem="LYC-xR-Udp" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="UUu-d3-yEM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vhK-nE-J8j" secondAttribute="trailing" constant="42" id="dmR-xk-Jjr"/>
+                            <constraint firstItem="vhK-nE-J8j" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="42" id="fhh-o5-qGM"/>
+                            <constraint firstItem="sp5-x8-MvV" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="hNX-ww-pcV"/>
+                            <constraint firstItem="DEG-Gi-pEV" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="tQz-m6-Sck"/>
+                            <constraint firstItem="LYC-xR-Udp" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="61" id="ulr-eg-FOd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LYC-xR-Udp" secondAttribute="trailing" constant="61" id="wWe-mT-hZn"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="sp5-x8-MvV" id="sez-B1-gWM"/>
@@ -1503,6 +1529,9 @@
                             </button>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chat Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tyU-TQ-zEq" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DaF-vR-zE3"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1513,7 +1542,6 @@
                             <constraint firstItem="tyU-TQ-zEq" firstAttribute="top" secondItem="g2P-tf-1lb" secondAttribute="bottom" constant="16" id="2oL-32-PtC"/>
                             <constraint firstItem="g2P-tf-1lb" firstAttribute="top" secondItem="sJF-EW-jo1" secondAttribute="bottom" constant="16" id="Ihx-iW-wnF"/>
                             <constraint firstItem="g2P-tf-1lb" firstAttribute="top" secondItem="sJF-EW-jo1" secondAttribute="bottom" constant="16" id="J0I-P6-cBD"/>
-                            <constraint firstItem="wFd-al-uNi" firstAttribute="top" secondItem="tyU-TQ-zEq" secondAttribute="bottom" constant="449" id="NZq-H1-eiP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g2P-tf-1lb" secondAttribute="trailing" constant="56" id="OBV-4L-VBa"/>
                             <constraint firstItem="tyU-TQ-zEq" firstAttribute="trailing" secondItem="X6t-Zq-o1b" secondAttribute="trailingMargin" id="S6P-7M-Oai"/>
                             <constraint firstItem="g2P-tf-1lb" firstAttribute="leading" secondItem="X6t-Zq-o1b" secondAttribute="leadingMargin" constant="55" id="Sbx-Bx-3LJ"/>
