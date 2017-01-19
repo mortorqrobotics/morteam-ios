@@ -61,6 +61,7 @@ class LoginVC: UIViewController {
             if (responseCode > 199 && responseCode < 300){
                 self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id")
                 self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
+                self.storage.set(User(userJSON: parseJSON(responseText)).lastname, forKey: "lastname")
                 
                 SocketIOManager.sharedInstance.connectSocket()
                 

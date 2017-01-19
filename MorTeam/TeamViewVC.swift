@@ -15,6 +15,9 @@ class TeamViewVC: UITableViewController  {
     var yourGroups = [Group]()
     var otherGroups = [Group]()
     
+    var storage = UserDefaults.standard
+    
+    @IBOutlet var logoutButton: UIBarButtonItem!
      let morTeamURL = "http://www.morteam.com/api"
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +41,10 @@ class TeamViewVC: UITableViewController  {
     override func viewDidAppear(_ animated: Bool) {
         //Don't try putting this in viewWillAppear because the table is not yet loaded and it will crash
         self.loadGroups()
+        DispatchQueue.main.async(execute: {
+            self.title = self.storage.string(forKey: "firstname")! + " " + self.storage.string(forKey: "lastname")!
+            
+        })
     }
     
     func loadGroups(){
