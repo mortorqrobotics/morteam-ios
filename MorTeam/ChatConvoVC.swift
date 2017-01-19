@@ -170,6 +170,14 @@ class ChatConvoVC: JSQMessagesViewController {
             let id = String(describing: JSON(data)[0]["chatId"])
             if id == self.chatId {
                 let message = Message(messageJSONAlt: JSON(data)[0])
+            
+//                message.text_ = message.text_.replacingOccurrences(of: "&lt;", with: "<")
+//                    
+//                message.text_ = message.text_?.replacingOccurrences(of: "&gt;", with: ">")
+//                
+//                message.text_ = message.text_.replacingOccurrences(of: "&", with: "&amp;")
+                
+                    
                 self.messages += [message]
                 DispatchQueue.main.async(execute: {
                     self.reloadMessagesView()
@@ -228,6 +236,17 @@ class ChatConvoVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          let cell = super.collectionView(super.collectionView, cellForItemAt: indexPath) as! JSQMessagesCollectionViewCell
         let message = messages[(indexPath as NSIndexPath).row]
+        
+        message.text_ = message.text_.replacingOccurrences(of: "&lt;", with: "<")
+        
+        message.text_ = message.text_?.replacingOccurrences(of: "&gt;", with: ">")
+        
+        message.text_ = message.text_.replacingOccurrences(of: "&amp;", with: "&")
+        
+        //message.text_ = message.text_.replacingOccurrences(of: "&", with: "&amp;")
+        
+        print(message.text_)
+        
         if !message.isMediaMessage() {
             //change font to Exo2
             cell.textView!.textColor = UIColor.black
@@ -235,7 +254,7 @@ class ChatConvoVC: JSQMessagesViewController {
             
             cell.textView.font = UIFont(name: "Exo2-Light", size: 17.0)
         }
-        
+        cell.textView.text = message.text_
         
         
         return cell
@@ -346,10 +365,16 @@ class ChatConvoVC: JSQMessagesViewController {
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
         let message = Message(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
+//        message.text_ = message.text_.replacingOccurrences(of: "&lt;", with: "<")
+//        
+//        message.text_ = message.text_?.replacingOccurrences(of: "&gt;", with: ">")
+//        
+//        message.text_ = message.text_.replacingOccurrences(of: "&", with: "&amp;")
         self.messages += [message]
         self.finishSendingMessage()
         
         var msg: [String: String]
+
         
         msg = ["chatId": self.chatId, "content": text]
 

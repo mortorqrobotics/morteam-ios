@@ -15,7 +15,7 @@ class Message : NSObject, JSQMessageData{
     let senderDisplayName_ : String!
     let date_ : Date
     let isMediaMessage_ : Bool
-    let text_ : String!
+    var text_ : String!
     let messageHash_ : UInt
     
     init(messageJSON: JSON){

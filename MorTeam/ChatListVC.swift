@@ -166,7 +166,15 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         let row = (indexPath as NSIndexPath).row
         let chat = self.showingChats[row] as! Chat
+        
+        chat.lastMessage = chat.lastMessage.replacingOccurrences(of: "&lt;", with: "<")
+        
+        chat.lastMessage = chat.lastMessage.replacingOccurrences(of: "&gt;", with: ">")
+        
+        chat.lastMessage = chat.lastMessage.replacingOccurrences(of: "&amp;", with: "&")
+        
         cell.lastMessage.text = chat.lastMessage
+        
         
         let imagePath = (self.showingChats[row] as! Chat).imagePath.replacingOccurrences(of: " ", with: "%20")
         let profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
@@ -209,6 +217,12 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         
         cell.name.font = UIFont(name: "Exo2-Regular", size: 17.0)
+        
+        
+        
+        
+        
+        
         cell.lastMessage.font = UIFont(name: "Exo2-Light", size: 13.0)
         cell.name.text = chat.name
         if (unreadChatIds.contains(chat._id)){
