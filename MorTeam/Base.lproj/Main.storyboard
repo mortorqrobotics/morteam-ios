@@ -1551,7 +1551,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Chat" id="KJE-db-wrF">
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="feY-kj-Hqn">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Done" style="done" id="feY-kj-Hqn">
                             <connections>
                                 <action selector="composeChatButtonClicked:" destination="Dyd-ZJ-QxQ" id="5Rg-hv-C4j"/>
                             </connections>

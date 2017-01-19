@@ -108,6 +108,14 @@ class ComposeChatVC: UIViewController, SelectionDelegate {
         }
         
         
+        if (self.selectedGroups.count > 0 || self.selectedMembers.count > 0){
+            self.composeChatButton.isEnabled = true
+        }
+        else {
+            self.composeChatButton.isEnabled = false
+        }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
