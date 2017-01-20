@@ -59,17 +59,27 @@ class LoginVC: UIViewController {
             "rememberMe": true
         ]){responseText, responseCode in
             if (responseCode > 199 && responseCode < 300){
-                self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id")
-                self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
-                self.storage.set(User(userJSON: parseJSON(responseText)).lastname, forKey: "lastname")
                 
-                SocketIOManager.sharedInstance.connectSocket()
-                
-                
-                DispatchQueue.main.async(execute: {
-                    let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "main")
-                    self.show(vc as! UIViewController, sender: vc)
-                })
+                if let team = User(userJSON: parseJSON(responseText)).team {
+                    
+                    self.storage.set(User(userJSON: parseJSON(responseText))._id, forKey: "_id")
+                    self.storage.set(User(userJSON: parseJSON(responseText)).firstname, forKey: "firstname")
+                    self.storage.set(User(userJSON: parseJSON(responseText)).lastname, forKey: "lastname")
+                    
+                    SocketIOManager.sharedInstance.connectSocket()
+                    
+                    
+                    DispatchQueue.main.async(execute: {
+                        let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "main")
+                        self.show(vc as! UIViewController, sender: vc)
+                    })
+                    
+                }
+                else {
+                    alert(title: "No Team For User", message: "This user is not associated with a team", buttonText: "OK", viewController: self)
+                    
+                    self.loginButton.isEnabled = true
+                }
                 
                 
             }

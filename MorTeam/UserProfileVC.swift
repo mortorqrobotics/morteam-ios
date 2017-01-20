@@ -29,7 +29,7 @@ class UserProfileVC: UIViewController {
     @IBOutlet var attendanceView: UIView!
     
     
-    var user = User(_id: "", firstname: "", lastname: "", username: "", email: "", phone: "", profPicPath: "")
+    var user = User(_id: "", firstname: "", lastname: "", username: "", email: "", phone: "", profPicPath: "", team: "")
     
     let morTeamURL = "http://www.morteam.com/api"
     

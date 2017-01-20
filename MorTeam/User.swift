@@ -15,6 +15,7 @@ class User {
     let username: String
     let email: String
     let phone: String
+    let team: String?
     let profPicPath: String
     let groups: [String]? //maybe populate later, how to make optional
     
@@ -24,6 +25,7 @@ class User {
         self.firstname = String( describing: userJSON["firstname"] )
         self.lastname = String( describing: userJSON["lastname"] )
         self.username = String( describing: userJSON["username"] )
+        self.team = String( describing: userJSON["team"] )
         self.email = String( describing: userJSON["email"] )
         self.phone = String( describing: userJSON["phone"] )
         self.profPicPath = String( describing: userJSON["profpicpath"] )
@@ -32,11 +34,12 @@ class User {
         }
         self.groups = allGroupIds
     }
-    init(_id: String, firstname: String, lastname: String, username: String, email: String, phone: String, profPicPath: String){
+    init(_id: String, firstname: String, lastname: String, username: String, email: String, phone: String, profPicPath: String, team: String){
         self._id = _id
         self.firstname = firstname
         self.lastname = lastname
         self.username = username
+        self.team = team
         self.email = email
         self.phone = phone
         self.profPicPath = profPicPath
