@@ -18,6 +18,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
     var resultsTableData = [Any]();
     let morTeamURL = "http://www.morteam.com"
     
+    var allTeamLocations:[String:AnyObject]? = nil
+    
+    var allTeams = [String]()
+    var showingTeams = [String]()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,19 +34,24 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
         //Set camera
         
         DispatchQueue.main.async(execute: {
-            let camera = GMSCameraPosition.camera(withLatitude: 34.06, longitude: -118.41, zoom: 5);
+            
+            
+            let camera = GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: 3);
+            
             let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera);
-            mapView.isMyLocationEnabled = true;
+            
+            //self.mapView.isMyLocationEnabled = true;
             
             //Get locations
             httpRequest(self.morTeamURL+"/teamLocations.json", type: "GET") { responseText, responseCode in
                 //Parse response
                 
-                //let textNoVar = responseText.substring(from: responseText.characters.index(responseText.startIndex, offsetBy: 20))
-                //let noSemi = textNoVar.substring(to: textNoVar.characters.index(textNoVar.endIndex, offsetBy: -2))
-                var teams = parseJSONMap(responseText)
+                self.allTeamLocations = parseJSONMap(responseText)!
                 //Place markers
-                for (team, location) in teams! {
+                for (team, location) in self.allTeamLocations! {
+                    
+                    self.allTeams.append(team)
+                    
                     let lat = location["lat"] as! Double
                     let long = location["lng"] as! Double
                     DispatchQueue.main.async(execute: {
@@ -55,6 +67,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
             }
         })
     }
+    
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker){
         let teamNumber = Int((marker.title?.substring(from: marker.title!.characters.index(marker.title!.startIndex, offsetBy: 5)))!)!
@@ -83,7 +96,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         //This is where the request will be sent to get search results
-        addDataToTable([searchText]) //For testing purposes
+        self.showingTeams = self.allTeams.filter() {$0.contains(searchText)}
+        DispatchQueue.main.async(execute: {
+            self.searchResultsTableView.reloadData()
+        })
+        
     }
     
     func addDataToTable(_ arr: [Any]){
@@ -94,7 +111,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
     }
     
     func clearDataFromTable(){
-        self.resultsTableData = [Any]()
+        self.showingTeams = []
         DispatchQueue.main.async(execute: {
             self.searchResultsTableView.reloadData()
         })
@@ -109,15 +126,39 @@ class MapViewController: UIViewController, GMSMapViewDelegate, UITableViewDataSo
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.resultsTableData.count
+        return self.showingTeams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchResultsTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let row = (indexPath as NSIndexPath).row
-        cell.textLabel?.text = self.resultsTableData[row] as? String //The warning on this line will go away when search is truly implemented
+        cell.textLabel?.text = "Team " + (self.showingTeams[row]) //The warning on this line will go away when search is truly implemented
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = searchResultsTableView.cellForRow(at: indexPath)
+        
+        let teamClicked = cell?.textLabel?.text?.substring(from: (cell?.textLabel?.text?.index((cell?.textLabel?.text?.startIndex)!, offsetBy: 5))!)
+        
+        for (team, location) in self.allTeamLocations! {
+            if (team == teamClicked){
+                
+                (self.MapUI.viewWithTag(0) as! GMSMapView).camera = GMSCameraPosition.camera(withLatitude: location["lat"] as! Double, longitude: location["lng"] as! Double, zoom: 15);
+                
+                MapUI.isHidden = false
+                searchResultsTableView.isHidden = true
+                searchBar.showsCancelButton = false
+                searchBar.text = "";
+                clearDataFromTable()
+                searchBar.resignFirstResponder()
+            }
+        }
+        
+        
+    }
+    
     //Search Bar>
     
     override func viewDidDisappear(_ animated: Bool) {
