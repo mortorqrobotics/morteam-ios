@@ -120,6 +120,8 @@ class ChatConvoVC: JSQMessagesViewController {
                     
                     let responseMessages = parseJSON(responseDataText)
                     
+                    print(responseDataText)
+                    
                     for (_, json) in responseMessages {
                         let message = Message(messageJSON: json)
                         self.messages.insert(message, at: 0)
@@ -178,8 +180,10 @@ class ChatConvoVC: JSQMessagesViewController {
 //                
 //                message.text_ = message.text_.replacingOccurrences(of: "&", with: "&amp;")
                 
-                    
+                
                 self.messages += [message]
+                
+                
                 DispatchQueue.main.async(execute: {
                     self.reloadMessagesView()
                     self.scrollToBottom(animated: false)
@@ -249,7 +253,6 @@ class ChatConvoVC: JSQMessagesViewController {
         print(message.text_)
         
         if !message.isMediaMessage() {
-            //change font to Exo2
             cell.textView!.textColor = UIColor.black
             cell.textView!.linkTextAttributes = [NSForegroundColorAttributeName : cell.textView!.textColor!,NSUnderlineStyleAttributeName : NSUnderlineStyle.styleSingle.rawValue]
             
@@ -257,6 +260,22 @@ class ChatConvoVC: JSQMessagesViewController {
         }
         cell.textView.text = message.text_
         
+        
+        let imagePath = message.author.profPicPath.replacingOccurrences(of: " ", with: "%20") + "-60"
+        
+        var profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
+        
+        if (imagePath != "/images/user.jpg-60"){
+            profPicUrl = URL(string: "http://profilepics.morteam.com.s3.amazonaws.com"+imagePath.substring(from: (imagePath.index((imagePath.startIndex), offsetBy: 3))))
+        }
+        
+        
+        cell.avatarImageView.kf.setImage(with: profPicUrl)
+        
+        cell.avatarImageView.contentMode = .scaleAspectFill
+        cell.avatarImageView.clipsToBounds = true
+        let rad = cell.avatarImageView.bounds.width/2
+        cell.avatarImageView.layer.cornerRadius = rad
         
         return cell
     }

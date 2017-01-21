@@ -17,10 +17,11 @@ class Message : NSObject, JSQMessageData{
     let isMediaMessage_ : Bool
     var text_ : String!
     let messageHash_ : UInt
+    let author: User
     
     init(messageJSON: JSON){
         
-        let author = User(userJSON: messageJSON["author"])
+        self.author = User(userJSON: messageJSON["author"])
         let content = String( describing: messageJSON["content"] )
         let timestamp = String( describing: messageJSON["timestamp"] )
         
@@ -28,8 +29,8 @@ class Message : NSObject, JSQMessageData{
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         let date = dateFormatter.date(from: timestamp)
         
-        self.senderId_ = author._id
-        self.senderDisplayName_ = author.firstname
+        self.senderId_ = self.author._id
+        self.senderDisplayName_ = self.author.firstname
         self.date_ = date!
         self.isMediaMessage_ = false
         self.text_ = content
@@ -38,6 +39,7 @@ class Message : NSObject, JSQMessageData{
     
     init(messageJSONAlt: JSON){
         
+        self.author = User(userJSON: messageJSONAlt["message"]["author"])
         let authorFirstname = String(describing: messageJSONAlt["message"]["author"]["firstname"])
         let author_id = String(describing: messageJSONAlt["message"]["author"]["_id"])
         let content = String(describing: messageJSONAlt["message"]["content"])
@@ -58,6 +60,7 @@ class Message : NSObject, JSQMessageData{
     
     init(senderId: String, senderDisplayName: String, date: Date, text: String){
         
+        self.author = User(_id: senderId, firstname: "", lastname: "", username: "", email: "", phone: "", profPicPath: "", team: "", position: "")
         self.senderId_ = senderId
         self.senderDisplayName_ = senderDisplayName
         self.date_ = date
