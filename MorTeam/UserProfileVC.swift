@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import GoogleMaps
+import Kingfisher
 
 class UserProfileVC: UIViewController {
     
@@ -55,27 +56,34 @@ class UserProfileVC: UIViewController {
         
         //Make better
         let imagePath = user.profPicPath.replacingOccurrences(of: " ", with: "%20") + "-300"
-        let profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
+        var profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
         
-        let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
-        if let sid = storage.string(forKey: "connect.sid"){
-            request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+        if (imagePath != "/images/user.jpg-300"){
+            profPicUrl = URL(string: "http://profilepics.morteam.com.s3.amazonaws.com"+imagePath.substring(from: (imagePath.index((imagePath.startIndex), offsetBy: 3))))
         }
-        let mainQueue = OperationQueue.main
-        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
-            if error == nil {
-                
-                let image = UIImage(data: data!)
-                
-                DispatchQueue.main.async(execute: {
-                    self.profilePic.image = image
-                })
-            }
-            else {
-                print("Error: \(error!.localizedDescription)")
-            }
-        })
         
+        self.profilePic.kf.setImage(with: profPicUrl)
+        
+        
+//        let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
+//        if let sid = storage.string(forKey: "connect.sid"){
+//            request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+//        }
+//        let mainQueue = OperationQueue.main
+//        NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+//            if error == nil {
+//                
+//                let image = UIImage(data: data!)
+//                
+//                DispatchQueue.main.async(execute: {
+//                    self.profilePic.image = image
+//                })
+//            }
+//            else {
+//                print("Error: \(error!.localizedDescription)")
+//            }
+//        })
+//        
         self.profilePic.layer.masksToBounds = false
         self.profilePic.layer.cornerRadius = 4.2
         self.profilePic.clipsToBounds = true

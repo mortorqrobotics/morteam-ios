@@ -28,7 +28,7 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     var showingUsers = [User]()
     var users = [User]()
     
-    var imageCache = [String:UIImage]()
+//    var imageCache = [String:UIImage]()
     
     let morTeamURL = "http://www.morteam.com/api"
     
@@ -137,35 +137,42 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         let row = (indexPath as NSIndexPath).row
         
         let imagePath = self.showingUsers[row].profPicPath.replacingOccurrences(of: " ", with: "%20") + "-60"
-        let profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
+        
+        var profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
+        
+        if (imagePath != "/images/user.jpg-60"){
+            profPicUrl = URL(string: "http://profilepics.morteam.com.s3.amazonaws.com"+imagePath.substring(from: (imagePath.index((imagePath.startIndex), offsetBy: 3))))
+        }
+        
+        cell.profilePic.kf.setImage(with: profPicUrl)
         
         
         //Fix
-        if let img = self.imageCache[imagePath] {
-            cell.profilePic.image = img
-        }
-        else {
-            let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
-            if let sid = storage.string(forKey: "connect.sid"){
-                request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
-            }
-            let mainQueue = OperationQueue.main
-            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
-                if error == nil {
-                    
-                    let image = UIImage(data: data!)
-                    
-                    self.imageCache[imagePath] = image
-                    
-                    DispatchQueue.main.async(execute: {
-                        cell.profilePic.image = image
-                    })
-                }
-                else {
-                    print("Error: \(error!.localizedDescription)")
-                }
-            })
-        }
+//        if let img = self.imageCache[imagePath] {
+//            cell.profilePic.image = img
+//        }
+//        else {
+//            let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
+//            if let sid = storage.string(forKey: "connect.sid"){
+//                request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+//            }
+//            let mainQueue = OperationQueue.main
+//            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+//                if error == nil {
+//                    
+//                    let image = UIImage(data: data!)
+//                    
+//                    self.imageCache[imagePath] = image
+//                    
+//                    DispatchQueue.main.async(execute: {
+//                        cell.profilePic.image = image
+//                    })
+//                }
+//                else {
+//                    print("Error: \(error!.localizedDescription)")
+//                }
+//            })
+//        }
         
         cell.profilePic.layer.masksToBounds = false
         cell.profilePic.layer.cornerRadius = 4.2

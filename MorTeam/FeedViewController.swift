@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import GoogleMaps
+import Kingfisher
 
 class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -19,7 +20,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var storage = UserDefaults.standard
     var announcements = [Announcement]()
     let cellIdentifier = "AnnouncementCell"
-    var imageCache = [String:UIImage]()
+//    var imageCache = [String:UIImage]()
     let screenSize: CGRect = UIScreen.main.bounds
     var page = 0;
     var isRefreshing = false;
@@ -177,35 +178,42 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             cell.backgroundColor = UIColor.white
             
-            let profPicUrlString = "http://www.morteam.com"+String(describing: announcementAtIndex.author["profpicpath"])+"-60"
-            let profPicUrl = URL(string: profPicUrlString)
+            let imagePath = String(describing: announcementAtIndex.author["profpicpath"]).replacingOccurrences(of: " ", with: "%20") + "-60"
             
-            if let img = imageCache[profPicUrlString] {
-                cell.profilePic.image = img
-            }else{
-                let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
-                if let sid = storage.string(forKey: "connect.sid"){
-                    request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
-                }
-                let mainQueue = OperationQueue.main
-                NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
-                    if error == nil {
-                        
-                        let image = UIImage(data: data!)
-                        
-                        self.imageCache[profPicUrlString] = image
-                        
-                        DispatchQueue.main.async(execute: {
-                            if let cellToUpdate = self.announcementCollectionView.cellForItem(at: indexPath) as? AnnouncementCell {
-                                cellToUpdate.profilePic.image = image
-                            }
-                        })
-                    }
-                    else {
-                        print("Error: \(error!.localizedDescription)")
-                    }
-                })
+            var profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
+            
+            if (imagePath != "/images/user.jpg-60"){
+                profPicUrl = URL(string: "http://profilepics.morteam.com.s3.amazonaws.com"+imagePath.substring(from: (imagePath.index((imagePath.startIndex), offsetBy: 3))))
             }
+            
+            cell.profilePic.kf.setImage(with: profPicUrl)
+            
+//            if let img = imageCache[profPicUrlString] {
+//                cell.profilePic.image = img
+//            }else{
+//                let request: NSMutableURLRequest = NSMutableURLRequest(url: profPicUrl!)
+//                if let sid = storage.string(forKey: "connect.sid"){
+//                    request.addValue("connect.sid=\(sid)", forHTTPHeaderField: "Cookie")
+//                }
+//                let mainQueue = OperationQueue.main
+//                NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: mainQueue, completionHandler: { (response, data, error) -> Void in
+//                    if error == nil {
+//                        
+//                        let image = UIImage(data: data!)
+//                        
+//                        self.imageCache[profPicUrlString] = image
+//                        
+//                        DispatchQueue.main.async(execute: {
+//                            if let cellToUpdate = self.announcementCollectionView.cellForItem(at: indexPath) as? AnnouncementCell {
+//                                cellToUpdate.profilePic.image = image
+//                            }
+//                        })
+//                    }
+//                    else {
+//                        print("Error: \(error!.localizedDescription)")
+//                    }
+//                })
+//            }
             
             cell.layer.shadowColor = UIColor.black.cgColor
             cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)

@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import JSQMessagesViewController
 import Alamofire
+import Kingfisher
 
 
 class ChatConvoVC: JSQMessagesViewController {
@@ -284,12 +285,17 @@ class ChatConvoVC: JSQMessagesViewController {
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource! {
         let message = messages[indexPath.row]
         
+        
+        
         let avatar = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: UIImage(named: "user"), diameter: 30)
+        
         
         if let profpic = self.profilePics[message.senderId()!] {
             avatar?.avatarImage = JSQMessagesAvatarImageFactory.circularAvatarImage(profpic, withDiameter: 30)
             avatar?.avatarHighlightedImage = JSQMessagesAvatarImageFactory.circularAvatarImage(profpic, withDiameter: 30)
         }
+        
+        
         
         return avatar
     }
