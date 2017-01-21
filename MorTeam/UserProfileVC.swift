@@ -51,6 +51,8 @@ class UserProfileVC: UIViewController {
         
         self.emailLabel.text = user.email
         
+        self.phoneLabel.text = user.phone
+        
         self.positionLabel.text = user.position.capitalized
         
         let imagePath = user.profPicPath.replacingOccurrences(of: " ", with: "%20") + "-300"
