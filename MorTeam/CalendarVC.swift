@@ -98,8 +98,16 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         cell.selectionStyle = .none
         cell.dayView.text = "\(event.day)" //Thanks, type safety
-        cell.eventTitleLabel.text = event.name
+        
         cell.eventDescriptionLabel.text = event.description
+        
+        if (event.description == "null") {
+            cell.eventDescriptionLabel.text = "--"
+        }
+        
+        
+        cell.eventTitleLabel.text = event.name
+        
         
        
         

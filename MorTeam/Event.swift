@@ -11,7 +11,7 @@ import Foundation
 class Event {
     let _id: String
     let name: String
-    let description: String
+    let description: String?
     let audience: Audience
     let date: String
     let day: Int //Very helpful

@@ -104,7 +104,7 @@ class ChatConvoVC: JSQMessagesViewController {
 //        }
         Alamofire.request(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20)).response { response in
             
-//            print("Request: \(response.request)")
+            print("Request: \(response.request)")
 //            print("Response: \(response.response)")
 //            print("Error: \(response.error)")
             
@@ -250,7 +250,6 @@ class ChatConvoVC: JSQMessagesViewController {
         
         //message.text_ = message.text_.replacingOccurrences(of: "&", with: "&amp;")
         
-        print(message.text_)
         
         if !message.isMediaMessage() {
             cell.textView!.textColor = UIColor.black

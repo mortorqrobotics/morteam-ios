@@ -107,7 +107,11 @@ class UserProfileVC: UIViewController {
                 
                 self.absencesLabel.text = "Unexcused absences: " + String(attendanceObject.absences.count)
                 
-                let percent:Double = (Double(attendanceObject.present) / (Double(attendanceObject.absences.count) + Double(attendanceObject.present))) * 100.0
+                var percent:Double = (Double(attendanceObject.present) / (Double(attendanceObject.absences.count) + Double(attendanceObject.present))) * 100.0
+                if (attendanceObject.present == 0 && attendanceObject.absences.count == 0){
+                    percent = 100.0
+                }
+                
                 
                 self.percentLabel.text = "Presence percentage: " + String(Double(round(10*percent)/10)) + "%"
                 
