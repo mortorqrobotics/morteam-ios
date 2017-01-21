@@ -37,8 +37,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
 
         self.setup();
-        self.getAnnouncements()
-        
+        //Change later
+        //self.getAnnouncements()
+        ref()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,6 +86,10 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func refresh(_ sender: AnyObject){
+        ref()
+    }
+    
+    func ref(){
         if (!isRefreshing){
             isRefreshing = true
             
@@ -111,7 +116,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
             
         }
+
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.announcements.count
     }

@@ -93,6 +93,8 @@ class UserProfileVC: UIViewController {
         
     }
     
+   
+    
     func loadAttendance(){
         httpRequest(self.morTeamURL+"/users/id/\(self.user._id)/absences", type: "GET"){
             responseText, responseCode in
