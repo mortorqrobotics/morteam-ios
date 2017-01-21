@@ -29,7 +29,6 @@ class UserProfileVC: UIViewController {
     
     @IBOutlet var attendanceView: UIView!
     
-    
     var user = User(_id: "", firstname: "", lastname: "", username: "", email: "", phone: "", profPicPath: "", team: "", position: "")
     
     let morTeamURL = "http://www.morteam.com/api"
@@ -54,7 +53,6 @@ class UserProfileVC: UIViewController {
         
         self.positionLabel.text = user.position.capitalized
         
-        //Make better
         let imagePath = user.profPicPath.replacingOccurrences(of: " ", with: "%20") + "-300"
         var profPicUrl = URL(string: "http://www.morteam.com"+imagePath)
         
