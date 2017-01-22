@@ -98,6 +98,8 @@ class SocketIOManager {
     
     var socket: SocketIOClient
     
+    var connectedSockets = 0
+    
     init() {
         
         print("socket init")
@@ -122,12 +124,19 @@ class SocketIOManager {
     
     
     func connectSocket() {
-        print("connected")
-        self.socket.connect()
+        if (connectedSockets == 0){
+            connectedSockets += 1
+            self.socket.connect()
+            print("connected")
+        }
+        
     }
     func disconnectSocket() {
-        print("disconnected")
-        self.socket.disconnect()
+        if (connectedSockets > 0){
+            connectedSockets -= 1
+            self.socket.disconnect()
+            print("disconnected")
+        }
     }
     func socketStatus() -> SocketIOClientStatus {
         return socket.status
