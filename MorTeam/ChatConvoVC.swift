@@ -27,6 +27,9 @@ class ChatConvoVC: JSQMessagesViewController {
     var page = 0
     
     
+    var isAtBottom = false
+    
+    
     var typingTimer = Timer()
     
     
@@ -120,7 +123,6 @@ class ChatConvoVC: JSQMessagesViewController {
                     
                     let responseMessages = parseJSON(responseDataText)
                     
-                    print(responseDataText)
                     
                     for (_, json) in responseMessages {
                         let message = Message(messageJSON: json)
@@ -186,7 +188,9 @@ class ChatConvoVC: JSQMessagesViewController {
                 
                 DispatchQueue.main.async(execute: {
                     self.reloadMessagesView()
-                    self.scrollToBottom(animated: false)
+                    if (self.isAtBottom){
+                        self.scrollToBottom(animated: false)
+                    }
                 })
             }
             else {
@@ -199,7 +203,9 @@ class ChatConvoVC: JSQMessagesViewController {
             if String(describing: JSON(data)[0]["chatId"]) == self.chatId {
                 //counter later?
                 self.showTypingIndicator = true
-                self.scrollToBottom(animated: true)
+                if (self.isAtBottom){
+                    self.scrollToBottom(animated: false)
+                }
                 
             }
         }
@@ -207,6 +213,15 @@ class ChatConvoVC: JSQMessagesViewController {
             if String(describing: JSON(data)[0]["chatId"]) == self.chatId {
                 self.showTypingIndicator = false
             }
+        }
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
+            self.isAtBottom = true
+        }
+        else {
+            self.isAtBottom = false
         }
     }
     
@@ -275,6 +290,7 @@ class ChatConvoVC: JSQMessagesViewController {
         cell.avatarImageView.clipsToBounds = true
         let rad = cell.avatarImageView.bounds.width/2
         cell.avatarImageView.layer.cornerRadius = rad
+        
         
         return cell
     }
