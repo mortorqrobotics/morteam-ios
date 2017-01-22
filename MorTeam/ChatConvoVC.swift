@@ -26,9 +26,9 @@ class ChatConvoVC: JSQMessagesViewController {
     var profilePics = [String: UIImage]()
     var page = 0
     
-    
     var isAtBottom = false
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
     
     var typingTimer = Timer()
     
@@ -44,9 +44,15 @@ class ChatConvoVC: JSQMessagesViewController {
         super.viewDidLoad()
         self.title = chatName
         self.setup()
-        self.loadMessages(scrollToBottom: true)
+        self.loadMessages(scrollToBottom: true, start: true)
         self.setupSocketIO()
         //self.loadProfilePictures()  Uncommenting this line will cause a major memory spike unless things are changed
+    }
+    
+    //Auto refresh later
+    @IBAction func refreshButtonClicked(_ sender: Any) {
+        self.refreshButton.isEnabled = false
+        self.loadMessages(scrollToBottom: true, start: true)
     }
     
     func reloadMessagesView() {
@@ -76,10 +82,10 @@ class ChatConvoVC: JSQMessagesViewController {
         unreadChatIds = unreadChatIds.filter() {$0 != self.chatId}
         self.inputToolbar.contentView.leftBarButtonItem = nil
         self.inputToolbar.contentView.textView.becomeFirstResponder()
-        
     }
+    
 
-    func loadMessages(scrollToBottom: Bool) {
+    func loadMessages(scrollToBottom: Bool, start: Bool) {
         
         //This code refuses to not be a major problem
         
@@ -105,6 +111,14 @@ class ChatConvoVC: JSQMessagesViewController {
 //                }
 //            })
 //        }
+      
+        
+        if (start){
+            self.messages = []
+            self.reloadMessagesView()
+            self.page = 0
+        }
+        
         Alamofire.request(self.morteamURL+"/chats/id/"+self.chatId+"/messages?skip="+String(self.page*20)).response { response in
             
             print("Request: \(response.request)")
@@ -133,10 +147,12 @@ class ChatConvoVC: JSQMessagesViewController {
                         if responseMessages.count == 20 {
                             self.showLoadEarlierMessagesHeader = true
                         }
+                        
                         self.page += 1
                         if (scrollToBottom) {
                             self.scrollToBottom(animated: false)
                         }
+                        self.refreshButton.isEnabled = true
                     })
                     
                     
@@ -145,6 +161,7 @@ class ChatConvoVC: JSQMessagesViewController {
             
             
         }
+        
     }
     
 //    func loadProfilePictures() {
@@ -399,7 +416,7 @@ class ChatConvoVC: JSQMessagesViewController {
     }
     
     override func collectionView(_ collectionView: JSQMessagesCollectionView!, header headerView: JSQMessagesLoadEarlierHeaderView!, didTapLoadEarlierMessagesButton sender: UIButton!) {
-        self.loadMessages(scrollToBottom: false)
+        self.loadMessages(scrollToBottom: false, start: false)
     }
     
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
