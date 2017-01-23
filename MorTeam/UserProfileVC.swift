@@ -51,6 +51,9 @@ class UserProfileVC: UIViewController {
         
         self.emailLabel.text = user.email
         
+        print(user.phone)
+        
+        print(format(phoneNumber: user.phone))
         self.phoneLabel.text = format(phoneNumber: user.phone)
         
         self.positionLabel.text = user.position.capitalized
