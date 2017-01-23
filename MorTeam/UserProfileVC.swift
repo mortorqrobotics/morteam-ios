@@ -134,19 +134,19 @@ class UserProfileVC: UIViewController {
         let hasLeadingOne = numbersOnly.hasPrefix("1")
         
         // Check for supported phone number length
-        guard length == 7 || length == 10 || (length == 11 && hasLeadingOne) else {
+        guard length == 10 else {
             return nil
         }
         
         let hasAreaCode = (length >= 10)
         var sourceIndex = 0
         
-        // Leading 1
+        //Leading 1
         var leadingOne = ""
-        if hasLeadingOne {
-            leadingOne = "1 "
-            sourceIndex += 1
-        }
+//        if hasLeadingOne {
+//            leadingOne = "1 "
+//            sourceIndex += 1
+//        }
         
         // Area code
         var areaCode = ""
