@@ -8,5 +8,7 @@ target 'MorTeam' do
 	pod 'JSQMessagesViewController’
 	pod 'Socket.IO-Client-Swift'
 	pod 'GoogleMaps'
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
 	pod 'CVCalendar', '~> 1.4.0'
 end
