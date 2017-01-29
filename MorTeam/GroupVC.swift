@@ -30,7 +30,7 @@ class GroupVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
 //    var imageCache = [String:UIImage]()
     
-    let morTeamURL = "http://test.voidpigeon.com/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()

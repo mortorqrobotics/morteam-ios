@@ -33,7 +33,7 @@ class CalendarVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var showingEvents = [Event]()
     
-    let morTeamUrl = "http://test.voidpigeon.com/api"
+    let morTeamUrl = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()

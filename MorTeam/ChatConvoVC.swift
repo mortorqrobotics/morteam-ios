@@ -33,7 +33,7 @@ class ChatConvoVC: JSQMessagesViewController {
     var typingTimer = Timer()
     
     
-    let morteamURL = "http://test.voidpigeon.com/api"
+    let morteamURL = "http://www.morteam.com/api"
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

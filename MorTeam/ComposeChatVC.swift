@@ -21,7 +21,7 @@ class ComposeChatVC: UIViewController, SelectionDelegate {
     
     var storage = UserDefaults.standard
     
-    let morTeamURL = "http://test.voidpigeon.com/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()

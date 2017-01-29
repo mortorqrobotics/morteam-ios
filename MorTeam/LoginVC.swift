@@ -38,7 +38,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     var storage = UserDefaults.standard
     
-    let morTeamURL = "http://test.voidpigeon.com/api"
+    let morTeamURL = "http://www.morteam.com/api"
     
     
     override func viewDidLoad() {
