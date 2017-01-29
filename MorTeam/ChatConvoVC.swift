@@ -207,6 +207,7 @@ class ChatConvoVC: JSQMessagesViewController {
                     self.reloadMessagesView()
                     if (self.isAtBottom){
                         self.scrollToBottom(animated: false)
+                        SocketIOManager.sharedInstance.socket.emit("read message", ["chatId":self.chatId])
                     }
                 })
             }
@@ -436,6 +437,8 @@ class ChatConvoVC: JSQMessagesViewController {
         msg = ["chatId": self.chatId, "content": text]
 
         SocketIOManager.sharedInstance.socket.emit("sendMessage", msg)
+        
+        //here?
 
     }
 
