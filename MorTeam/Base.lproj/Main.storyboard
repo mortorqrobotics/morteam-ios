@@ -1290,16 +1290,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MorTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-xR-Udp">
-                                <rect key="frame" x="77" y="73" width="221" height="76"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="221" id="F5A-Pe-ObT"/>
-                                    <constraint firstAttribute="height" constant="76" id="Pfj-76-I38"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="46"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Username/Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEG-Gi-pEV" customClass="LoginTextField" customModule="MorTeam" customModuleProvider="target">
                                 <rect key="frame" x="58" y="183" width="259" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1309,7 +1299,10 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="trs-DL-49n" id="nJo-tc-fCN"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sp5-x8-MvV">
                                 <rect key="frame" x="58" y="351" width="259" height="46"/>
@@ -1336,8 +1329,20 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="trs-DL-49n" id="Irl-Q5-0eQ"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MorTeam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-xR-Udp">
+                                <rect key="frame" x="29" y="73" width="317" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Pfj-76-I38"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="46"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1354,9 +1359,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="vhK-nE-J8j" secondAttribute="trailing" constant="42" id="dmR-xk-Jjr"/>
                             <constraint firstItem="vhK-nE-J8j" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="42" id="fhh-o5-qGM"/>
                             <constraint firstItem="sp5-x8-MvV" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="hNX-ww-pcV"/>
+                            <constraint firstItem="LYC-xR-Udp" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="13" id="p3V-Zo-HGv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LYC-xR-Udp" secondAttribute="trailing" constant="13" id="rXC-dx-zGM"/>
                             <constraint firstItem="DEG-Gi-pEV" firstAttribute="centerX" secondItem="NTj-HQ-oNN" secondAttribute="centerX" id="tQz-m6-Sck"/>
-                            <constraint firstItem="LYC-xR-Udp" firstAttribute="leading" secondItem="NTj-HQ-oNN" secondAttribute="leadingMargin" constant="61" id="ulr-eg-FOd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LYC-xR-Udp" secondAttribute="trailing" constant="61" id="wWe-mT-hZn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1418,13 +1423,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Chat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNj-Yj-XE2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Chat Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNj-Yj-XE2">
                                                     <rect key="frame" x="76" y="13" width="291" height="21"/>
                                                     <fontDescription key="fontDescription" name="Exo2-Regular" family="Exo 2" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-rs-xsh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Last Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4A-rs-xsh">
                                                     <rect key="frame" x="76" y="42" width="268" height="25"/>
                                                     <fontDescription key="fontDescription" name="Exo2-Light" family="Exo 2" pointSize="13"/>
                                                     <color key="textColor" red="0.45171400498550357" green="0.46774737936223004" blue="0.5158475024924094" alpha="1" colorSpace="calibratedRGB"/>

@@ -28,7 +28,7 @@ class LoginTextField: UITextField {
     }
 }
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var usernameBox: UITextField!
     
@@ -41,12 +41,17 @@ class LoginVC: UIViewController {
     let morTeamURL = "http://test.voidpigeon.com/api"
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColorFromHex("#FFC547");
-        
+        self.usernameBox.delegate = self
+        self.passwordBox.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func loginButtonClicked(_ sender: AnyObject) {
