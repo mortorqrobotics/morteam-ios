@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C0CEB101E3D1FFF002C8EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C0CEB0F1E3D1FFF002C8EFD /* GoogleService-Info.plist */; };
+		6C5334371E3D6A9A009B6C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */; };
 		A20E6BBB1DA371EB00330F9C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E6BBA1DA371EB00330F9C /* Message.swift */; };
 		A21149DD1DBACCD10054BFB2 /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */; };
 		A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206D511D1B43340023BC10 /* TeamProfileVC.swift */; };
@@ -81,8 +81,8 @@
 /* Begin PBXFileReference section */
 		42C6DA5BFEB0463B25C9EC4C /* Pods-MorTeam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.release.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.release.xcconfig"; sourceTree = "<group>"; };
 		6C0CEB0C1E3C11B6002C8EFD /* MorTeam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MorTeam.entitlements; sourceTree = "<group>"; };
-		6C0CEB0F1E3D1FFF002C8EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6C4E150FCAC8B0AC64A7C95F /* Pods-MorTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.debug.xcconfig"; sourceTree = "<group>"; };
+		6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A5489431B097FB13458840C /* Pods_MorTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20E6BBA1DA371EB00330F9C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 				A226C4881D20978F0083971D /* Views */,
 				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
 				A2F9C7091D9B81AE006299D9 /* Assets.xcassets */,
-				6C0CEB0F1E3D1FFF002C8EFD /* GoogleService-Info.plist */,
+				6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */,
 				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
 				A2CE33B11D19254B003CDE63 /* Info.plist */,
 			);
@@ -439,7 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C0CEB101E3D1FFF002C8EFD /* GoogleService-Info.plist in Resources */,
+				6C5334371E3D6A9A009B6C00 /* GoogleService-Info.plist in Resources */,
 				A2CE33B01D19254B003CDE63 /* LaunchScreen.storyboard in Resources */,
 				A2F9C7071D98E13A006299D9 /* TitilliumWeb-Regular.ttf in Resources */,
 				A2F9C7051D98E13A006299D9 /* TitilliumWeb-ExtraLight.ttf in Resources */,

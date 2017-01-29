@@ -18,7 +18,7 @@ class TeamViewVC: UITableViewController  {
     var storage = UserDefaults.standard
     
     @IBOutlet var logoutButton: UIBarButtonItem!
-     let morTeamURL = "http://www.morteam.com/api"
+     let morTeamURL = "http://test.voidpigeon.com/api"
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

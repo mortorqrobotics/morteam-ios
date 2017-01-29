@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import GoogleMaps
 
+
 class LoginTextField: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
@@ -37,7 +38,7 @@ class LoginVC: UIViewController {
     
     var storage = UserDefaults.standard
     
-    let morTeamURL = "http://www.morteam.com/api"
+    let morTeamURL = "http://test.voidpigeon.com/api"
     
     
     
@@ -56,7 +57,8 @@ class LoginVC: UIViewController {
         httpRequest(self.morTeamURL+"/login", type: "POST", data: [
             "username": self.usernameBox.text!,
             "password": self.passwordBox.text!,
-            "rememberMe": true
+            "rememberMe": true,
+            "mobileDeviceToken": self.storage.string(forKey: "deviceToken") ?? nil
         ]){responseText, responseCode in
             if (responseCode > 199 && responseCode < 300){
                 

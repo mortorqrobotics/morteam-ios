@@ -20,7 +20,7 @@ class ChatListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var showingChats = [Any]()
     var onlineUsers = [String]()
     
-    let morTeamURL = "http://www.morteam.com/api"
+    let morTeamURL = "http://test.voidpigeon.com/api"
     
 //    var imageCache = [String:UIImage]()
     var isGettingChats = false //To avoid double getChats()

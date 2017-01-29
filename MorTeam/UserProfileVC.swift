@@ -31,7 +31,7 @@ class UserProfileVC: UIViewController {
     
     var user = User(_id: "", firstname: "", lastname: "", username: "", email: "", phone: "", profPicPath: "", team: "", position: "")
     
-    let morTeamURL = "http://www.morteam.com/api"
+    let morTeamURL = "http://test.voidpigeon.com/api"
     
     override func viewWillAppear(_ animated: Bool) {
         self.loadAttendance()

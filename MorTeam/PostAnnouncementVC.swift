@@ -28,7 +28,7 @@ class PostAnnouncementVC: UIViewController, UITextViewDelegate, SelectionDelegat
     var selectedMembers = [String]();
     var selectedGroups = [String]();
     
-    let morTeamURL = "http://www.morteam.com/api"
+    let morTeamURL = "http://test.voidpigeon.com/api"
     
     override func viewDidLoad() {
         super.viewDidLoad()

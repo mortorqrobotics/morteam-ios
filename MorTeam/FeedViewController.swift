@@ -32,7 +32,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     
-    let morTeamURL = "http://www.morteam.com/api"
+    let morTeamURL = "http://test.voidpigeon.com/api"
     override func viewDidLoad() {
         super.viewDidLoad()
 

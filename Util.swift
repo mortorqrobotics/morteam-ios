@@ -15,7 +15,7 @@ let storage = UserDefaults.standard
 
 var unreadChatIds = [String]()
 
-let morTeamURL = "http://www.morteam.com/api"
+let morTeamURL = "http://test.voidpigeon.com/api"
 
 func parseJSON(_ string: String) -> JSON {
     let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
@@ -168,12 +168,14 @@ func alert(title: String, message: String, buttonText: String, viewController: U
 }
 
 func logout() {
-    for key in storage.dictionaryRepresentation().keys {
-        UserDefaults.standard.removeObject(forKey: key)
-    }
+    
     SocketIOManager.sharedInstance.disconnectSocket()
-    httpRequest(morTeamURL+"/logout", type: "POST"){ responseText, responseCode in
-        
+    httpRequest(morTeamURL+"/logout", type: "POST", data:[
+        "mobileDeviceToken": storage.string(forKey: "deviceToken") ?? nil
+    ]){ responseText, responseCode in
+        for key in storage.dictionaryRepresentation().keys {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
     }
 }
 

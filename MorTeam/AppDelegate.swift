@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    
+    var storage = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization ater application launch.
@@ -36,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginVC : UIViewController! = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "login")
         
         //let loginVC : UIViewController! = mainStoryboard.instantiateViewControllerWithIdentifier("login")
-        
         
         
         if #available(iOS 10.0, *) {
@@ -59,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         FIRApp.configure()
         
-        
         if let _ = storage.string(forKey: "connect.sid"){
             //logged in
             //if storage.bool(forKey: "noTeam") {
@@ -79,6 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         NotificationCenter.default.addObserver(self,selector: #selector(self.tokenRefreshNotification),name: .firInstanceIDTokenRefresh,object: nil)
+        
+        
+        
         
             
         return true
@@ -135,6 +138,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func tokenRefreshNotification(_ notification: Notification) {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
+            self.storage.set(refreshedToken, forKey: "deviceToken")
         }
         
         // Connect to FCM since connection may have failed when attempted before having a token.
@@ -169,7 +173,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // the InstanceID token.
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("APNs token retrieved: \(deviceToken)")
-        
         // With swizzling disabled you must set the APNs token here.
         // FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.sandbox)
     }
