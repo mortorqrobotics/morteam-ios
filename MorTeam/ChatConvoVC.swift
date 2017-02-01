@@ -237,6 +237,7 @@ class ChatConvoVC: JSQMessagesViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.contentOffset.y >= (scrollView.contentSize.height - scrollView.frame.size.height)) {
             self.isAtBottom = true
+            SocketIOManager.sharedInstance.socket.emit("read message", ["chatId":self.chatId])
         }
         else {
             self.isAtBottom = false

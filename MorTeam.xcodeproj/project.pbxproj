@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6C5334371E3D6A9A009B6C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */; };
+		6C5334391E4152D3009B6C00 /* DriveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5334381E4152D3009B6C00 /* DriveVC.swift */; };
+		6C53343B1E415591009B6C00 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C53343A1E415591009B6C00 /* Folder.swift */; };
+		6C53343D1E4159CB009B6C00 /* DriveFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C53343C1E4159CB009B6C00 /* DriveFolderTableViewCell.swift */; };
+		6C53343F1E415F41009B6C00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C53343E1E415F41009B6C00 /* Assets.xcassets */; };
+		6C5334411E416B88009B6C00 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5334401E416B88009B6C00 /* File.swift */; };
+		6C5334431E416C39009B6C00 /* FilesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5334421E416C39009B6C00 /* FilesVC.swift */; };
+		6C5334451E416DC4009B6C00 /* FileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5334441E416DC4009B6C00 /* FileTableViewCell.swift */; };
 		A20E6BBB1DA371EB00330F9C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20E6BBA1DA371EB00330F9C /* Message.swift */; };
 		A21149DD1DBACCD10054BFB2 /* AddEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */; };
 		A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2206D511D1B43340023BC10 /* TeamProfileVC.swift */; };
@@ -53,7 +60,6 @@
 		A2F9C7061D98E13A006299D9 /* TitilliumWeb-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C6FD1D98E13A006299D9 /* TitilliumWeb-Light.ttf */; };
 		A2F9C7071D98E13A006299D9 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C6FE1D98E13A006299D9 /* TitilliumWeb-Regular.ttf */; };
 		A2F9C7081D98E13A006299D9 /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C6FF1D98E13A006299D9 /* TitilliumWeb-SemiBold.ttf */; };
-		A2F9C70A1D9B81AE006299D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2F9C7091D9B81AE006299D9 /* Assets.xcassets */; };
 		A2F9C70C1D9B8874006299D9 /* PostAnnouncementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */; };
 		A2F9C70E1D9B9166006299D9 /* EditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F9C70D1D9B9166006299D9 /* EditorTextView.swift */; };
 		A2F9C7131D9B98E7006299D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F9C7121D9B98E7006299D9 /* CoreGraphics.framework */; };
@@ -83,6 +89,13 @@
 		6C0CEB0C1E3C11B6002C8EFD /* MorTeam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MorTeam.entitlements; sourceTree = "<group>"; };
 		6C4E150FCAC8B0AC64A7C95F /* Pods-MorTeam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MorTeam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MorTeam/Pods-MorTeam.debug.xcconfig"; sourceTree = "<group>"; };
 		6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6C5334381E4152D3009B6C00 /* DriveVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveVC.swift; sourceTree = "<group>"; };
+		6C53343A1E415591009B6C00 /* Folder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		6C53343C1E4159CB009B6C00 /* DriveFolderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveFolderTableViewCell.swift; sourceTree = "<group>"; };
+		6C53343E1E415F41009B6C00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C5334401E416B88009B6C00 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		6C5334421E416C39009B6C00 /* FilesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesVC.swift; sourceTree = "<group>"; };
+		6C5334441E416DC4009B6C00 /* FileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileTableViewCell.swift; sourceTree = "<group>"; };
 		8A5489431B097FB13458840C /* Pods_MorTeam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MorTeam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20E6BBA1DA371EB00330F9C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventVC.swift; sourceTree = "<group>"; };
@@ -136,7 +149,6 @@
 		A2F9C6FD1D98E13A006299D9 /* TitilliumWeb-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TitilliumWeb-Light.ttf"; path = "Resources/TitilliumWeb-Light.ttf"; sourceTree = "<group>"; };
 		A2F9C6FE1D98E13A006299D9 /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TitilliumWeb-Regular.ttf"; path = "Resources/TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
 		A2F9C6FF1D98E13A006299D9 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "TitilliumWeb-SemiBold.ttf"; path = "Resources/TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
-		A2F9C7091D9B81AE006299D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2F9C70B1D9B8874006299D9 /* PostAnnouncementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAnnouncementVC.swift; sourceTree = "<group>"; };
 		A2F9C70D1D9B9166006299D9 /* EditorTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorTextView.swift; sourceTree = "<group>"; };
 		A2F9C7121D9B98E7006299D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -198,6 +210,8 @@
 				A269AE991DA84DC6001229E7 /* CalendarVC.swift */,
 				A21149DC1DBACCD10054BFB2 /* AddEventVC.swift */,
 				A2AD0D2F1E2DDD45008EECBA /* UserProfileVC.swift */,
+				6C5334381E4152D3009B6C00 /* DriveVC.swift */,
+				6C5334421E416C39009B6C00 /* FilesVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -231,6 +245,10 @@
 				A2F2ACFE1DAF51120054E331 /* AttendanceObject.swift */,
 				A2BD1C2C1DB1A87C002F5C6B /* CalendarTableViewCell.swift */,
 				A2AD0D311E2EE2C1008EECBA /* UserAttendance.swift */,
+				6C53343A1E415591009B6C00 /* Folder.swift */,
+				6C53343C1E4159CB009B6C00 /* DriveFolderTableViewCell.swift */,
+				6C5334401E416B88009B6C00 /* File.swift */,
+				6C5334441E416DC4009B6C00 /* FileTableViewCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,8 +284,8 @@
 				A226C48A1D20985E0083971D /* Models */,
 				A226C4881D20978F0083971D /* Views */,
 				A2CE33A91D19254B003CDE63 /* Main.storyboard */,
-				A2F9C7091D9B81AE006299D9 /* Assets.xcassets */,
 				6C5334361E3D6A9A009B6C00 /* GoogleService-Info.plist */,
+				6C53343E1E415F41009B6C00 /* Assets.xcassets */,
 				A2CE33AE1D19254B003CDE63 /* LaunchScreen.storyboard */,
 				A2CE33B11D19254B003CDE63 /* Info.plist */,
 			);
@@ -445,12 +463,12 @@
 				A2F9C7051D98E13A006299D9 /* TitilliumWeb-ExtraLight.ttf in Resources */,
 				A2F9C7081D98E13A006299D9 /* TitilliumWeb-SemiBold.ttf in Resources */,
 				A2F9C7001D98E13A006299D9 /* Exo2-ExtraLight.ttf in Resources */,
+				6C53343F1E415F41009B6C00 /* Assets.xcassets in Resources */,
 				A2F9C7011D98E13A006299D9 /* Exo2-Light.ttf in Resources */,
 				A2CE33AB1D19254B003CDE63 /* Main.storyboard in Resources */,
 				A2F9C7021D98E13A006299D9 /* Exo2-Regular.ttf in Resources */,
 				A2F9C7031D98E13A006299D9 /* Exo2-SemiBold.ttf in Resources */,
 				A2F9C7061D98E13A006299D9 /* TitilliumWeb-Light.ttf in Resources */,
-				A2F9C70A1D9B81AE006299D9 /* Assets.xcassets in Resources */,
 				A2F9C7041D98E13A006299D9 /* Exo2-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,15 +543,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2EA33E71E2C088300ECF809 /* LoginVC.swift in Sources */,
+				6C5334391E4152D3009B6C00 /* DriveVC.swift in Sources */,
 				A2206D521D1B43340023BC10 /* TeamProfileVC.swift in Sources */,
 				A2CE33A81D19254B003CDE63 /* MapViewController.swift in Sources */,
 				A269AE9A1DA84DC6001229E7 /* CalendarVC.swift in Sources */,
 				A269AE961DA41C5B001229E7 /* KeyboardLayoutConstraint.swift in Sources */,
+				6C53343B1E415591009B6C00 /* Folder.swift in Sources */,
 				A2EDBEE71D19E454003D9851 /* Util.swift in Sources */,
 				A21149DD1DBACCD10054BFB2 /* AddEventVC.swift in Sources */,
 				A2F030EF1E299B1E004EED7E /* GroupVC.swift in Sources */,
 				A2BD1C2D1DB1A87C002F5C6B /* CalendarTableViewCell.swift in Sources */,
+				6C5334411E416B88009B6C00 /* File.swift in Sources */,
 				A2F9C6F21D9882E8006299D9 /* SwiftyJSON.swift in Sources */,
+				6C5334451E416DC4009B6C00 /* FileTableViewCell.swift in Sources */,
 				A2AD0D321E2EE2C2008EECBA /* UserAttendance.swift in Sources */,
 				A2EDBEE91D1A3065003D9851 /* FeedViewController.swift in Sources */,
 				A2F2ACFD1DAF4E840054E331 /* Audience.swift in Sources */,
@@ -549,9 +571,11 @@
 				A2F9C70E1D9B9166006299D9 /* EditorTextView.swift in Sources */,
 				A239823B1DA359330082B5A1 /* ChatConvoVC.swift in Sources */,
 				A2AD0D301E2DDD45008EECBA /* UserProfileVC.swift in Sources */,
+				6C5334431E416C39009B6C00 /* FilesVC.swift in Sources */,
 				A23426161DA0C8EF00FBDE74 /* BadgeTableViewCell.swift in Sources */,
 				A2F2ACFF1DAF51120054E331 /* AttendanceObject.swift in Sources */,
 				A2F030ED1E247060004EED7E /* TeamViewVC.swift in Sources */,
+				6C53343D1E4159CB009B6C00 /* DriveFolderTableViewCell.swift in Sources */,
 				A23426121DA0865100FBDE74 /* User.swift in Sources */,
 				A2F9C6E81D983C7E006299D9 /* AnnouncementCell.swift in Sources */,
 				A23982391DA342CE0082B5A1 /* ChatListCell.swift in Sources */,
