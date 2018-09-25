@@ -15,7 +15,7 @@ let storage = UserDefaults.standard
 
 var unreadChatIds = [String]()
 
-let morTeamURL = "http://www.morteam.com/api"
+let morTeamURL = "https://www.morteam.com/api"
 
 func parseJSON(_ string: String) -> JSON {
     let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
